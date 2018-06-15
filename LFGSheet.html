@@ -30,9 +30,9 @@
 		<div class="sheet-col-1-7 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_size"><br/>Race</div>
 	</div>
 	<div class="sheet-row sheet-padb">
-		<div class="sheet-col-1-6 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_vision"><br/>Background</div>
-		<div class="sheet-col-2-3 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_prolanguages"><br/>Languages</div>
-		<div class="sheet-col-1-6 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_alignment"><br/>Vision</div>
+		<div class="sheet-col-1-4 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_vision"><br/>Background</div>
+		<div class="sheet-col-5-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_prolanguages"><br/>Languages</div>
+		<div class="sheet-col-1-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_alignment"><br/>Vision</div>
 	</div>
     <!-- Tabs-->
     <input type="checkbox" name="attr_tab1" class="sheet-tab sheet-tab1" value="1" title="Main" checked />
@@ -52,100 +52,157 @@
 			<div class="sheet-col-1-2 sheet-padr">
 				<h4 class="sheet-center">Attributes</h4>
 				<div class="sheet-row sheet-sub-header">
-					<div class="sheet-col-1-6 sheet-center sheet-small-label">Score</div>
+					<div class="sheet-col-1-8 sheet-center sheet-small-label">Score</div>
 					<div class="sheet-col-1-6 sheet-center sheet-small-label">&nbsp;</div>
-					<div class="sheet-col-1-6 sheet-center sheet-small-label">Adjust.</div>
-					<div class="sheet-col-1-8 sheet-center sheet-small-label">Check</div>
+					<div class="sheet-col-1-11 sheet-center sheet-small-label">Adjust.</div>
+					<div class="sheet-col-1-7 sheet-center sheet-small-label">Advantage</div>
+					<div class="sheet-col-1-8 sheet-center sheet-small-label">Roll</div>
 					<div class="sheet-col-1-4 sheet-center sheet-small-label">Notes</div>
 				</div>
 				<div class="sheet-row">
-					<div class="sheet-col-1-6"><input type="number" name="attr_strength" min="1" step="1" /></div>
+					<div class="sheet-col-1-8"><input type="number" name="attr_strength" min="1" step="1" /></div>
 					<div class="sheet-col-1-6 sheet-core-stat-label">Str</div>
-					<div class="sheet-col-1-6">
+					<div class="sheet-col-1-11">
 						<input type="number" name="attr_strength_mod" value="0" readonly/>
 					</div>
+				   <div class="sheet-col-1-7">
+                        <select name="attr_strengthadvantage">
+                            <option value="2d20kl1">ADV</option>
+                            <option value="1d20" selected>NO</option>
+                            <option value="2d20kh1">DIS</option>
+                        </select>
+                    </div>
 					<div class="sheet-col-1-8 sheet-center">
 					    <!-- Rolling Advantage h/l swap depending -->
 					    <!-- ?{Advantage|Normal,1d20|Advantage,2d20kl1|Disadvantage,2d20kh1} -->
-						<button type="roll" name="roll_Str" value="&{template:5eDefault} {{ability=1}} {{title=Strength Check}} {{subheader=@{character_name}}} {{roll=[[@{strength}-(?{Advantage|Normal,1d20|Advantage,2d20kl1|Disadvantage,2d20kh1}-(?{Modifier|0}))]]}}"></button>
+						<button type="roll" name="roll_Str" value="&{template:5eDefault} {{ability=1}} {{title=Strength Check}} {{subheader=@{character_name}}} {{roll=[[@{strength}-(@{strengthadvantage}-(?{Modifier|0}))]]}}"></button>
 					</div>
 					<div class="sheet-col-1-4 sheet-tiny-note">Melee,&nbsp;Athletics</div>
 				</div>
 				<div class="sheet-row">
-                    <div class="sheet-col-1-6"><input type="number" name="attr_dexterity" min="1" step="1" /></div>
+                    <div class="sheet-col-1-8"><input type="number" name="attr_dexterity" min="1" step="1" /></div>
 					<div class="sheet-col-1-6 sheet-core-stat-label">Dex</div>
-					<div class="sheet-col-1-6">
+					<div class="sheet-col-1-11">
 						<input type="number" name="attr_dexterity_mod" value="0" readonly/>
 					</div>
+				   <div class="sheet-col-1-7">
+                        <select name="attr_dexterityadvantage">
+                            <option value="2d20kl1">ADV</option>
+                            <option value="1d20" selected>NO</option>
+                            <option value="2d20kh1">DIS</option>
+                        </select>
+                    </div>
 					<div class="sheet-col-1-8 sheet-center">
-						<button type="roll" name="roll_Dex" value="&{template:5eDefault} {{ability=1}} {{title=Dexterity Check}} {{subheader=@{character_name}}} {{roll=[[@{dexterity}-(?{Advantage|Normal,1d20|Advantage,2d20kl1|Disadvantage,2d20kh1}-(?{Modifier|0}))]]}}"></button>
+						<button type="roll" name="roll_Dex" value="&{template:5eDefault} {{ability=1}} {{title=Dexterity Check}} {{subheader=@{character_name}}} {{roll=[[@{dexterity}-(@{dexterityadvantage}-(?{Modifier|0}))]]}}"></button>
 					</div>
 					<div class="sheet-col-1-4 sheet-tiny-note">Ranged,&nbsp;AC</div>
 				</div>
                 <div class="sheet-row">
-                    <div class="sheet-col-1-6"><input type="number" name="attr_constitution" min="1" step="1" /></div>
+                    <div class="sheet-col-1-8"><input type="number" name="attr_constitution" min="1" step="1" /></div>
 					<div class="sheet-col-1-6 sheet-core-stat-label">Con</div>
-					<div class="sheet-col-1-6">
+					<div class="sheet-col-1-11">
 						<input type="number" name="attr_constitution_mod" value="0" readonly/>
 					</div>
+				   <div class="sheet-col-1-7">
+                        <select name="attr_constitutionadvantage">
+                            <option value="2d20kl1">ADV</option>
+                            <option value="1d20" selected>NO</option>
+                            <option value="2d20kh1">DIS</option>
+                        </select>
+                    </div>
 					<div class="sheet-col-1-8 sheet-center">
-						<button type="roll" name="roll_Con" value="&{template:5eDefault} {{ability=1}} {{title=Constitution Check}} {{subheader=@{character_name}}} {{roll=[[@{constitution}-(?{Advantage|Normal,1d20|Advantage,2d20kl1|Disadvantage,2d20kh1}-(?{Modifier|0}))]]}}"></button>
+						<button type="roll" name="roll_Con" value="&{template:5eDefault} {{ability=1}} {{title=Constitution Check}} {{subheader=@{character_name}}} {{roll=[[@{constitution}-(@{constitutionadvantage}-(?{Modifier|0}))]]}}"></button>
 					</div>
 					<div class="sheet-col-1-4 sheet-tiny-note">Hit&nbsp;Points,&nbsp;Poison</div>
 				</div>
                 <div class="sheet-row">
-					<div class="sheet-col-1-6"><input type="number" name="attr_intelligence" min="1" step="1" /></div>
+					<div class="sheet-col-1-8"><input type="number" name="attr_intelligence" min="1" step="1" /></div>
 					<div class="sheet-col-1-6 sheet-core-stat-label">Int</div>
-					<div class="sheet-col-1-6">
+					<div class="sheet-col-1-11">
 						<input type="number" name="attr_intelligence_mod" value="0" readonly/>
 					</div>
+				   <div class="sheet-col-1-7">
+                        <select name="attr_intelligenceadvantage">
+                            <option value="2d20kl1">ADV</option>
+                            <option value="1d20" selected>NO</option>
+                            <option value="2d20kh1">DIS</option>
+                        </select>
+                    </div>
 					<div class="sheet-col-1-8 sheet-center">
-						<button type="roll" name="roll_Int" value="&{template:5eDefault} {{ability=1}} {{title=Intelligence Check}} {{subheader=@{character_name}}} {{roll=[[@{intelligence}-(?{Advantage|Normal,1d20|Advantage,2d20kl1|Disadvantage,2d20kh1}-(?{Modifier|0}))]]}}"></button>
+						<button type="roll" name="roll_Int" value="&{template:5eDefault} {{ability=1}} {{title=Intelligence Check}} {{subheader=@{character_name}}} {{roll=[[@{intelligence}-(@{intelligenceadvantage}-(?{Modifier|0}))]]}}"></button>
 					</div>
 					<div class="sheet-col-1-4 sheet-tiny-note">Lore,&nbsp;Insight,&nbsp;Lang</div>
 				</div>
                 <div class="sheet-row">
-                    <div class="sheet-col-1-6"><input type="number" name="attr_perception" min="1" step="1" /></div>
+                    <div class="sheet-col-1-8"><input type="number" name="attr_perception" min="1" step="1" /></div>
 					<div class="sheet-col-1-6 sheet-core-stat-label">Per</div>
-					<div class="sheet-col-1-6">
+					<div class="sheet-col-1-11">
 						<input type="number" name="attr_perception_mod" value="0" readonly/>
 					</div>
+				   <div class="sheet-col-1-7">
+                        <select name="attr_perceptionadvantage">
+                            <option value="2d20kl1">ADV</option>
+                            <option value="1d20" selected>NO</option>
+                            <option value="2d20kh1">DIS</option>
+                        </select>
+                    </div>
 					<div class="sheet-col-1-8 sheet-center">
-						<button type="roll" name="roll_Per" value="&{template:5eDefault} {{ability=1}} {{title=Perception Check}} {{subheader=@{character_name}}} {{roll=[[@{perception}-(?{Advantage|Normal,1d20|Advantage,2d20kl1|Disadvantage,2d20kh1}-(?{Modifier|0}))]]}}"></button>
+						<button type="roll" name="roll_Per" value="&{template:5eDefault} {{ability=1}} {{title=Perception Check}} {{subheader=@{character_name}}} {{roll=[[@{perception}-(@{perceptionadvantage}-(?{Modifier|0}))]]}}"></button>
 					</div>
 					<div class="sheet-col-1-4 sheet-tiny-note">Alertness,&nbsp;Detection</div>
 				</div>
 				<div class="sheet-row">
-					<div class="sheet-col-1-6"><input type="number" name="attr_willpower" min="1" step="1" /></div>
+					<div class="sheet-col-1-8"><input type="number" name="attr_willpower" min="1" step="1" /></div>
 					<div class="sheet-col-1-6 sheet-core-stat-label">Will</div>
-					<div class="sheet-col-1-6">
+					<div class="sheet-col-1-11">
 						<input type="number" name="attr_willpower_mod" value="0" readonly/>
 					</div>
+				   <div class="sheet-col-1-7">
+                        <select name="attr_willpoweradvantage">
+                            <option value="2d20kl1">ADV</option>
+                            <option value="1d20" selected>NO</option>
+                            <option value="2d20kh1">DIS</option>
+                        </select>
+                    </div>
 					<div class="sheet-col-1-8 sheet-center">
-						<button type="roll" name="roll_Will" value="&{template:5eDefault} {{ability=1}} {{title=Willpower Check}} {{subheader=@{character_name}}} {{roll=[[@{willpower}-(?{Advantage|Normal,1d20|Advantage,2d20kl1|Disadvantage,2d20kh1}-(?{Modifier|0}))]]}}"></button>
+						<button type="roll" name="roll_Will" value="&{template:5eDefault} {{ability=1}} {{title=Willpower Check}} {{subheader=@{character_name}}} {{roll=[[@{willpower}-(@{willpoweradvantage}-(?{Modifier|0}))]]}}"></button>
 					</div>
 					<div class="sheet-col-1-4 sheet-tiny-note">Mental&nbsp;Defence,&nbsp;Recovery</div>
 				</div>
 				<div class="sheet-row">
-					<div class="sheet-col-1-6"><input type="number" name="attr_charisma" min="1" step="1" /></div>
+					<div class="sheet-col-1-8"><input type="number" name="attr_charisma" min="1" step="1" /></div>
 					<div class="sheet-col-1-6 sheet-core-stat-label">Cha</div>
-					<div class="sheet-col-1-6">
+					<div class="sheet-col-1-11">
 						<input type="number" name="attr_charisma_mod" value="0" readonly/>
 					</div>
+				   <div class="sheet-col-1-7">
+                        <select name="attr_charismaadvantage">
+                            <option value="2d20kl1">ADV</option>
+                            <option value="1d20" selected>NO</option>
+                            <option value="2d20kh1">DIS</option>
+                        </select>
+                    </div>
 					<div class="sheet-col-1-8 sheet-center">
-						<button type="roll" name="roll_Cha" value="&{template:5eDefault} {{ability=1}} {{title=Charisma Check}} {{subheader=@{character_name}}} {{roll=[[@{charisma}-(?{Advantage|Normal,1d20|Advantage,2d20kl1|Disadvantage,2d20kh1}-(?{Modifier|0}))]]}}"></button>
+						<button type="roll" name="roll_Cha" value="&{template:5eDefault} {{ability=1}} {{title=Charisma Check}} {{subheader=@{character_name}}} {{roll=[[@{charisma}-(@{charismaadvantage}-(?{Modifier|0}))]]}}"></button>
 					</div>
 					<div class="sheet-col-1-4 sheet-tiny-note">Influence,&nbsp;Morale</div>
 				</div>
                 <div class="sheet-row">
-                    <div class="sheet-col-1-6"><input type="number" name="attr_luck" min="1" step="1" /></div>
+                    <div class="sheet-col-1-8"><input type="number" name="attr_luck" min="1" step="1" /></div>
 					<div class="sheet-col-1-6 sheet-core-stat-label">Luck</div>
-					<div class="sheet-col-1-6">
+					<div class="sheet-col-1-11">
 						<input type="number" name="attr_luck_mod" value="0" readonly/>
 					</div>
+				   <div class="sheet-col-1-7">
+                        <select name="attr_luckadvantage">
+                            <option value="2d20kl1">ADV</option>
+                            <option value="1d20" selected>NO</option>
+                            <option value="2d20kh1">DIS</option>
+                        </select>
+                    </div>
 					<div class="sheet-col-1-8 sheet-center">
 					    <!-- +(?{Luck Save|Luck,0|Luck(STR),@{strength_mod}|Luck(DEX),@{dexterity_mod}|Luck(CON),@{constitution_mod}|Luck(INT),@{intelligence_mod}|Luck(PER),@{perception_mod}|Luck(WILL),@{willpower_mod}|Luck(CHA),@{charisma_mod}}) -->
-						<button type="roll" name="roll_Luck" value="&{template:5eDefault} {{ability=1}} {{title=Luck Check}} {{subheader=@{character_name}}} {{roll=[[@{luck}-(?{Advantage|Normal,1d20|Advantage,2d20kl1|Disadvantage,2d20kh1}-(?{Modifier|0}))]]}}"></button>
+						<button type="roll" name="roll_Luck" value="&{template:5eDefault} {{ability=1}} {{title=Luck Check}} {{subheader=@{character_name}}} {{roll=[[@{luck}-(@{luckadvantage}-(?{Modifier|0}))]]}}"></button>
 					</div>
 					<div class="sheet-col-1-4 sheet-tiny-note">Saves,&nbsp;Exploits</div>
 				</div>
@@ -158,11 +215,11 @@
                         <div class="sheet-center sheet-small-label sheet-vert-bottom sheet-sub-header">Hit Points</div>
                         <div class="sheet-row">
                             <div class="sheet-col-1-2 sheet-small-label sheet-center">
-                                <input class="sheet-underlined" type="number" name="attr_HP" step="1">
+                                <input class="sheet-underlined" type="number" name="attr_HP" step="1" value="0">
                                 <br/>Current
                             </div>
                             <div class="sheet-col-1-2 sheet-small-label sheet-center">
-                                <input class="sheet-underlined" type="number" name="attr_HP_max" min="1" step="1">
+                                <input class="sheet-underlined" type="number" name="attr_HP_max" min="1" step="1" value="0">
                                 <br/>Max
                             </div>
                         </div>
@@ -170,11 +227,20 @@
                     <div class="sheet-col-1-2 sheet-padr">
                         <div class="sheet-center sheet-small-label sheet-vert-bottom sheet-sub-header">Initiative</div>
                         <div class="sheet-row">
-                            <div class="sheet-col-7-8 sheet-small-label sheet-center">
-                                <input class="sheet-underlined" type="number" name="attr_initiative" step="1">
+                            <div class="sheet-col-1-2 sheet-small-label sheet-center">
+                                <input class="sheet-underlined" type="number" name="attr_initiative" step="1" value="0">
                             </div>
-                            <div class="sheet-col-1-8 sheet-small-label sheet-center">
-                                <button type="roll" name="roll_Initiative" value="&{template:5eDefault} {{title=Initiative}} {{subheader=@{character_name}}} {{rollname=Initiative}} {{roll=[[ 1d20+@{dexterity_mod}+@{initiative} &{tracker} ]]}}}"></button>
+        				   <div class="sheet-col-1-3 sheet-small-label sheet-center">
+                                <select name="attr_initiativeadvantage">
+                                    <option value="2d20kh1">ADV</option>
+                                    <option value="1d20" selected>NO</option>
+                                    <option value="2d20kl1">DIS</option>
+                                </select>
+                                <br/>Advantage
+                            </div>
+                            <div class="sheet-col-1-6 sheet-small-label sheet-center">
+                                <button type="roll" name="roll_Initiative" value="&{template:5eDefault} {{title=Initiative}} {{subheader=@{character_name}}} {{rollname=Initiative}} {{roll=[[ 1d20+(@{dexterity_mod})+(@{initiative}) &{tracker} ]]}}"></button>
+                                <div class="sheet-tiny-spacer"></div>Roll
                             </div>
                         </div>
                     </div>
@@ -184,7 +250,7 @@
                         <div class="sheet-center sheet-small-label sheet-vert-bottom sheet-sub-header">Attack Bonus</div>
                         <div class="sheet-row">
                             <div class="sheet-col-1-1 sheet-small-label sheet-center">
-                                <input class="sheet-underlined sheet-center" type="number" name="attr_class_attackbonus" step="1">
+                                <input class="sheet-underlined sheet-center" type="number" name="attr_class_hitbonus" step="1" value="0">
                                 <br/>&nbsp;
                             </div>
                         </div>
@@ -193,7 +259,7 @@
                         <div class="sheet-center sheet-small-label sheet-vert-bottom sheet-sub-header">Armour Class</div>
                         <div class="sheet-row">
                             <div class="sheet-col-1-1 sheet-small-label sheet-center">
-                                <input class="sheet-underlined sheet-center" type="number" name="attr_armour_class" step="1">
+                                <input class="sheet-underlined sheet-center" type="number" name="attr_armour_class" step="1" value="10">
                                 <br/>&nbsp;
                             </div>
                         </div>
@@ -206,11 +272,11 @@
                     <div class="sheet-col-1-2 sheet-padr">
                         <div class="sheet-row">
                             <div class="sheet-col-1-2 sheet-small-label sheet-center">
-                                <input class="sheet-underlined" type="number" name="attr_rerolls" step="1">
+                                <input class="sheet-underlined" type="number" name="attr_rerolls" step="1" value="0">
                                 <br/>Current
                             </div>
                             <div class="sheet-col-1-2 sheet-small-label sheet-center">
-                                <input class="sheet-underlined" type="number" name="attr_rerolls_max" min="1" step="1">
+                                <input class="sheet-underlined" type="number" name="attr_rerolls_max" value="@{level}" disabled="disabled">
                                 <br/>Max
                             </div>
                         </div>
@@ -252,17 +318,17 @@
 			<div class="sheet-col-1-2 sheet-padr">
 				<h4 class="sheet-center">Skills</h4>
 				<div class="sheet-row sheet-sub-header">
-					<div class="sheet-col-11-24 sheet-center sheet-small-label">Skill Name</div>
-					<div class="sheet-col-1-6 sheet-center sheet-small-label">Attribute</div>
-					<div class="sheet-col-1-4 sheet-center sheet-small-label">Advantage</div>
-					<div class="sheet-col-1-8 sheet-center sheet-small-label">Check</div>
+					<div class="sheet-col-4-7 sheet-center sheet-small-label">Skill Name</div>
+					<div class="sheet-col-1-7 sheet-center sheet-small-label">Attribute</div>
+					<div class="sheet-col-1-7 sheet-center sheet-small-label">Advantage</div>
+					<div class="sheet-col-1-7 sheet-center sheet-small-label">Roll</div>
 				</div>
 				<fieldset class="repeating_features">
 				    <div class="sheet-row">
-                        <div class="sheet-col-11-24">
+                        <div class="sheet-col-4-7">
                             <input type="text" name="attr_skillname">
                         </div>
-                        <div class="sheet-col-1-6">
+                        <div class="sheet-col-1-7">
                             <select name="attr_skilltype">
                                 <option value="@{strength}" selected>STR</option>
                                 <option value="@{dexterity}">DEX</option>
@@ -274,14 +340,14 @@
                                 <option value="@{luck}">LUCK</option>
                             </select>
                         </div>
-                        <div class="sheet-col-1-4">
+                        <div class="sheet-col-1-7">
                             <select name="attr_skilladvantage">
-                                <option value="2d20kl1">Advantage</option>
-                                <option value="1d20" selected>Normal</option>
-                                <option value="2d20kh1">Disadvantage</option>
+                                <option value="2d20kl1">ADV</option>
+                                <option value="1d20" selected>NO</option>
+                                <option value="2d20kh1">DIS</option>
                             </select>
                         </div>
-                        <div class="sheet-col-1-8 sheet-center">
+                        <div class="sheet-col-1-7 sheet-center">
                             <button type="roll" name="roll_Skill" value="&{template:5eDefault} {{ability=1}} {{title=@{skillname} Check}} {{subheader=@{character_name}}} {{roll=[[@{skilltype}+1-(@{skilladvantage}-(?{Modifier|0}))]]}}"></button>
                         </div>
                     </div>
@@ -293,15 +359,17 @@
     <!--Combat-->
     <div class="sheet-section-combat">
         <span class="sheet-spacer"></span>
-        <h4 class="sheet-center">Melee Weapons</h4>
-        <div class="sheet-row">
-            <div class="sheet-row sheet-sub-header">
-                <div class="sheet-col-1-6 sheet-center sheet-small-label sheet-vert-bottom">Weapon Name</div>
-                <div class="sheet-col-1-16 sheet-center sheet-small-label sheet-vert-bottom sheet-padr">+Hit</div>
-                <div class="sheet-col-1-16 sheet-center sheet-small-label sheet-vert-bottom sheet-padr">+Damage</div>
-                <div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-bottom">Base Damage</div>
-                <div class="sheet-col-9-16 sheet-center sheet-small-label sheet-vert-bottom">Weapon Notes</div>
-                <div class="sheet-col-1-24 sheet-center">&nbsp;</div>
+        <div class="sheet-col-1">
+            <h4 class="sheet-center">Melee Weapons</h4>
+            <div class="sheet-row">
+                <div class="sheet-row sheet-sub-header">
+                    <div class="sheet-col-1-6 sheet-center sheet-small-label">Weapon Name</div>
+                    <div class="sheet-col-1-16 sheet-center sheet-small-label">+Hit</div>
+                    <div class="sheet-col-1-16 sheet-center sheet-small-label">+Damage</div>
+                    <div class="sheet-col-1-10 sheet-center sheet-small-label">Base Damage</div>
+                    <div class="sheet-col-9-16 sheet-center sheet-small-label">Weapon Notes</div>
+                    <div class="sheet-col-1-24 sheet-center sheet-small-label">Roll</div>
+                </div>
             </div>
         </div>
         <fieldset class="repeating_meleeattacks">
@@ -312,22 +380,23 @@
                 <div class="sheet-col-1-10 sheet-padr"><input class="sheet-center" type="text" name="attr_melee_dmgbase" value="1d4"></div>
                 <div class="sheet-col-9-16 sheet-padr"><input type="text" name="attr_melee_description"></div>
                 <div class="sheet-col-1-24 sheet-center">
-                    <button type="roll" class="sheet-roll" name="roll_MeleeAttack" value="&{template:5eDefault} {{weapon=1}} {{title=@{melee_weaponname}}} {{subheader=@{character_name}}} {{attack=[[@{strength_mod}+(@{melee_hitbonus})+?{Advantage|Normal,1d20|Advantage,2d20kh1|Disadvantage,2d20kl1}]]}} {{damage=[[@{melee_dmgbase}+(@{strength_mod})]]}} {{attackshowinfoblock=1}} }} "></button>
+                    <button type="roll" class="sheet-roll" name="roll_MeleeAttack" value="&{template:5eDefault} {{weapon=1}} {{title=@{melee_weaponname}}} {{subheader=@{character_name}}} {{attack=[[@{class_hitbonus}+(@{strength_mod})+(@{melee_hitbonus})+?{Advantage|Normal,1d20|Advantage,2d20kh1|Disadvantage,2d20kl1}]]}} {{damage=[[{@{melee_dmgbase}+(@{strength_mod}), 1d1}k1]]}} {{attackshowinfoblock=1}} }} "></button>
                 </div>
             </div>
         </fieldset>
-
         <span class="sheet-spacer"></span>
-        <h4 class="sheet-center">Ranged&nbsp;Weapons </h4>
-        <div class="sheet-row">
-            <div class="sheet-row sheet-sub-header">
-                <div class="sheet-col-1-6 sheet-center sheet-small-label sheet-vert-bottom">Weapon Name</div>
-                <div class="sheet-col-1-16 sheet-center sheet-small-label sheet-vert-bottom sheet-padr">+Hit</div>
-                <div class="sheet-col-1-16 sheet-center sheet-small-label sheet-vert-bottom sheet-padr">+Damage</div>
-                <div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-bottom">Base Damage</div>
-                <div class="sheet-col-1-16 sheet-center sheet-small-label sheet-vert-bottom">Range</div>
-                <div class="sheet-col-1-2 sheet-center sheet-small-label sheet-vert-bottom">Weapon Notes</div>
-                <div class="sheet-col-1-24 sheet-center">&nbsp;</div>
+        <div class="sheet-col-1">
+            <h4 class="sheet-center">Ranged&nbsp;Weapons </h4>
+            <div class="sheet-row">
+                <div class="sheet-row sheet-sub-header">
+                    <div class="sheet-col-1-6 sheet-center sheet-small-label sheet-vert-bottom">Weapon Name</div>
+                    <div class="sheet-col-1-16 sheet-center sheet-small-label sheet-vert-bottom sheet-padr">+Hit</div>
+                    <div class="sheet-col-1-16 sheet-center sheet-small-label sheet-vert-bottom sheet-padr">+Damage</div>
+                    <div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-bottom">Base Damage</div>
+                    <div class="sheet-col-1-16 sheet-center sheet-small-label sheet-vert-bottom">Range</div>
+                    <div class="sheet-col-1-2 sheet-center sheet-small-label sheet-vert-bottom">Weapon Notes</div>
+                    <div class="sheet-col-1-24 sheet-center sheet-small-label sheet-vert-bottom">Roll</div>
+                </div>
             </div>
         </div>
         <fieldset class="repeating_rangedattacks">
@@ -339,15 +408,13 @@
                 <div class="sheet-col-1-16 sheet-padr"><input type="text" name="attr_range_distance"></div>
                 <div class="sheet-col-1-2"><input type="text" name="attr_range_description"></div>
                 <div class="sheet-col-1-24 sheet-center">
-                    <button type="roll" class="sheet-roll" name="roll_RangeAttack" value="&{template:5eDefault} {{weapon=1}} {{title=@{range_weaponname}}} {{subheader=@{character_name}}} {{attack=[[@{dexterity_mod}+(@{range_hitbonus})+?{Advantage|Normal,1d20|Advantage,2d20kh1|Disadvantage,2d20kl1}]]}} {{damage=[[@{range_dmgbase}+(@{dexterity_mod})+(@{range_dmgbonus})]]}} {{attackshowinfoblock=1}} }} "></button>
+                    <button type="roll" class="sheet-roll" name="roll_RangeAttack" value="&{template:5eDefault} {{weapon=1}} {{title=@{range_weaponname}}} {{subheader=@{character_name}}} {{attack=[[@{class_hitbonus}+(@{dexterity_mod})+(@{range_hitbonus})+?{Advantage|Normal,1d20|Advantage,2d20kh1|Disadvantage,2d20kl1}]]}} {{damage=[[{@{range_dmgbase}+(@{dexterity_mod})+(@{range_dmgbonus}), 1d1}k1]]}} {{attackshowinfoblock=1}} }} "></button>
                 </div>
             </div>
         </fieldset>
     </div>
 <!----------------------------------------------------------->
     <!--Spellbook-->
-<!----------------------------------------------------------->
-
     <div class="sheet-section-spellbook">
 		<h4 class="sheet-center">Spellbook</h4>
 		<input type="radio" name="attr_spellpagetab" class="sheet-spellpagetab sheet-spelltab1" value="1" title="Level 1" checked/>
@@ -368,57 +435,243 @@
 		<!-- BEGIN AUTO GENERATED SPELL PAGES -->
 	    <!-- BEGIN new spell page -->
 		<div class="sheet-spell-page1">
-		    <div class="sheet-row sheet-spell-header">
+		    <div class="sheet-row sheet-sub-header">
 				<div class="sheet-col-1 sheet-vert-bottom sheet-center sheet-small-label">Level 1</div>
 			</div>
 			<fieldset class="repeating_spellbooklevel1">
 			<!-- BEGIN spell row -->
-    			<div class="sheet-margin-bottom sheet-padr sheet-padl sheet-spellscroll">
+			    <span class="sheet-spacer"></span>
+    			<div class="sheet-margin-bottom sheet-padr sheet-padl">
     				<div class="sheet-row">
     					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Spell Level</div>
     					<div class="sheet-col-13-24 sheet-vert-bottom sheet-center sheet-small-label">Spell Name</div>
-    					<div class="sheet-col-1-6 sheet-vert-bottom sheet-center sheet-small-label">Range</div>
-    					<div class="sheet-col-1-6 sheet-vert-bottom sheet-center sheet-small-label">Duration</div>
+    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Range</div>
+    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Duration</div>
+    					<div class="sheet-col-1-12 sheet-center sheet-small-label sheet-vert-bottom">Roll</div>
     				</div>
     				
     				<div class="sheet-row">
     					<div class="sheet-col-1-8 sheet-vert-middle sheet-center">Level 1<input type="hidden" name="attr_spellbaselevel" value="1"></div>
     					<div class="sheet-col-13-24 sheet-vert-middle"><input type="text" name="attr_spellname"></div>
-    					<div class="sheet-col-1-6 sheet-vert-middle"><input type="text" name="attr_spellrange"></div>
-    					<div class="sheet-col-1-6 sheet-vert-middle"><input type="text" name="attr_spellduration"></div>
+    					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellrange"></div>
+    					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellduration"></div>
+                        <div class="sheet-col-1-12 sheet-center">
+                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}}"></button>
+                        </div>
     				</div>
-    
-    				<div class="sheet-row">
-    					<div class="sheet-col-1 sheet-vert-bottom sheet-center sheet-small-label">Spell Details</div>
-    				</div>
-    				
     				<div class="sheet-row">
     				    <div class="sheet-col-1">
         					<div class="sheet-auto-expand">
                                 <span name="attr_spelldescr"></span>
-                                <textarea class="sheet-auto-expand" spellcheck="false" name="attr_spelldescr"></textarea>
+                                <textarea class="sheet-auto-expand" spellcheck="false" name="attr_spelldescr" placeholder="Spell Description and Effects"></textarea>
                             </div>
                         </div>
     				</div>
+    				<span class="sheet-spacer"></span>
     			</div>
 			<!-- END spell row -->	
 			</fieldset>
 		</div>
 		<!-- END spell page -->
 		<!-- BEGIN new spell page -->
-		<div class="sheet-spell-page2"></div>
+		<div class="sheet-spell-page2">
+		    <div class="sheet-row sheet-sub-header">
+				<div class="sheet-col-1 sheet-vert-bottom sheet-center sheet-small-label">Level 2</div>
+			</div>
+			<fieldset class="repeating_spellbooklevel2">
+			<!-- BEGIN spell row -->
+			    <span class="sheet-spacer"></span>
+    			<div class="sheet-margin-bottom sheet-padr sheet-padl">
+    				<div class="sheet-row">
+    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Spell Level</div>
+    					<div class="sheet-col-13-24 sheet-vert-bottom sheet-center sheet-small-label">Spell Name</div>
+    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Range</div>
+    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Duration</div>
+    					<div class="sheet-col-1-12 sheet-center sheet-small-label sheet-vert-bottom">Cast</div>
+    				</div>
+    				
+    				<div class="sheet-row">
+    					<div class="sheet-col-1-8 sheet-vert-middle sheet-center">Level 2<input type="hidden" name="attr_spellbaselevel" value="2"></div>
+    					<div class="sheet-col-13-24 sheet-vert-middle"><input type="text" name="attr_spellname"></div>
+    					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellrange"></div>
+    					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellduration"></div>
+                        <div class="sheet-col-1-12 sheet-center">
+                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}}"></button>
+                        </div>
+    				</div>
+    				<div class="sheet-row">
+    				    <div class="sheet-col-1">
+        					<div class="sheet-auto-expand">
+                                <span name="attr_spelldescr"></span>
+                                <textarea class="sheet-auto-expand" spellcheck="false" name="attr_spelldescr" placeholder="Spell Description and Effects"></textarea>
+                            </div>
+                        </div>
+    				</div>
+    				<span class="sheet-spacer"></span>
+    			</div>
+			<!-- END spell row -->	
+			</fieldset>
+		</div>
 		<!-- END spell page -->
 		<!-- BEGIN new spell page -->
-		<div class="sheet-spell-page3"></div>
+		<div class="sheet-spell-page3">
+		    <div class="sheet-row sheet-sub-header">
+				<div class="sheet-col-1 sheet-vert-bottom sheet-center sheet-small-label">Level 3</div>
+			</div>
+			<fieldset class="repeating_spellbooklevel3">
+			<!-- BEGIN spell row -->
+			    <span class="sheet-spacer"></span>
+    			<div class="sheet-margin-bottom sheet-padr sheet-padl">
+    				<div class="sheet-row">
+    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Spell Level</div>
+    					<div class="sheet-col-13-24 sheet-vert-bottom sheet-center sheet-small-label">Spell Name</div>
+    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Range</div>
+    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Duration</div>
+    					<div class="sheet-col-1-12 sheet-center sheet-small-label sheet-vert-bottom">Cast</div>
+    				</div>
+    				
+    				<div class="sheet-row">
+    					<div class="sheet-col-1-8 sheet-vert-middle sheet-center">Level 3<input type="hidden" name="attr_spellbaselevel" value="3"></div>
+    					<div class="sheet-col-13-24 sheet-vert-middle"><input type="text" name="attr_spellname"></div>
+    					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellrange"></div>
+    					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellduration"></div>
+                        <div class="sheet-col-1-12 sheet-center">
+                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}}"></button>
+                        </div>
+    				</div>
+    				<div class="sheet-row">
+    				    <div class="sheet-col-1">
+        					<div class="sheet-auto-expand">
+                                <span name="attr_spelldescr"></span>
+                                <textarea class="sheet-auto-expand" spellcheck="false" name="attr_spelldescr" placeholder="Spell Description and Effects"></textarea>
+                            </div>
+                        </div>
+    				</div>
+    				<span class="sheet-spacer"></span>
+    			</div>
+			<!-- END spell row -->	
+			</fieldset>
+		</div>
 		<!-- END spell page -->
 		<!-- BEGIN new spell page -->
-		<div class="sheet-spell-page4"></div>
+		<div class="sheet-spell-page4">
+		    <div class="sheet-row sheet-sub-header">
+				<div class="sheet-col-1 sheet-vert-bottom sheet-center sheet-small-label">Level 4</div>
+			</div>
+			<fieldset class="repeating_spellbooklevel4">
+			<!-- BEGIN spell row -->
+			    <span class="sheet-spacer"></span>
+    			<div class="sheet-margin-bottom sheet-padr sheet-padl">
+    				<div class="sheet-row">
+    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Spell Level</div>
+    					<div class="sheet-col-13-24 sheet-vert-bottom sheet-center sheet-small-label">Spell Name</div>
+    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Range</div>
+    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Duration</div>
+    					<div class="sheet-col-1-12 sheet-center sheet-small-label sheet-vert-bottom">Cast</div>
+    				</div>
+    				
+    				<div class="sheet-row">
+    					<div class="sheet-col-1-8 sheet-vert-middle sheet-center">Level 4<input type="hidden" name="attr_spellbaselevel" value="4"></div>
+    					<div class="sheet-col-13-24 sheet-vert-middle"><input type="text" name="attr_spellname"></div>
+    					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellrange"></div>
+    					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellduration"></div>
+                        <div class="sheet-col-1-12 sheet-center">
+                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}}"></button>
+                        </div>
+    				</div>
+    				<div class="sheet-row">
+    				    <div class="sheet-col-1">
+        					<div class="sheet-auto-expand">
+                                <span name="attr_spelldescr"></span>
+                                <textarea class="sheet-auto-expand" spellcheck="false" name="attr_spelldescr" placeholder="Spell Description and Effects"></textarea>
+                            </div>
+                        </div>
+    				</div>
+    				<span class="sheet-spacer"></span>
+    			</div>
+			<!-- END spell row -->	
+			</fieldset>
+		</div>
 		<!-- END spell page -->
 		<!-- BEGIN new spell page -->
-		<div class="sheet-spell-page5"></div>
+		<div class="sheet-spell-page5">
+		    <div class="sheet-row sheet-sub-header">
+				<div class="sheet-col-1 sheet-vert-bottom sheet-center sheet-small-label">Level 5</div>
+			</div>
+			<fieldset class="repeating_spellbooklevel5">
+			<!-- BEGIN spell row -->
+			    <span class="sheet-spacer"></span>
+    			<div class="sheet-margin-bottom sheet-padr sheet-padl">
+    				<div class="sheet-row">
+    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Spell Level</div>
+    					<div class="sheet-col-13-24 sheet-vert-bottom sheet-center sheet-small-label">Spell Name</div>
+    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Range</div>
+    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Duration</div>
+    					<div class="sheet-col-1-12 sheet-center sheet-small-label sheet-vert-bottom">Cast</div>
+    				</div>
+    				
+    				<div class="sheet-row">
+    					<div class="sheet-col-1-8 sheet-vert-middle sheet-center">Level 5<input type="hidden" name="attr_spellbaselevel" value="5"></div>
+    					<div class="sheet-col-13-24 sheet-vert-middle"><input type="text" name="attr_spellname"></div>
+    					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellrange"></div>
+    					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellduration"></div>
+                        <div class="sheet-col-1-12 sheet-center">
+                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}}"></button>
+                        </div>
+    				</div>
+    				<div class="sheet-row">
+    				    <div class="sheet-col-1">
+        					<div class="sheet-auto-expand">
+                                <span name="attr_spelldescr"></span>
+                                <textarea class="sheet-auto-expand" spellcheck="false" name="attr_spelldescr" placeholder="Spell Description and Effects"></textarea>
+                            </div>
+                        </div>
+    				</div>
+    				<span class="sheet-spacer"></span>
+    			</div>
+			<!-- END spell row -->	
+			</fieldset>
+		</div>
 		<!-- END spell page -->
 		<!-- BEGIN new spell page -->
-		<div class="sheet-spell-page6"></div>
+		<div class="sheet-spell-page6">
+		    <div class="sheet-row sheet-sub-header">
+				<div class="sheet-col-1 sheet-vert-bottom sheet-center sheet-small-label">Level 6</div>
+			</div>
+			<fieldset class="repeating_spellbooklevel6">
+			<!-- BEGIN spell row -->
+			    <span class="sheet-spacer"></span>
+    			<div class="sheet-margin-bottom sheet-padr sheet-padl">
+    				<div class="sheet-row">
+    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Spell Level</div>
+    					<div class="sheet-col-13-24 sheet-vert-bottom sheet-center sheet-small-label">Spell Name</div>
+    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Range</div>
+    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Duration</div>
+    					<div class="sheet-col-1-12 sheet-center sheet-small-label sheet-vert-bottom">Cast</div>
+    				</div>
+    				
+    				<div class="sheet-row">
+    					<div class="sheet-col-1-8 sheet-vert-middle sheet-center">Level 6<input type="hidden" name="attr_spellbaselevel" value="6"></div>
+    					<div class="sheet-col-13-24 sheet-vert-middle"><input type="text" name="attr_spellname"></div>
+    					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellrange"></div>
+    					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellduration"></div>
+                        <div class="sheet-col-1-12 sheet-center">
+                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}}"></button>
+                        </div>
+    				</div>
+    				<div class="sheet-row">
+    				    <div class="sheet-col-1">
+        					<div class="sheet-auto-expand">
+                                <span name="attr_spelldescr"></span>
+                                <textarea class="sheet-auto-expand" spellcheck="false" name="attr_spelldescr" placeholder="Spell Description and Effects"></textarea>
+                            </div>
+                        </div>
+    				</div>
+    				<span class="sheet-spacer"></span>
+    			</div>
+			<!-- END spell row -->	
+			</fieldset>
+		</div>
 		<!-- END spell page -->
 		<!-- END AUTO GENERATED SPELL PAGES -->
 	</div>
@@ -449,7 +702,7 @@
 					<div class="sheet-col-1-6" title="Platinum Pieces"><input type="number" name="attr_pp" value="0" min="0" step="1"></div>
 					<div class="sheet-col-1-6" title="Total (in Gold Pieces)"><input type="number" name="attr_money_total_gp" value="(@{cp} / 100) + (@{sp} / 10) + (@{ep} / 2) + @{gp} + (@{pp} * 5) " disabled="disabled"></div>
 				</div>
-				<h4 class="sheet-center">Treasure/Loot/Inventory Notes <span class="sheet-pictos">W</span></h4>
+				<h4 class="sheet-center">Treasure/Loot/Inventory Notes</h4>
 				<textarea name="attr_lootnotes"></textarea>
 			</div>
 			<!--Encumbrance and Inventory Locations -->
@@ -490,27 +743,25 @@
 			</div>
 		</div>
 		<h4 class="sheet-center">Inventory</h4>
-			<input type="radio" name="attr_inventorytab" class="sheet-inventorytab sheet-inventorytab1" value="1" title="Page 1" checked="checked" />
-			<span class="sheet-inventorytab sheet-inventorytab1">1</span>
-			<input type="radio" name="attr_inventorytab" class="sheet-inventorytab sheet-inventorytab2" value="2" title="Page 2" />
-			<span class="sheet-inventorytab sheet-inventorytab2">2</span>
-			<input type="radio" name="attr_inventorytab" class="sheet-inventorytab sheet-inventorytab3" value="3" title="Page 3" />
-			<span class="sheet-inventorytab sheet-inventorytab3">3</span>
-			<input type="radio" name="attr_inventorytab" class="sheet-inventorytab sheet-inventorytab4" value="4" title="Page 4" />
-			<span class="sheet-inventorytab sheet-inventorytab4">4</span>
-			<input type="radio" name="attr_inventorytab" class="sheet-inventorytab sheet-inventorytab5" value="5" title="Page 5" />
-			<span class="sheet-inventorytab sheet-inventorytab5">5</span>
-			<input type="radio" name="attr_inventorytab" class="sheet-inventorytab sheet-inventorytab6" value="7" title="Page 6" />
-			<span class="sheet-inventorytab sheet-inventorytab6">6</span>
-			<input type="radio" name="attr_inventorytab" class="sheet-inventorytab sheet-inventorytab7" value="7" title="Page 7" />
-			<span class="sheet-inventorytab sheet-inventorytab7">7</span>
-			<input type="radio" name="attr_inventorytab" class="sheet-inventorytab sheet-inventorytab99" value="99" title="Show All" />
-			<span class="sheet-inventorytab sheet-inventorytab99">Show All</span>
+			<input type="checkbox" name="attr_inventorytab1" class="sheet-inventorytab sheet-inventorytab1" value="1" title="Page 1" />
+			<span class="sheet-inventorytab sheet-inventorytab1" name="attr_itab1"></span>
+			<input type="checkbox" name="attr_inventorytab2" class="sheet-inventorytab sheet-inventorytab2" value="2" title="Page 2" />
+			<span class="sheet-inventorytab sheet-inventorytab2" name="attr_itab2"></span>
+			<input type="checkbox" name="attr_inventorytab3" class="sheet-inventorytab sheet-inventorytab3" value="3" title="Page 3" />
+			<span class="sheet-inventorytab sheet-inventorytab3" name="attr_itab3"></span>
+			<input type="checkbox" name="attr_inventorytab4" class="sheet-inventorytab sheet-inventorytab4" value="4" title="Page 4" />
+			<span class="sheet-inventorytab sheet-inventorytab4" name="attr_itab4"></span>
+			<input type="checkbox" name="attr_inventorytab5" class="sheet-inventorytab sheet-inventorytab5" value="5" title="Page 5" />
+			<span class="sheet-inventorytab sheet-inventorytab5" name="attr_itab5"></span>
+			<input type="checkbox" name="attr_inventorytab6" class="sheet-inventorytab sheet-inventorytab6" value="6" title="Page 6" />
+			<span class="sheet-inventorytab sheet-inventorytab6" name="attr_itab6"></span>
+			<input type="checkbox" name="attr_inventorytab7" class="sheet-inventorytab sheet-inventorytab7" value="7" title="Page 7" />
+			<span class="sheet-inventorytab sheet-inventorytab7" name="attr_itab7"></span>
 			<span class="sheet-spacer"></span>
 			<!-- Inventory Page 1-->
 			<div class="sheet-inventory-page1">
-				<input type="text" class="sheet-center sheet-sub-header" name="attr_tabinvtitle1" value="@{itab1}" disabled="disabled">
 				<div class="sheet-row sheet-sub-header">
+				    <div class="sheet-col-1 sheet-center sheet-small-label sheet-padl"><span name="attr_itab1"></span></div>
 					<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-padl">Name</div>
 					<div class="sheet-col-2-21 sheet-center sheet-small-label">Qty</div>
 					<div class="sheet-col-2-21 sheet-center sheet-small-label">Uses</div>
@@ -527,8 +778,8 @@
 			</div>
 			<!-- Inventory Page 2-->
 			<div class="sheet-inventory-page2">
-				<input type="text" class="sheet-center sheet-sub-header" name="attr_tabinvtitle2" value="@{itab2}" disabled="disabled">
 				<div class="sheet-row sheet-sub-header">
+				    <div class="sheet-col-1 sheet-center sheet-small-label sheet-padl"><span name="attr_itab2"></span></div>
 					<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-padl">Name</div>
 					<div class="sheet-col-2-21 sheet-center sheet-small-label">Qty</div>
 					<div class="sheet-col-2-21 sheet-center sheet-small-label">Uses</div>
@@ -545,8 +796,8 @@
 			</div>
 			<!-- Inventory Page 3-->
 			<div class="sheet-inventory-page3">
-				<input type="text" class="sheet-center sheet-sub-header" name="attr_tabinvtitle3" value="@{itab3}" disabled="disabled">
 				<div class="sheet-row sheet-sub-header">
+				    <div class="sheet-col-1 sheet-center sheet-small-label sheet-padl"><span name="attr_itab3"></span></div>
 					<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-padl">Name</div>
 					<div class="sheet-col-2-21 sheet-center sheet-small-label">Qty</div>
 					<div class="sheet-col-2-21 sheet-center sheet-small-label">Uses</div>
@@ -563,8 +814,8 @@
 			</div>
 			<!-- Inventory Page 4-->
 			<div class="sheet-inventory-page4">
-				<input type="text" class="sheet-center sheet-sub-header" name="attr_tabinvtitle4" value="@{itab4}" disabled="disabled">
 				<div class="sheet-row sheet-sub-header">
+				    <div class="sheet-col-1 sheet-center sheet-small-label sheet-padl"><span name="attr_itab4"></span></div>
 					<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-padl">Name</div>
 					<div class="sheet-col-2-21 sheet-center sheet-small-label">Qty</div>
 					<div class="sheet-col-2-21 sheet-center sheet-small-label">Uses</div>
@@ -581,8 +832,8 @@
 			</div>
 			<!-- Inventory Page 5-->
 			<div class="sheet-inventory-page5">
-				<input type="text" class="sheet-center sheet-sub-header" name="attr_tabinvtitle5" value="@{itab5}" disabled="disabled">
 				<div class="sheet-row sheet-sub-header">
+				    <div class="sheet-col-1 sheet-center sheet-small-label sheet-padl"><span name="attr_itab5"></span></div>
 					<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-padl">Name</div>
 					<div class="sheet-col-2-21 sheet-center sheet-small-label">Qty</div>
 					<div class="sheet-col-2-21 sheet-center sheet-small-label">Uses</div>
@@ -599,8 +850,8 @@
 			</div>
 			<!-- Inventory Page 6-->
 			<div class="sheet-inventory-page6">
-				<input type="text" class="sheet-center sheet-sub-header" name="attr_tabinvtitle6" value="@{itab6}" disabled="disabled">
 				<div class="sheet-row sheet-sub-header">
+				    <div class="sheet-col-1 sheet-center sheet-small-label sheet-padl"><span name="attr_itab6"></span></div>
 					<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-padl">Name</div>
 					<div class="sheet-col-2-21 sheet-center sheet-small-label">Qty</div>
 					<div class="sheet-col-2-21 sheet-center sheet-small-label">Uses</div>
@@ -617,8 +868,8 @@
 			</div>
 			<!-- Inventory Page 7-->
 			<div class="sheet-inventory-page7">
-				<input type="text" class="sheet-center sheet-sub-header" name="attr_tabinvtitle7" value="@{itab7}" disabled="disabled">
 				<div class="sheet-row sheet-sub-header">
+				    <div class="sheet-col-1 sheet-center sheet-small-label sheet-padl"><span name="attr_itab7"></span></div>
 					<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-padl">Name</div>
 					<div class="sheet-col-2-21 sheet-center sheet-small-label">Qty</div>
 					<div class="sheet-col-2-21 sheet-center sheet-small-label">Uses</div>
@@ -694,11 +945,9 @@
 				<!--Spellcasting-->
 				{{#spellshowinfoblock}}
 				<div class="sheet-row sheet-padb">
-					<div class="sheet-col-1-2 sheet-padl sheet-padr sheet-center sheet-border-right-dotted"><span class="sheet-rt-key">Cast Time</span><br/><span class="sheet-rt-value">{{spellcasttime}}</span></div>
-					<div class="sheet-col-1-2 sheet-padl sheet-padr sheet-center sheet-border-left-dotted"><span class="sheet-rt-key">Duration</span><br/><span class="sheet-rt-value">{{spellduration}}</span></div>
-					<div class="sheet-col-1 sheet-border-top-dotted"></div>
-					<div class="sheet-col-1-2 sheet-padl sheet-padr sheet-center sheet-border-right-dotted"><span class="sheet-rt-key">Target/AoE</span><br/><span class="sheet-rt-value">{{spelltarget}}</span></div>
+					<div class="sheet-col-1-2 sheet-padl sheet-padr sheet-center sheet-border-right-dotted"><span class="sheet-rt-key">Duration</span><br/><span class="sheet-rt-value">{{spellduration}}</span></div>
 					<div class="sheet-col-1-2 sheet-padl sheet-padr sheet-center sheet-border-left-dotted"><span class="sheet-rt-key">Range</span><br/><span class="sheet-rt-value">{{spellrange}}</span></div>
+					<div class="sheet-col-1 sheet-border-top-dotted"></div>
 				</div>
 				{{/spellshowinfoblock}}
 				{{#spellshowattack}}
