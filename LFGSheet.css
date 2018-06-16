@@ -1,3 +1,7 @@
+.charsheet .repcontainer .repitem .itemcontrol .repcontrol_del {  
+    float: left !important;
+    z-index: 99999 !important;
+}
 
 .sheet-rolltemplate-5eDefault .sheet-rt-card {
     width:95%;
