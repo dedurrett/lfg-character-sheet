@@ -231,20 +231,17 @@
 }
 
  input.sheet-tab1:checked ~ div.sheet-section-main,
- input.sheet-tab2:checked ~ div.sheet-section-skills,
- input.sheet-tab3:checked ~ div.sheet-section-class,
- input.sheet-tab4:checked ~ div.sheet-section-combat,
- input.sheet-tab5:checked ~ div.sheet-section-spellbook,
- input.sheet-tab6:checked ~ div.sheet-section-inventory {
+ input.sheet-tab2:checked ~ div.sheet-section-class,
+ input.sheet-tab3:checked ~ div.sheet-section-combat,
+ input.sheet-tab4:checked ~ div.sheet-section-spellbook,
+ input.sheet-tab5:checked ~ div.sheet-section-inventory,
+ input.sheet-tab6:checked ~ div.sheet-section-injury {
 	display: block;
 }
 
- input.sheet-tab99:checked ~ div[class^="sheet-section"] {
-	display: block;
-}
 
  input.sheet-tab {
-	width: 19%;
+	width: 15%;
 	height: 20px;
 	cursor: pointer;
 	position: relative;
@@ -260,11 +257,11 @@
 	color: white;
 	font-weight: bold;
 	border-radius: 4px;
-	width: 19%;
+	width: 15%;
 	height: 20px;
 	cursor: pointer;
 	position: relative;
-	margin-left: -19%;
+	margin-left: -15%;
 }
 
  input.sheet-tab1:checked + span.sheet-tab1,
@@ -272,8 +269,7 @@
  input.sheet-tab3:checked + span.sheet-tab3,
  input.sheet-tab4:checked + span.sheet-tab4,
  input.sheet-tab5:checked + span.sheet-tab5,
- input.sheet-tab6:checked + span.sheet-tab6,
- input.sheet-tab99:checked + span.sheet-tab99 {
+ input.sheet-tab6:checked + span.sheet-tab6 {
 	background: #ab8b57;
 	color: white;
 	border-radius: 4px;
@@ -698,7 +694,7 @@ div.sheet-tiny-spacer {
 	z-index: 1;
 	top: 0;
 	left: 0;
-	margin: 0;
+	margin: 0 0 -10px 0;
 	overflow: hidden;
 	resize: none;
 	height: 100%;
@@ -706,7 +702,6 @@ div.sheet-tiny-spacer {
 	display: block;
 	box-sizing: border-box;
 	background: transparent;
-	
 	color: inherit;
 	font: inherit;
 	letter-spacing: inherit;
