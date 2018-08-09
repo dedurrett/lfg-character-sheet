@@ -6,7 +6,7 @@
                 <img src="http://i.imgur.com/XLGhAAm.png" alt="Low Fantasy Gaming" width=50 >
             </div>
             <div class="sheet-col-1-8 sheet-center sheet-margin-top">
-                <p class="sheet-last-updated">Sheet version<br/>June 2018</p>
+                <p class="sheet-last-updated">Sheet version<br/>August 2018</p>
             </div>
                 <div class="sheet-col-1-4 sheet-small-label sheet-center">
                 <input class="sheet-underlined sheet-center" type="text" name="attr_character_name"><br/>Character Name
@@ -382,7 +382,7 @@
                 <div class="sheet-col-1-10 sheet-padr"><input class="sheet-center" type="text" name="attr_melee_dmgbase" value="1d4"></div>
                 <div class="sheet-col-9-16 sheet-padr"><input type="text" name="attr_melee_description"></div>
                 <div class="sheet-col-1-24 sheet-center">
-                    <button type="roll" class="sheet-roll" name="roll_MeleeAttack" value="&{template:5eDefault} {{weapon=1}} {{title=@{melee_weaponname}}} {{subheader=@{character_name}}} {{attack=[[@{class_hitbonus}+(@{strength_mod})+(@{melee_hitbonus})+?{Advantage|Normal,1d20|Advantage,2d20kh1|Disadvantage,2d20kl1}]]}} {{damage=[[{@{melee_dmgbase}+(@{strength_mod}), 1d1}k1]]}} {{attackshowinfoblock=1}} }} "></button>
+                    <button type="roll" class="sheet-roll" name="roll_MeleeAttack" value="&{template:5eDefault} {{weapon=1}} {{title=@{melee_weaponname}}} {{subheader=@{character_name}}} {{attack=[[@{class_hitbonus}+(@{strength_mod})+(@{melee_hitbonus})+?{Advantage|Normal,1d20|Advantage,2d20kh1|Disadvantage,2d20kl1}]]}} {{damage=[[{@{melee_dmgbase}+(@{strength_mod})+(@{melee_dmgbonus}), 1d1}k1]]}} {{attackshowinfoblock=1}} }} "></button>
                 </div>
             </div>
         </fieldset>
