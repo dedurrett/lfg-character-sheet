@@ -6,7 +6,7 @@
                 <img src="http://i.imgur.com/XLGhAAm.png" alt="Low Fantasy Gaming" width=50 >
             </div>
             <div class="sheet-col-1-8 sheet-center sheet-margin-top">
-                <p class="sheet-last-updated">Sheet version<br/>August 2018</p>
+                <p class="sheet-last-updated">Sheet version<br/>June 2018</p>
             </div>
                 <div class="sheet-col-1-4 sheet-small-label sheet-center">
                 <input class="sheet-underlined sheet-center" type="text" name="attr_character_name"><br/>Character Name
@@ -54,17 +54,19 @@
 			<div class="sheet-col-1-2 sheet-padr">
 				<h4 class="sheet-center">Attributes</h4>
 				<div class="sheet-row sheet-sub-header">
-					<div class="sheet-col-1-8 sheet-center sheet-small-label">Score</div>
-					<div class="sheet-col-1-6 sheet-center sheet-small-label">&nbsp;</div>
-					<div class="sheet-col-1-11 sheet-center sheet-small-label">Adjust.</div>
+					<div class="sheet-col-1-10 sheet-center sheet-small-label">Score</div>
+					<div class="sheet-col-1-10 sheet-center sheet-small-label">Max</div>
+					<div class="sheet-col-1-8 sheet-center sheet-small-label">&nbsp;</div>
+					<div class="sheet-col-1-13 sheet-center sheet-small-label">Adj.</div>
 					<div class="sheet-col-1-7 sheet-center sheet-small-label">Advantage</div>
 					<div class="sheet-col-1-8 sheet-center sheet-small-label">Roll</div>
-					<div class="sheet-col-1-4 sheet-center sheet-small-label">Notes</div>
+					<div class="sheet-col-1-3 sheet-center sheet-small-label">Notes</div>
 				</div>
 				<div class="sheet-row">
-					<div class="sheet-col-1-8"><input type="number" name="attr_strength" min="1" step="1" /></div>
-					<div class="sheet-col-1-6 sheet-core-stat-label">Str</div>
-					<div class="sheet-col-1-11">
+					<div class="sheet-col-1-10"><input type="number" name="attr_strength" min="1" step="1" /></div>
+					<div class="sheet-col-1-10"><input type="number" name="attr_strength_max" min="1" step="1" /></div>
+					<div class="sheet-col-1-8 sheet-core-stat-label">Str</div>
+					<div class="sheet-col-1-13">
 						<input type="number" name="attr_strength_mod" value="0" readonly/>
 					</div>
 				   <div class="sheet-col-1-7">
@@ -77,14 +79,18 @@
 					<div class="sheet-col-1-8 sheet-center">
 					    <!-- Rolling Advantage h/l swap depending -->
 					    <!-- ?{Advantage|Normal,1d20|Advantage,2d20kl1|Disadvantage,2d20kh1} -->
+					    <!-- How to show advantage in the roll template
+					        {{subheaderright= @{strengthadvantage}}} -> this will just eval as the roll result
+					    -->
 						<button type="roll" name="roll_Str" value="&{template:5eDefault} {{ability=1}} {{title=Strength Check}} {{subheader=@{character_name}}} {{roll=[[@{strength}-(@{strengthadvantage}-(?{Modifier|0}))]]}}"></button>
 					</div>
-					<div class="sheet-col-1-4 sheet-tiny-note">Melee,&nbsp;Athletics</div>
+					<div class="sheet-col-1-3 sheet-tiny-note">Melee,&nbsp;Athletics</div>
 				</div>
 				<div class="sheet-row">
-                    <div class="sheet-col-1-8"><input type="number" name="attr_dexterity" min="1" step="1" /></div>
-					<div class="sheet-col-1-6 sheet-core-stat-label">Dex</div>
-					<div class="sheet-col-1-11">
+                    <div class="sheet-col-1-10"><input type="number" name="attr_dexterity" min="1" step="1" /></div>
+                    <div class="sheet-col-1-10"><input type="number" name="attr_dexterity_max" min="1" step="1" /></div>
+					<div class="sheet-col-1-8 sheet-core-stat-label">Dex</div>
+					<div class="sheet-col-1-13">
 						<input type="number" name="attr_dexterity_mod" value="0" readonly/>
 					</div>
 				   <div class="sheet-col-1-7">
@@ -97,12 +103,13 @@
 					<div class="sheet-col-1-8 sheet-center">
 						<button type="roll" name="roll_Dex" value="&{template:5eDefault} {{ability=1}} {{title=Dexterity Check}} {{subheader=@{character_name}}} {{roll=[[@{dexterity}-(@{dexterityadvantage}-(?{Modifier|0}))]]}}"></button>
 					</div>
-					<div class="sheet-col-1-4 sheet-tiny-note">Ranged,&nbsp;AC</div>
+					<div class="sheet-col-1-3 sheet-tiny-note">Ranged,&nbsp;AC</div>
 				</div>
                 <div class="sheet-row">
-                    <div class="sheet-col-1-8"><input type="number" name="attr_constitution" min="1" step="1" /></div>
-					<div class="sheet-col-1-6 sheet-core-stat-label">Con</div>
-					<div class="sheet-col-1-11">
+                    <div class="sheet-col-1-10"><input type="number" name="attr_constitution" min="1" step="1" /></div>
+                    <div class="sheet-col-1-10"><input type="number" name="attr_constitution_max" min="1" step="1" /></div>
+					<div class="sheet-col-1-8 sheet-core-stat-label">Con</div>
+					<div class="sheet-col-1-13">
 						<input type="number" name="attr_constitution_mod" value="0" readonly/>
 					</div>
 				   <div class="sheet-col-1-7">
@@ -115,12 +122,13 @@
 					<div class="sheet-col-1-8 sheet-center">
 						<button type="roll" name="roll_Con" value="&{template:5eDefault} {{ability=1}} {{title=Constitution Check}} {{subheader=@{character_name}}} {{roll=[[@{constitution}-(@{constitutionadvantage}-(?{Modifier|0}))]]}}"></button>
 					</div>
-					<div class="sheet-col-1-4 sheet-tiny-note">Hit&nbsp;Points,&nbsp;Poison</div>
+					<div class="sheet-col-1-3 sheet-tiny-note">Hit&nbsp;Points,&nbsp;Poison</div>
 				</div>
                 <div class="sheet-row">
-					<div class="sheet-col-1-8"><input type="number" name="attr_intelligence" min="1" step="1" /></div>
-					<div class="sheet-col-1-6 sheet-core-stat-label">Int</div>
-					<div class="sheet-col-1-11">
+					<div class="sheet-col-1-10"><input type="number" name="attr_intelligence" min="1" step="1" /></div>
+					<div class="sheet-col-1-10"><input type="number" name="attr_intelligence_max" min="1" step="1" /></div>
+					<div class="sheet-col-1-8 sheet-core-stat-label">Int</div>
+					<div class="sheet-col-1-13">
 						<input type="number" name="attr_intelligence_mod" value="0" readonly/>
 					</div>
 				   <div class="sheet-col-1-7">
@@ -133,12 +141,13 @@
 					<div class="sheet-col-1-8 sheet-center">
 						<button type="roll" name="roll_Int" value="&{template:5eDefault} {{ability=1}} {{title=Intelligence Check}} {{subheader=@{character_name}}} {{roll=[[@{intelligence}-(@{intelligenceadvantage}-(?{Modifier|0}))]]}}"></button>
 					</div>
-					<div class="sheet-col-1-4 sheet-tiny-note">Lore,&nbsp;Insight,&nbsp;Lang</div>
+					<div class="sheet-col-1-3 sheet-tiny-note">Lore,&nbsp;Insight,&nbsp;Lang</div>
 				</div>
                 <div class="sheet-row">
-                    <div class="sheet-col-1-8"><input type="number" name="attr_perception" min="1" step="1" /></div>
-					<div class="sheet-col-1-6 sheet-core-stat-label">Per</div>
-					<div class="sheet-col-1-11">
+                    <div class="sheet-col-1-10"><input type="number" name="attr_perception" min="1" step="1" /></div>
+                    <div class="sheet-col-1-10"><input type="number" name="attr_perception_max" min="1" step="1" /></div>
+					<div class="sheet-col-1-8 sheet-core-stat-label">Per</div>
+					<div class="sheet-col-1-13">
 						<input type="number" name="attr_perception_mod" value="0" readonly/>
 					</div>
 				   <div class="sheet-col-1-7">
@@ -151,12 +160,13 @@
 					<div class="sheet-col-1-8 sheet-center">
 						<button type="roll" name="roll_Per" value="&{template:5eDefault} {{ability=1}} {{title=Perception Check}} {{subheader=@{character_name}}} {{roll=[[@{perception}-(@{perceptionadvantage}-(?{Modifier|0}))]]}}"></button>
 					</div>
-					<div class="sheet-col-1-4 sheet-tiny-note">Alertness,&nbsp;Detection</div>
+					<div class="sheet-col-1-3 sheet-tiny-note">Alertness,&nbsp;Detection</div>
 				</div>
 				<div class="sheet-row">
-					<div class="sheet-col-1-8"><input type="number" name="attr_willpower" min="1" step="1" /></div>
-					<div class="sheet-col-1-6 sheet-core-stat-label">Will</div>
-					<div class="sheet-col-1-11">
+					<div class="sheet-col-1-10"><input type="number" name="attr_willpower" min="1" step="1" /></div>
+					<div class="sheet-col-1-10"><input type="number" name="attr_willpower_max" min="1" step="1" /></div>
+					<div class="sheet-col-1-8 sheet-core-stat-label">Will</div>
+					<div class="sheet-col-1-13">
 						<input type="number" name="attr_willpower_mod" value="0" readonly/>
 					</div>
 				   <div class="sheet-col-1-7">
@@ -169,12 +179,13 @@
 					<div class="sheet-col-1-8 sheet-center">
 						<button type="roll" name="roll_Will" value="&{template:5eDefault} {{ability=1}} {{title=Willpower Check}} {{subheader=@{character_name}}} {{roll=[[@{willpower}-(@{willpoweradvantage}-(?{Modifier|0}))]]}}"></button>
 					</div>
-					<div class="sheet-col-1-4 sheet-tiny-note">Mental&nbsp;Defence,&nbsp;Recovery</div>
+					<div class="sheet-col-1-3 sheet-tiny-note">Mental&nbsp;Defence,&nbsp;Recovery</div>
 				</div>
 				<div class="sheet-row">
-					<div class="sheet-col-1-8"><input type="number" name="attr_charisma" min="1" step="1" /></div>
-					<div class="sheet-col-1-6 sheet-core-stat-label">Cha</div>
-					<div class="sheet-col-1-11">
+					<div class="sheet-col-1-10"><input type="number" name="attr_charisma" min="1" step="1" /></div>
+					<div class="sheet-col-1-10"><input type="number" name="attr_charisma_max" min="1" step="1" /></div>
+					<div class="sheet-col-1-8 sheet-core-stat-label">Cha</div>
+					<div class="sheet-col-1-13">
 						<input type="number" name="attr_charisma_mod" value="0" readonly/>
 					</div>
 				   <div class="sheet-col-1-7">
@@ -187,12 +198,13 @@
 					<div class="sheet-col-1-8 sheet-center">
 						<button type="roll" name="roll_Cha" value="&{template:5eDefault} {{ability=1}} {{title=Charisma Check}} {{subheader=@{character_name}}} {{roll=[[@{charisma}-(@{charismaadvantage}-(?{Modifier|0}))]]}}"></button>
 					</div>
-					<div class="sheet-col-1-4 sheet-tiny-note">Influence,&nbsp;Morale</div>
+					<div class="sheet-col-1-3 sheet-tiny-note">Influence,&nbsp;Morale</div>
 				</div>
                 <div class="sheet-row">
-                    <div class="sheet-col-1-8"><input type="number" name="attr_luck" min="1" step="1" /></div>
-					<div class="sheet-col-1-6 sheet-core-stat-label">Luck</div>
-					<div class="sheet-col-1-11">
+                    <div class="sheet-col-1-10"><input type="number" name="attr_luck" min="1" step="1" /></div>
+                    <div class="sheet-col-1-10"><input type="number" name="attr_luck_max" min="1" step="1" /></div>
+					<div class="sheet-col-1-8 sheet-core-stat-label">Luck</div>
+					<div class="sheet-col-1-13">
 						<input type="number" name="attr_luck_mod" value="0" readonly/>
 					</div>
 				   <div class="sheet-col-1-7">
@@ -206,7 +218,7 @@
 					    <!-- +(?{Luck Save|Luck,0|Luck(STR),@{strength_mod}|Luck(DEX),@{dexterity_mod}|Luck(CON),@{constitution_mod}|Luck(INT),@{intelligence_mod}|Luck(PER),@{perception_mod}|Luck(WILL),@{willpower_mod}|Luck(CHA),@{charisma_mod}}) -->
 						<button type="roll" name="roll_Luck" value="&{template:5eDefault} {{ability=1}} {{title=Luck Check}} {{subheader=@{character_name}}} {{roll=[[@{luck}-(@{luckadvantage}-(?{Modifier|0}))]]}}"></button>
 					</div>
-					<div class="sheet-col-1-4 sheet-tiny-note">Saves,&nbsp;Exploits</div>
+					<div class="sheet-col-1-3 sheet-tiny-note">Saves,&nbsp;Exploits</div>
 				</div>
 			</div>
 			<!--Buncha Stats-->
@@ -231,6 +243,7 @@
                         <div class="sheet-row">
                             <div class="sheet-col-1-2 sheet-small-label sheet-center">
                                 <input class="sheet-underlined" type="number" name="attr_initiative" step="1" value="0">
+                                Misc Bonus
                             </div>
         				   <div class="sheet-col-1-3 sheet-small-label sheet-center">
                                 <select name="attr_initiativeadvantage">
@@ -380,7 +393,7 @@
                 <div class="sheet-col-1-16 sheet-padr"><input type="number" name="attr_melee_hitbonus" value="0" step="1"></div>
                 <div class="sheet-col-1-16 sheet-padr"><input type="number" name="attr_melee_dmgbonus" value="0" step="1"></div>
                 <div class="sheet-col-1-10 sheet-padr"><input class="sheet-center" type="text" name="attr_melee_dmgbase" value="1d4"></div>
-                <div class="sheet-col-9-16 sheet-padr"><input type="text" name="attr_melee_description"></div>
+                <div class="sheet-col-9-16 sheet-padr"><input type="text" name="attr_melee_description" placeholder="STR adustment factored in."></div>
                 <div class="sheet-col-1-24 sheet-center">
                     <button type="roll" class="sheet-roll" name="roll_MeleeAttack" value="&{template:5eDefault} {{weapon=1}} {{title=@{melee_weaponname}}} {{subheader=@{character_name}}} {{attack=[[@{class_hitbonus}+(@{strength_mod})+(@{melee_hitbonus})+?{Advantage|Normal,1d20|Advantage,2d20kh1|Disadvantage,2d20kl1}]]}} {{damage=[[{@{melee_dmgbase}+(@{strength_mod})+(@{melee_dmgbonus}), 1d1}k1]]}} {{attackshowinfoblock=1}} }} "></button>
                 </div>
@@ -388,7 +401,7 @@
         </fieldset>
         <span class="sheet-spacer"></span>
         <div class="sheet-col-1">
-            <h4 class="sheet-center">Ranged&nbsp;Weapons </h4>
+            <h4 class="sheet-center">Ranged Weapons</h4>
             <div class="sheet-row">
                 <div class="sheet-row sheet-sub-header">
                     <div class="sheet-col-1-6 sheet-center sheet-small-label sheet-vert-bottom">Weapon Name</div>
@@ -408,7 +421,7 @@
                 <div class="sheet-col-1-16 sheet-padr"><input type="number" name="attr_range_dmgbonus" value="0" step="1"></div>
                 <div class="sheet-col-1-10 sheet-padr"><input class="sheet-center" type="text" name="attr_range_dmgbase" value="1d4"></div>
                 <div class="sheet-col-1-16 sheet-padr"><input type="text" name="attr_range_distance"></div>
-                <div class="sheet-col-1-2"><input type="text" name="attr_range_description"></div>
+                <div class="sheet-col-1-2"><input type="text" name="attr_range_description" placeholder="DEX adjustment factored in."></div>
                 <div class="sheet-col-1-24 sheet-center">
                     <button type="roll" class="sheet-roll" name="roll_RangeAttack" value="&{template:5eDefault} {{weapon=1}} {{title=@{range_weaponname}}} {{subheader=@{character_name}}} {{attack=[[@{class_hitbonus}+(@{dexterity_mod})+(@{range_hitbonus})+?{Advantage|Normal,1d20|Advantage,2d20kh1|Disadvantage,2d20kl1}]]}} {{damage=[[{@{range_dmgbase}+(@{dexterity_mod})+(@{range_dmgbonus}), 1d1}k1]]}} {{attackshowinfoblock=1}} }} "></button>
                 </div>
