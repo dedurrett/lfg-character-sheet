@@ -114,16 +114,16 @@
 	border-left-color: #503535;
 }
 
-/* Death Save header */
-.sheet-rolltemplate-5eDefault .sheet-rt-header.sheet-deathsave{
+/* Feature header */
+.sheet-rolltemplate-5eDefault .sheet-rt-header.sheet-feature{
 	background-color: #240F0F;
 }
 
-.sheet-rolltemplate-5eDefault .sheet-rt-header.sheet-deathsave:before {
+.sheet-rolltemplate-5eDefault .sheet-rt-header.sheet-feature:before {
 	border-right-color: #1F1414;
 }
 
-.sheet-rolltemplate-5eDefault .sheet-rt-header.sheet-deathsave:after {
+.sheet-rolltemplate-5eDefault .sheet-rt-header.sheet-feature:after {
 	border-left-color: #1F1414;
 }
 
