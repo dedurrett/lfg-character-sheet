@@ -1,7 +1,3 @@
-<!--
-Add DDM?
-Add Uses to Features?
--->
 <div class="sheet-overall-wrapper">
     <!--Main Header -->
     <div class="sheet-core-header sheet-padb">
@@ -10,7 +6,7 @@ Add Uses to Features?
                 <img src="http://i.imgur.com/XLGhAAm.png" alt="Low Fantasy Gaming" width=50 >
             </div>
             <div class="sheet-col-1-8 sheet-center sheet-margin-top">
-                <p class="sheet-last-updated">Sheet version<br/>September 2018</p>
+                <p class="sheet-last-updated">Sheet version<br/>October 2018</p>
             </div>
                 <div class="sheet-col-1-4 sheet-small-label sheet-center">
                 <input class="sheet-underlined sheet-center" type="text" name="attr_character_name"><br/>Character Name
@@ -310,7 +306,10 @@ Add Uses to Features?
                     <div class="sheet-col-1 sheet-padr">
                         <div class="sheet-center sheet-small-label sheet-vert-bottom sheet-sub-header">Dark and Dangerous Magic</div>
                     </div>
-                    <div class="sheet-col-1-2 sheet-padr">
+                    <div class="sheet-col-1-12 sheet-padr">
+                        <button type="roll" class="sheet-roll" name="roll_DDM" value="&{template:5eDefault} {{ddm=1}} {{title=Dark & Dangerous Magic}} {{subheader=@{character_name}}} {{ddmroll=[[1d20]]}} {{ddmthreshold=[[@{DDM}]]}}"></button>
+                    </div>
+                    <div class="sheet-col-5-12 sheet-padr">
                         <input class="sheet-underlined sheet-center" type="number" name="attr_DDM" step="1" value="1">
                     </div>
                     <div class="sheet-col-1-2 sheet-padr">
@@ -341,16 +340,16 @@ Add Uses to Features?
                             </div>
                             <div class="sheet-row">
                                 <div class="sheet-col-1-4">
-                                    <button type="roll" name="roll_Feature" value="&{template:5eDefault} {{subheader=@{character_name}}} {{subheaderright=@{feature_uses}/@{feature_uses_max} Uses}} {{title=@{featurename}}} {{featureshowdesc=@{featuredescr}}}"></button>
+                                    <button type="roll" name="roll_Feature" value="&{template:5eDefault} {{feature=1}} {{featuresubheader=@{character_name}}} {{featureuses=@{feature_uses}}} {{featureusesmax=@{feature_uses_max}}} {{featureusesmaxnum=[[@{feature_uses_max}]]}} {{title=@{featurename}}} {{featureshowdesc=@{featuredescr}}}"></button>
                                 </div>
                                 <div class="sheet-col-3-10">
-                                    <input type="number" name="attr_feature_uses" min="0" step="1" />
+                                    <input type="number" name="attr_feature_uses" min="0" step="1" value="0" />
                                 </div>
                                 <div class="sheet-col-1-10 sheet-tiny-note">
                                     &nbsp;/&nbsp;
                                 </div>
                                 <div class="sheet-col-3-10">
-                                    <input type="number" name="attr_feature_uses_max" min="1" step="1" />
+                                    <input type="number" name="attr_feature_uses_max" min="1" step="1" value="0" />
                                 </div>
                             </div>
                         </div>
@@ -433,7 +432,7 @@ Add Uses to Features?
                 <div class="sheet-col-1-10 sheet-padr"><input class="sheet-center" type="text" name="attr_melee_dmgbase" value="1d4"></div>
                 <div class="sheet-col-9-16 sheet-padr"><input type="text" name="attr_melee_description" placeholder="STR adustment factored in."></div>
                 <div class="sheet-col-1-24 sheet-center">
-                    <button type="roll" class="sheet-roll" name="roll_MeleeAttack" value="&{template:5eDefault} {{weapon=1}} {{title=@{melee_weaponname}}} {{subheader=@{character_name}}} {{attack=[[@{class_hitbonus}+(@{strength_mod})+(@{melee_hitbonus})+(?{Hit Modifier|0})+?{Advantage|Normal,1d20|Advantage,2d20kh1|Disadvantage,2d20kl1}]]}} {{damage=[[{@{melee_dmgbase}+(@{strength_mod})+(@{melee_dmgbonus})+(?{Damage Modifier|0}), 1d1}k1]]}} {{attackshowinfoblock=1}} }} "></button>
+                    <button type="roll" class="sheet-roll" name="roll_MeleeAttack" value="&{template:5eDefault} {{weapon=1}} {{title=@{melee_weaponname}}} {{subheader=@{character_name}}} {{attack=[[@{class_hitbonus}+(@{strength_mod})+(@{melee_hitbonus})+?{Advantage|Normal,1d20|Advantage,2d20kh1|Disadvantage,2d20kl1}+(?{Hit Modifier|0})]]}} {{damage=[[{@{melee_dmgbase}+(@{strength_mod})+(@{melee_dmgbonus})+(?{Damage Modifier|0}), 1d1}k1]]}} {{attackshowinfoblock=1}} }} "></button>
                 </div>
             </div>
         </fieldset>
@@ -461,7 +460,7 @@ Add Uses to Features?
                 <div class="sheet-col-1-16 sheet-padr"><input type="text" name="attr_range_distance"></div>
                 <div class="sheet-col-1-2"><input type="text" name="attr_range_description" placeholder="DEX adjustment factored in."></div>
                 <div class="sheet-col-1-24 sheet-center">
-                    <button type="roll" class="sheet-roll" name="roll_RangeAttack" value="&{template:5eDefault} {{weapon=1}} {{title=@{range_weaponname}}} {{subheader=@{character_name}}} {{attack=[[@{class_hitbonus}+(@{dexterity_mod})+(@{range_hitbonus})+(?{Hit Modifier|0})+?{Advantage|Normal,1d20|Advantage,2d20kh1|Disadvantage,2d20kl1}]]}} {{damage=[[{@{range_dmgbase}+(@{dexterity_mod})+(@{range_dmgbonus})+(?{Damage Modifier|0}), 1d1}k1]]}} {{attackshowinfoblock=1}} }} "></button>
+                    <button type="roll" class="sheet-roll" name="roll_RangeAttack" value="&{template:5eDefault} {{weapon=1}} {{title=@{range_weaponname}}} {{subheader=@{character_name}}} {{attack=[[@{class_hitbonus}+(@{dexterity_mod})+(@{range_hitbonus})+?{Advantage|Normal,1d20|Advantage,2d20kh1|Disadvantage,2d20kl1}+(?{Hit Modifier|0})]]}} {{damage=[[{@{range_dmgbase}+(@{dexterity_mod})+(@{range_dmgbonus})+(?{Damage Modifier|0}), 1d1}k1]]}} {{attackshowinfoblock=1}} }} "></button>
                 </div>
             </div>
         </fieldset>
@@ -509,7 +508,7 @@ Add Uses to Features?
     					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellrange"></div>
     					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellduration"></div>
                         <div class="sheet-col-1-12 sheet-center">
-                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmroll=[[1d20]]}} {{ddmthreshold=[[@{DDM}]]}}"></button>
+                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmrequest=[Dark & Dangerous Roll](~@{character_id}|DDM)}}"></button>
                         </div>
     				</div>
     				<div class="sheet-row">
@@ -549,7 +548,7 @@ Add Uses to Features?
     					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellrange"></div>
     					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellduration"></div>
                         <div class="sheet-col-1-12 sheet-center">
-                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}}"></button>
+                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmrequest=[Dark & Dangerous Roll](~@{character_id}|DDM)}}"></button>
                         </div>
     				</div>
     				<div class="sheet-row">
@@ -589,7 +588,7 @@ Add Uses to Features?
     					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellrange"></div>
     					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellduration"></div>
                         <div class="sheet-col-1-12 sheet-center">
-                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmroll=[[1d20]]}} {{ddmthreshold=[[@{DDM}]]}}"></button>
+                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmrequest=[Dark & Dangerous Roll](~@{character_id}|DDM)}}"></button>
                         </div>
     				</div>
     				<div class="sheet-row">
@@ -629,7 +628,7 @@ Add Uses to Features?
     					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellrange"></div>
     					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellduration"></div>
                         <div class="sheet-col-1-12 sheet-center">
-                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmroll=[[1d20]]}} {{ddmthreshold=[[@{DDM}]]}}"></button>
+                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmrequest=[Dark & Dangerous Roll](~@{character_id}|DDM)}}"></button>
                         </div>
     				</div>
     				<div class="sheet-row">
@@ -669,7 +668,7 @@ Add Uses to Features?
     					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellrange"></div>
     					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellduration"></div>
                         <div class="sheet-col-1-12 sheet-center">
-                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmroll=[[1d20]]}} {{ddmthreshold=[[@{DDM}]]}}"></button>
+                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmrequest=[Dark & Dangerous Roll](~@{character_id}|DDM)}}"></button>
                         </div>
     				</div>
     				<div class="sheet-row">
@@ -709,7 +708,7 @@ Add Uses to Features?
     					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellrange"></div>
     					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellduration"></div>
                         <div class="sheet-col-1-12 sheet-center">
-                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmroll=[[1d20]]}} {{ddmthreshold=[[@{DDM}]]}}"></button>
+                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmrequest=[Dark & Dangerous Roll](~@{character_id}|DDM)}}"></button>
                         </div>
     				</div>
     				<div class="sheet-row">
@@ -955,7 +954,7 @@ Add Uses to Features?
                         </div>
                         <div class="sheet-col-5-6">
                             <div class="sheet-auto-expand">
-                            	<span name="attr_featuredescr"></span>
+                            	<span name="attr_injurydescr"></span>
                             	<textarea class="sheet-auto-expand" spellcheck="false" name="attr_injurydescr"></textarea>
                             </div>
                         </div>
@@ -964,36 +963,24 @@ Add Uses to Features?
 			</div>
         </div>
     </div>
-<!-- CATCH ALL
-    <span class="sheet-spacer"></span>
-    <h4 class="sheet-center">Skills, Abilities, Equipment, etc </h4>
-    <div class="sheet-row sheet-sub-header">
-        <div class="sheet-col-1-1 sheet-padr">
-            <div class="sheet-row">
-                <textarea name="attr_notey"></textarea>
-            </div>
-            <h4 class="sheet-center"> </h4>
-            <div class="sheet-row sheet-sub-header">
-                <div class="sheet-col-1-1 sheet-padr">
-                    <div class="sheet-row">
-                        <textarea name="attr_noob"></textarea>
-                    </div>		 
-                </div>
-            </div>    
-        </div>        
-    </div>            
--->
-
 <!----------------------------------------------------------->
 </div>
 <!-- Roll Templates -->
 <rolltemplate class="sheet-rolltemplate-5eDefault">
 	<div class="sheet-rt-card">
-		<div class="sheet-rt-header{{#weapon}} sheet-weapon{{/weapon}}{{#spell}} sheet-spell{{/spell}}{{#ability}} sheet-ability{{/ability}}{{#save}} sheet-save{{/save}}{{#feature}} sheet-feature{{/feature}}">
+		<div class="sheet-rt-header{{#weapon}} sheet-weapon{{/weapon}}{{#spell}} sheet-spell{{/spell}}{{#ability}} sheet-ability{{/ability}}{{#save}} sheet-save{{/save}}{{#feature}} sheet-feature{{/feature}}{{#ddm}} sheet-ddm{{/ddm}}">
 			<div class="sheet-rt-title">{{title}}</div>
 			{{#subheader}}
 			<div class="sheet-rt-subheader">{{subheader}}{{#subheaderright}} &bullet; {{subheaderright}}{{/subheaderright}}</div>
 			{{/subheader}}
+			{{#featuresubheader}}
+			    {{#rollGreater() featureusesmaxnum 0}}
+			        <div class="sheet-rt-subheader">{{featuresubheader}} &bullet; {{featureuses}}/{{featureusesmax}} Uses</div>
+			    {{/rollGreater() featureusesmaxnum 0}}
+			    {{#^rollGreater() featureusesmaxnum 0}}
+			        <div class="sheet-rt-subheader">{{featuresubheader}}</div>
+			    {{/^rollGreater() featureusesmaxnum 0}}
+			{{/featuresubheader}}
 			{{#subheader2}}
 			<div class="sheet-rt-subheader">{{subheader2}}{{#subheaderright2}} &bullet; {{subheaderright2}}{{/subheaderright2}}</div>
 			{{/subheader2}}
@@ -1015,26 +1002,31 @@ Add Uses to Features?
 					<div class="sheet-col-7-12 sheet-padr sheet-rt-value">{{damage}}</div>
 				</div>
 				{{/damage}}
-				{{#attackshowinfoblock}}
-				
-				{{/attackshowinfoblock}}
+				{{#ddm}}
+			    <div class="sheet-row">
+				    <div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Threshold</div>
+				    <div class="sheet-col-7-12 sheet-padl sheet-padr sheet-rt-value">{{ddmthreshold}}</div>
+				</div>
+				<div class="sheet-row">
+                    {{#rollLess() ddmroll ddmthreshold}}
+                        <div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Result</div>
+				        <div class="sheet-col-7-12 sheet-padl sheet-padr sheet-rt-value" style="color: red;">{{ddmroll}} Trigger!</div>
+                    {{/rollLess() ddmroll ddmthreshold}}
+                    {{#rollTotal() ddmroll ddmthreshold}}
+                        <div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Result</div>
+				        <div class="sheet-col-7-12 sheet-padl sheet-padr sheet-rt-value" style="color: red;">{{ddmroll}} Trigger!</div>
+                    {{/rollTotal() ddmroll ddmthreshold}}
+                    {{#rollGreater() ddmroll ddmthreshold}}
+                        <div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Result</div>
+				        <div class="sheet-col-7-12 sheet-padl sheet-padr sheet-rt-value">{{ddmroll}}</div>
+                    {{/rollGreater() ddmroll ddmthreshold}}
+                </div>
+				{{/ddm}}
 				<!--Spellcasting-->
 				{{#spellshowinfoblock}}
 				<div class="sheet-row sheet-padb">
-				    <div class="sheet-col-1-2 sheet-padl sheet-padr sheet-center sheet-border-right-dotted"><span class="sheet-rt-key">DDM</span><br/><span class="sheet-rt-value">{{ddmthreshold}}</span></div>
-				    {{#rollLess() ddmroll ddmthreshold}}
-					    <div class="sheet-col-1-2 sheet-padl sheet-padr sheet-center sheet-border-left-dotted"><span class="sheet-rt-key" style="color: red;">DDM Trigger!</span><br/><span class="sheet-rt-value">{{ddmroll}}</span></div>
-                    {{/rollLess() ddmroll ddmthreshold}}
-                    {{#rollTotal() ddmroll ddmthreshold}}
-					    <div class="sheet-col-1-2 sheet-padl sheet-padr sheet-center sheet-border-left-dotted"><span class="sheet-rt-key" style="color: red;">DDM Trigger!</span><br/><span class="sheet-rt-value">{{ddmroll}}</span></div>
-                    {{/rollTotal() ddmroll ddmthreshold}}
-                    {{#rollGreater() ddmroll ddmthreshold}}
-					    <div class="sheet-col-1-2 sheet-padl sheet-padr sheet-center sheet-border-left-dotted"><span class="sheet-rt-key" style="color: green;">DDM Increase!</span><br/><span class="sheet-rt-value">{{ddmroll}}</span></div>
-                    {{/rollGreater() ddmroll ddmthreshold}}
-					<div class="sheet-col-1 sheet-border-top-dotted"></div>
-					<div class="sheet-col-1-2 sheet-padl sheet-padr sheet-center sheet-border-right-dotted"><span class="sheet-rt-key">Duration</span><br/><span class="sheet-rt-value">{{spellduration}}</span></div>
-					<div class="sheet-col-1-2 sheet-padl sheet-padr sheet-center sheet-border-left-dotted"><span class="sheet-rt-key">Range</span><br/><span class="sheet-rt-value">{{spellrange}}</span></div>
-					<div class="sheet-col-1 sheet-border-top-dotted"></div>
+					<div class="sheet-col-1-2 sheet-padl sheet-padr sheet-center"><span class="sheet-rt-key">Duration</span><br/><span class="sheet-rt-value">{{spellduration}}</span></div>
+					<div class="sheet-col-1-2 sheet-padl sheet-padr sheet-center"><span class="sheet-rt-key">Range</span><br/><span class="sheet-rt-value">{{spellrange}}</span></div>
 				</div>
 				{{/spellshowinfoblock}}
 				{{#spellshowattack}}
@@ -1077,6 +1069,9 @@ Add Uses to Features?
 				<div class="sheet-row">
 					<div class="sheet-col-1 sheet-padl sheet-padr sheet-rt-key">Spell Description</div>
 					<div class="sheet-col-1 sheet-padl sheet-padr sheet-rt-value">{{spelldescription}}</div>
+				</div>
+				<div class="sheet-row">
+					<div class="sheet-col-1 sheet-padl sheet-padr sheet-rt-value sheet-center">{{ddmrequest}}</div>
 				</div>
 				{{/spellshowdesc}}
 				{{#featureshowdesc}}
@@ -1176,12 +1171,12 @@ Add Uses to Features?
 				{{/roll}}
 				<!--Outputall-->
 				{{#outputall}}
-					{{#allprops() outputall title subheader subheaderright subheader2 subheaderright2 emote weapon spell ability save deathsave}}
+					{{#allprops() outputall title subheader subheaderright subheader2 subheaderright2 emote weapon spell ability save feature ddm}}
 						<div class="sheet-row">
 							<div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">{{key}}</div>
 							<div class="sheet-col-7-12 sheet-padr sheet-rt-value">{{value}}</div>
 						</div>
-					{{/allprops() outputall title subheader subheaderright subheader2 subheaderright2 emote weapon spell ability save deathsave}}
+					{{/allprops() outputall title subheader subheaderright subheader2 subheaderright2 emote weapon spell ability save feature ddm}}
 				{{/outputall}}
 				<!--DEBUG-->
 				{{#debug}}
