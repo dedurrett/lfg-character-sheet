@@ -67,7 +67,7 @@
 					<div class="sheet-col-1-10"><input type="number" name="attr_strength_max" min="1" step="1" /></div>
 					<div class="sheet-col-1-8 sheet-core-stat-label">Str</div>
 					<div class="sheet-col-1-13">
-						<input type="number" name="attr_strength_mod" value="0" readonly/>
+						<input type="text" name="attr_strength_mod" value="0" readonly/>
 					</div>
 				   <div class="sheet-col-1-7">
                         <select name="attr_strengthadvantage">
@@ -91,7 +91,7 @@
                     <div class="sheet-col-1-10"><input type="number" name="attr_dexterity_max" min="1" step="1" /></div>
 					<div class="sheet-col-1-8 sheet-core-stat-label">Dex</div>
 					<div class="sheet-col-1-13">
-						<input type="number" name="attr_dexterity_mod" value="0" readonly/>
+						<input type="text" name="attr_dexterity_mod" value="0" readonly/>
 					</div>
 				   <div class="sheet-col-1-7">
                         <select name="attr_dexterityadvantage">
@@ -110,7 +110,7 @@
                     <div class="sheet-col-1-10"><input type="number" name="attr_constitution_max" min="1" step="1" /></div>
 					<div class="sheet-col-1-8 sheet-core-stat-label">Con</div>
 					<div class="sheet-col-1-13">
-						<input type="number" name="attr_constitution_mod" value="0" readonly/>
+						<input type="text" name="attr_constitution_mod" value="0" readonly/>
 					</div>
 				   <div class="sheet-col-1-7">
                         <select name="attr_constitutionadvantage">
@@ -129,7 +129,7 @@
 					<div class="sheet-col-1-10"><input type="number" name="attr_intelligence_max" min="1" step="1" /></div>
 					<div class="sheet-col-1-8 sheet-core-stat-label">Int</div>
 					<div class="sheet-col-1-13">
-						<input type="number" name="attr_intelligence_mod" value="0" readonly/>
+						<input type="text" name="attr_intelligence_mod" value="0" readonly/>
 					</div>
 				   <div class="sheet-col-1-7">
                         <select name="attr_intelligenceadvantage">
@@ -148,7 +148,7 @@
                     <div class="sheet-col-1-10"><input type="number" name="attr_perception_max" min="1" step="1" /></div>
 					<div class="sheet-col-1-8 sheet-core-stat-label">Per</div>
 					<div class="sheet-col-1-13">
-						<input type="number" name="attr_perception_mod" value="0" readonly/>
+						<input type="text" name="attr_perception_mod" value="0" readonly/>
 					</div>
 				   <div class="sheet-col-1-7">
                         <select name="attr_perceptionadvantage">
@@ -167,7 +167,7 @@
 					<div class="sheet-col-1-10"><input type="number" name="attr_willpower_max" min="1" step="1" /></div>
 					<div class="sheet-col-1-8 sheet-core-stat-label">Will</div>
 					<div class="sheet-col-1-13">
-						<input type="number" name="attr_willpower_mod" value="0" readonly/>
+						<input type="text" name="attr_willpower_mod" value="0" readonly/>
 					</div>
 				   <div class="sheet-col-1-7">
                         <select name="attr_willpoweradvantage">
@@ -186,7 +186,7 @@
 					<div class="sheet-col-1-10"><input type="number" name="attr_charisma_max" min="1" step="1" /></div>
 					<div class="sheet-col-1-8 sheet-core-stat-label">Cha</div>
 					<div class="sheet-col-1-13">
-						<input type="number" name="attr_charisma_mod" value="0" readonly/>
+						<input type="text" name="attr_charisma_mod" value="0" readonly/>
 					</div>
 				   <div class="sheet-col-1-7">
                         <select name="attr_charismaadvantage">
@@ -205,7 +205,7 @@
                     <div class="sheet-col-1-10"><input type="number" name="attr_luck_max" min="1" step="1" /></div>
 					<div class="sheet-col-1-8 sheet-core-stat-label">Luck</div>
 					<div class="sheet-col-1-13">
-						<input type="number" name="attr_luck_mod" value="0" readonly/>
+						<input type="text" name="attr_luck_mod" value="0" readonly/>
 					</div>
 				   <div class="sheet-col-1-7">
                         <select name="attr_luckadvantage">
@@ -514,7 +514,7 @@
     					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellrange"></div>
     					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellduration"></div>
                         <div class="sheet-col-1-12 sheet-center">
-                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmrequest=[Dark & Dangerous Roll](~@{character_id}|DDM)}}"></button>
+                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmrequest=[Dark & Dangerous Magic Roll](~@{character_id}|DDM)}}"></button>
                         </div>
     				</div>
     				<div class="sheet-row">
@@ -554,7 +554,7 @@
     					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellrange"></div>
     					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellduration"></div>
                         <div class="sheet-col-1-12 sheet-center">
-                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmrequest=[Dark & Dangerous Roll](~@{character_id}|DDM)}}"></button>
+                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmrequest=[Dark & Dangerous Magic Roll](~@{character_id}|DDM)}}"></button>
                         </div>
     				</div>
     				<div class="sheet-row">
@@ -594,7 +594,7 @@
     					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellrange"></div>
     					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellduration"></div>
                         <div class="sheet-col-1-12 sheet-center">
-                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmrequest=[Dark & Dangerous Roll](~@{character_id}|DDM)}}"></button>
+                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmrequest=[Dark & Dangerous Magic Roll](~@{character_id}|DDM)}}"></button>
                         </div>
     				</div>
     				<div class="sheet-row">
@@ -634,7 +634,7 @@
     					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellrange"></div>
     					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellduration"></div>
                         <div class="sheet-col-1-12 sheet-center">
-                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmrequest=[Dark & Dangerous Roll](~@{character_id}|DDM)}}"></button>
+                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmrequest=[Dark & Dangerous Magic Roll](~@{character_id}|DDM)}}"></button>
                         </div>
     				</div>
     				<div class="sheet-row">
@@ -674,7 +674,7 @@
     					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellrange"></div>
     					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellduration"></div>
                         <div class="sheet-col-1-12 sheet-center">
-                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmrequest=[Dark & Dangerous Roll](~@{character_id}|DDM)}}"></button>
+                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmrequest=[Dark & Dangerous Magic Roll](~@{character_id}|DDM)}}"></button>
                         </div>
     				</div>
     				<div class="sheet-row">
@@ -714,7 +714,7 @@
     					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellrange"></div>
     					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellduration"></div>
                         <div class="sheet-col-1-12 sheet-center">
-                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmrequest=[Dark & Dangerous Roll](~@{character_id}|DDM)}}"></button>
+                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmrequest=[Dark & Dangerous Magic Roll](~@{character_id}|DDM)}}"></button>
                         </div>
     				</div>
     				<div class="sheet-row">
