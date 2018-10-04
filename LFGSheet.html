@@ -416,11 +416,12 @@
             <div class="sheet-row">
                 <div class="sheet-row sheet-sub-header">
                     <div class="sheet-col-1-6 sheet-center sheet-small-label">Weapon Name</div>
-                    <div class="sheet-col-1-16 sheet-center sheet-small-label">+Hit</div>
-                    <div class="sheet-col-1-16 sheet-center sheet-small-label">+Damage</div>
-                    <div class="sheet-col-1-10 sheet-center sheet-small-label">Base Damage</div>
-                    <div class="sheet-col-9-16 sheet-center sheet-small-label">Weapon Notes</div>
-                    <div class="sheet-col-1-24 sheet-center sheet-small-label">Roll</div>
+                    <div class="sheet-col-1-16 sheet-center sheet-small-label sheet-padr">+Hit</div>
+                    <div class="sheet-col-1-16 sheet-center sheet-small-label sheet-padr">+Damage</div>
+                    <div class="sheet-col-1-12 sheet-center sheet-small-label">Base Damage</div>
+                    <div class="sheet-col-13-24 sheet-center sheet-small-label">Weapon Notes</div>
+                    <div class="sheet-col-1-24 sheet-center sheet-small-label sheet-padr"></div>
+                    <div class="sheet-col-1-24 sheet-center sheet-small-label sheet-padr">Roll</div>
                 </div>
             </div>
         </div>
@@ -429,10 +430,12 @@
                 <div class="sheet-col-1-6 sheet-padr"><input type="text" name="attr_melee_weaponname"></div>
                 <div class="sheet-col-1-16 sheet-padr"><input type="number" name="attr_melee_hitbonus" value="0" step="1"></div>
                 <div class="sheet-col-1-16 sheet-padr"><input type="number" name="attr_melee_dmgbonus" value="0" step="1"></div>
-                <div class="sheet-col-1-10 sheet-padr"><input class="sheet-center" type="text" name="attr_melee_dmgbase" value="1d4"></div>
-                <div class="sheet-col-9-16 sheet-padr"><input type="text" name="attr_melee_description" placeholder="STR adustment factored in."></div>
-                <div class="sheet-col-1-24 sheet-center">
-                    <button type="roll" class="sheet-roll" name="roll_MeleeAttack" value="&{template:5eDefault} {{weapon=1}} {{title=@{melee_weaponname}}} {{subheader=@{character_name}}} {{attack=[[@{class_hitbonus}+(@{strength_mod})+(@{melee_hitbonus})+?{Advantage|Normal,1d20|Advantage,2d20kh1|Disadvantage,2d20kl1}+(?{Hit Modifier|0})]]}} {{damage=[[{@{melee_dmgbase}+(@{strength_mod})+(@{melee_dmgbonus})+(?{Damage Modifier|0}), 1d1}k1]]}} {{attackshowinfoblock=1}} }} "></button>
+                <div class="sheet-col-1-12 sheet-padr"><input class="sheet-center" type="text" name="attr_melee_dmgbase" value="1d4"></div>
+                <div class="sheet-col-13-24 sheet-padr"><input type="text" name="attr_melee_description" placeholder="STR adustment factored in."></div>
+                <div class="sheet-col-1-24 sheet-padr"><input type="checkbox" name="attr_meleedescr_toggle" value="@{meleedescr_var}"></div>
+                <input type="hidden" name="attr_meleedescr_var" value={{attackdescription=@{melee_description}}}>
+                <div class="sheet-col-1-24 sheet-padr sheet-center">
+                    <button type="roll" class="sheet-roll" name="roll_MeleeAttack" value="&{template:5eDefault} {{weapon=1}} {{title=@{melee_weaponname}}} {{subheader=@{character_name}}} {{attack=[[@{class_hitbonus}+(@{strength_mod})+(@{melee_hitbonus})+?{Advantage|Normal,1d20|Advantage,2d20kh1|Disadvantage,2d20kl1}+(?{Hit Modifier|0})]]}} {{damage=[[{@{melee_dmgbase}+(@{strength_mod})+(@{melee_dmgbonus})+(?{Damage Modifier|0}), 1d1}k1]]}} @{meleedescr_toggle}"></button>
                 </div>
             </div>
         </fieldset>
@@ -441,13 +444,14 @@
             <h4 class="sheet-center">Ranged Weapons</h4>
             <div class="sheet-row">
                 <div class="sheet-row sheet-sub-header">
-                    <div class="sheet-col-1-6 sheet-center sheet-small-label sheet-vert-bottom">Weapon Name</div>
-                    <div class="sheet-col-1-16 sheet-center sheet-small-label sheet-vert-bottom sheet-padr">+Hit</div>
-                    <div class="sheet-col-1-16 sheet-center sheet-small-label sheet-vert-bottom sheet-padr">+Damage</div>
-                    <div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-bottom">Base Damage</div>
-                    <div class="sheet-col-1-16 sheet-center sheet-small-label sheet-vert-bottom">Range</div>
-                    <div class="sheet-col-1-2 sheet-center sheet-small-label sheet-vert-bottom">Weapon Notes</div>
-                    <div class="sheet-col-1-24 sheet-center sheet-small-label sheet-vert-bottom">Roll</div>
+                    <div class="sheet-col-1-6 sheet-center sheet-small-label">Weapon Name</div>
+                    <div class="sheet-col-1-16 sheet-center sheet-small-label sheet-padr">+Hit</div>
+                    <div class="sheet-col-1-16 sheet-center sheet-small-label sheet-padr">+Damage</div>
+                    <div class="sheet-col-1-12 sheet-center sheet-small-label">Base Damage</div>
+                    <div class="sheet-col-1-12 sheet-center sheet-small-label sheet-padr">Range</div>
+                    <div class="sheet-col-11-24 sheet-center sheet-small-label">Weapon Notes</div>
+                    <div class="sheet-col-1-24 sheet-center sheet-small-label sheet-padr"></div>
+                    <div class="sheet-col-1-24 sheet-center sheet-small-label sheet-padr">Roll</div>
                 </div>
             </div>
         </div>
@@ -456,11 +460,13 @@
                 <div class="sheet-col-1-6 sheet-padr"><input type="text" name="attr_range_weaponname"></div>
                 <div class="sheet-col-1-16 sheet-padr"><input type="number" name="attr_range_hitbonus" value="0" step="1"></div>
                 <div class="sheet-col-1-16 sheet-padr"><input type="number" name="attr_range_dmgbonus" value="0" step="1"></div>
-                <div class="sheet-col-1-10 sheet-padr"><input class="sheet-center" type="text" name="attr_range_dmgbase" value="1d4"></div>
-                <div class="sheet-col-1-16 sheet-padr"><input type="text" name="attr_range_distance"></div>
-                <div class="sheet-col-1-2"><input type="text" name="attr_range_description" placeholder="DEX adjustment factored in."></div>
-                <div class="sheet-col-1-24 sheet-center">
-                    <button type="roll" class="sheet-roll" name="roll_RangeAttack" value="&{template:5eDefault} {{weapon=1}} {{title=@{range_weaponname}}} {{subheader=@{character_name}}} {{attack=[[@{class_hitbonus}+(@{dexterity_mod})+(@{range_hitbonus})+?{Advantage|Normal,1d20|Advantage,2d20kh1|Disadvantage,2d20kl1}+(?{Hit Modifier|0})]]}} {{damage=[[{@{range_dmgbase}+(@{dexterity_mod})+(@{range_dmgbonus})+(?{Damage Modifier|0}), 1d1}k1]]}} {{attackshowinfoblock=1}} }} "></button>
+                <div class="sheet-col-1-12 sheet-padr"><input class="sheet-center" type="text" name="attr_range_dmgbase" value="1d4"></div>
+                <div class="sheet-col-1-12 sheet-padr"><input type="text" name="attr_range_distance"></div>
+                <div class="sheet-col-11-24 sheet-padr"><input type="text" name="attr_range_description" placeholder="DEX adjustment factored in."></div>
+                <div class="sheet-col-1-24 sheet-padr"><input type="checkbox" name="attr_rangedescr_toggle" value="@{rangedescr_var}"></div>
+                <input type="hidden" name="attr_rangedescr_var" value={{attackdescription=@{range_description}}}>
+                <div class="sheet-col-1-24 sheet-padr sheet-center">
+                    <button type="roll" class="sheet-roll" name="roll_RangeAttack" value="&{template:5eDefault} {{weapon=1}} {{title=@{range_weaponname}}} {{subheader=@{character_name}}} {{attack=[[@{class_hitbonus}+(@{dexterity_mod})+(@{range_hitbonus})+?{Advantage|Normal,1d20|Advantage,2d20kh1|Disadvantage,2d20kl1}+(?{Hit Modifier|0})]]}} {{damage=[[{@{range_dmgbase}+(@{dexterity_mod})+(@{range_dmgbonus})+(?{Damage Modifier|0}), 1d1}k1]]}} @{rangedescr_toggle}"></button>
                 </div>
             </div>
         </fieldset>
@@ -1002,6 +1008,11 @@
 					<div class="sheet-col-7-12 sheet-padr sheet-rt-value">{{damage}}</div>
 				</div>
 				{{/damage}}
+				{{#attackdescription}}
+                <div class="sheet-row">
+					<div class="sheet-col-1 sheet-padl sheet-padr sheet-rt-value">{{attackdescription}}</div>
+				</div>
+				{{/attackdescription}}
 				{{#ddm}}
 			    <div class="sheet-row">
 				    <div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Threshold</div>
