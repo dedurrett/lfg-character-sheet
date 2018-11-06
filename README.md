@@ -7,9 +7,9 @@ This version of the sheet incorporates roll templates and autocalculates hit and
 
 ### Changelog
 * 12 June 2016 original version.
-* 06 November 2018 Added fields and features for tracking character progression, inventory, ability usage, DDM, and Advantage/Disadvantage.
+* 06 November 2018 expanded fields and features.
 
 ### Credit Where Credit is Due
 The CSS and much of the layout is lifted from the excellent work of John Myles ([@Actoba](https://app.roll20.net/users/427494/actoba) on roll20) and the 5e Dungeons and Dragons sheet.
 Initial Version by the creator of Low Fantasy Gaming, Stephen J Grodzicki.
-Expanded Features contributed by Davemania
+Expanded fields and features contributed by David E. Durrett Jr. ([@Davemania](https://app.roll20.net/users/76/davemania) on roll20)
