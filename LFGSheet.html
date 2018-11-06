@@ -6,7 +6,8 @@
                 <img src="http://i.imgur.com/XLGhAAm.png" alt="Low Fantasy Gaming" width=50 >
             </div>
             <div class="sheet-col-1-8 sheet-center sheet-margin-top">
-                <p class="sheet-last-updated">Sheet version<br/>October 2018</p>
+                <p class="sheet-last-updated">Sheet version 2.0<br/>November 2018</p>
+                <input name="attr_version" type="hidden">
             </div>
                 <div class="sheet-col-1-4 sheet-small-label sheet-center">
                 <input class="sheet-underlined sheet-center" type="text" name="attr_character_name"><br/>Character Name
@@ -1221,5 +1222,151 @@
       setAttrs(setting);
     });
   });
+});
+
+var convertFromOldSheet = function () {
+    // Non-repeating attributes to rename
+    let conversionData = {
+        "size" : "race",
+        "vision" : "background",
+        "prolanguages" : "languages",
+        "alignment" : "vision",
+        "strength" : "strength_max",
+        "dexterity" : "dexterity_max",
+        "constitution" : "constitution_max",
+        "intelligence" : "intelligence_max",
+        "perception" : "perception_max",
+        "willpower" : "willpower_max",
+        "charisma" : "charisma_max",
+        "luck" : "luck_max",
+        "nil" : "armour_class",
+        "initiative" : "rerolls"
+    };
+    // Non-repeating attribute renaming
+    getAttrs(Object.keys(conversionData), function (values) {
+        let setting = {};
+        Object.keys(conversionData).forEach(function (oldAttr) {
+            if (values[oldAttr] != null) {
+                // set value of new attribute to the old one
+                setting[conversionData[oldAttr]] = values[oldAttr];
+            }
+        });
+        console.log("Setting non-repeating attributes.");
+        setAttrs(setting);
+    });
+
+    //Special Case to bring over the two note fields into one notes field here.
+    getAttrs(["notey","noob"], function(values) {
+        setAttrs({lootnotes: (values.notey + "\n" + values.noob)});
+    });
+    
+	getSectionIDs('repeating_meleeattacks', function (idArray) {
+	    console.log("Setting repeating_meleeattacks attributes.");
+		getAttrs(idArray.map(id => `repeating_meleeattacks_${id}_meleeweaponname`), function (values) {
+			let setting = {};
+			idArray.forEach(function (id) {
+				setting[`repeating_meleeattacks_${id}_melee_weaponname`] = values[`repeating_meleeattacks_${id}_meleeweaponname`];
+			});
+			setAttrs(setting);
+		});
+		getAttrs(idArray.map(id => `repeating_meleeattacks_${id}_meleemagic`), function (values) {
+			let setting = {};
+			idArray.forEach(function (id) {
+				setting[`class_hitbonus`] = values[`repeating_meleeattacks_${id}_meleemagic`];
+			});
+			setAttrs(setting);
+		});
+		getAttrs(idArray.map(id => `repeating_meleeattacks_${id}_meleemisc`), function (values) {
+			let setting = {};
+			idArray.forEach(function (id) {
+				setting[`repeating_meleeattacks_${id}_melee_hitbonus`] = values[`repeating_meleeattacks_${id}_meleemisc`];
+				setting[`repeating_meleeattacks_${id}_melee_dmgbonus`] = values[`repeating_meleeattacks_${id}_meleemisc`];
+			});
+			setAttrs(setting);
+		});
+		getAttrs(idArray.map(id => `repeating_meleeattacks_${id}_meleedmg`), function (values) {
+			let setting = {};
+			idArray.forEach(function (id) {
+				setting[`repeating_meleeattacks_${id}_melee_dmgbase`] = values[`repeating_meleeattacks_${id}_meleedmg`];
+			});
+			setAttrs(setting);
+		});
+		getAttrs(idArray.map(id => `repeating_meleeattacks_${id}_meleeacbonus`), function (values) {
+			let setting = {};
+			idArray.forEach(function (id) {
+				setting[`repeating_meleeattacks_${id}_melee_description`] = values[`repeating_meleeattacks_${id}_meleeacbonus`];
+			});
+			setAttrs(setting);
+		});
+	});
+	
+	getSectionIDs('repeating_rangedattacks', function (idArray) {
+	    console.log("Setting repeating_rangedattacks attributes.");
+		getAttrs(idArray.map(id => `repeating_rangedattacks_${id}_rangeweaponname`), function (values) {
+			let setting = {};
+			idArray.forEach(function (id) {
+				setting[`repeating_rangedattacks_${id}_range_weaponname`] = values[`repeating_rangedattacks_${id}_rangeweaponname`];
+			});
+			setAttrs(setting);
+		});
+		getAttrs(idArray.map(id => `repeating_rangedattacks_${id}_rangemisc`), function (values) {
+			let setting = {};
+			idArray.forEach(function (id) {
+				setting[`repeating_rangedattacks_${id}_range_hitbonus`] = values[`repeating_rangedattacks_${id}_rangemisc`];
+				setting[`repeating_rangedattacks_${id}_range_dmgbonus`] = values[`repeating_rangedattacks_${id}_rangemisc`];
+			});
+			setAttrs(setting);
+		});
+		getAttrs(idArray.map(id => `repeating_rangedattacks_${id}_rangedmg`), function (values) {
+			let setting = {};
+			idArray.forEach(function (id) {
+				setting[`repeating_rangedattacks_${id}_range_dmgbase`] = values[`repeating_rangedattacks_${id}_rangedmg`];
+			});
+			setAttrs(setting);
+		});
+		getAttrs(idArray.map(id => `repeating_rangedattacks_${id}_rangeacbonus`), function (values) {
+			let setting = {};
+			idArray.forEach(function (id) {
+				setting[`repeating_rangedattacks_${id}_range_distance`] = values[`repeating_rangedattacks_${id}_rangeacbonus`];
+			});
+			setAttrs(setting);
+		});
+		getAttrs(idArray.map(id => `repeating_rangedattacks_${id}_rangesaves`), function (values) {
+			let setting = {};
+			idArray.forEach(function (id) {
+				setting[`repeating_rangedattacks_${id}_range_description`] = values[`repeating_rangedattacks_${id}_rangesaves`];
+			});
+			setAttrs(setting);
+		});
+	});
+};
+on('sheet:opened', function () {
+    let currentVersion = '2.0';
+    getAttrs(['version','lootnotes'], function (values) {
+        if (!values.version) {
+            //Special Case to check if the custom sheet was already in use prior to adding version control logic
+            if (values.lootnotes) {
+                console.log("Special Case Cancel Upgrade from V1.0");
+            }
+            else{
+                //The old sheet had many variables whose names did not match sheet headings.
+                //I do my best to assign them to appropriate variables in the upgraded sheet.
+                console.log("Upgrading Sheet from V1.0");
+                convertFromOldSheet();
+            }
+        }
+        else{
+            switch (values.version) {
+                case 2.0:
+                    // upgrade v2 to next version
+                    // fallthrough, continue
+                case 3.0:
+                    //etc
+            }
+        }
+        setAttrs({
+            version: currentVersion
+        });
+    });
 });
 </script>
