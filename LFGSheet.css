@@ -1,1703 +1,3032 @@
-<div class="sheet-overall-wrapper">
-    <!--Main Header -->
-    <div class="sheet-core-header sheet-padb">
-        <div class="sheet-row">
-            <div class="sheet-col-1-8 sheet-margin-top">
-                <img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Low%20Fantasy%20Gaming/LFG_LOGO.png" alt="Low Fantasy Gaming" width=100 >
-            </div>
-            <div class="sheet-col-1-8 sheet-center sheet-margin-top">
-                &nbsp;<br/>&nbsp;<br/>
-                <p class="sheet-last-updated">Sheet version 3.0<br/>February 2019</p>
-                <input name="attr_version" type="hidden">
-            </div>
-            <div class="sheet-col-1-8 sheet-center sheet-margin-top"></div>
-            <div class="sheet-col-1-4 sheet-small-label sheet-center">
-                &nbsp;<br/>&nbsp;<br/>&nbsp;<br/>
-                <input class="sheet-underlined sheet-center" type="text" name="attr_character_name"><br/>Character Name
-            </div>
-            <div class="sheet-col-1-8 sheet-small-label sheet-center">
-                &nbsp;<br/>&nbsp;<br/>&nbsp;<br/>
-                <input class="sheet-underlined sheet-center" type="text" name="attr_class"><br/>Class
-            </div>
-            <div class="sheet-col-1-8 sheet-small-label sheet-center">
-                &nbsp;<br/>&nbsp;<br/>&nbsp;<br/>
-                <input class="sheet-underlined sheet-center" type="number" name="attr_level"><br/>Level
-            </div>
-            <div class="sheet-col-1-8 sheet-center sheet-margin-top"></div>
-        </div>
-    </div>
-    <h4 class="sheet-center">Personal Details </h4>
-	<div class="sheet-row">
-		<div class="sheet-col-1-7 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_gender"><br/>Gender</div>
-		<div class="sheet-col-1-7 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="number" name="attr_age"><br/>Age</div>
-		<div class="sheet-col-1-7 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_height"><br/>Height</div>
-		<div class="sheet-col-1-7 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_weight"><br/>Weight</div>
-		<div class="sheet-col-1-7 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_eyes"><br/>Eyes</div>
-		<div class="sheet-col-1-7 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_hair"><br/>Hair</div>
-		<div class="sheet-col-1-7 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_race"><br/>Race</div>
-	</div>
-	<div class="sheet-row sheet-padb">
-		<div class="sheet-col-1-4 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_background"><br/>Background</div>
-		<div class="sheet-col-5-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_languages"><br/>Languages</div>
-		<div class="sheet-col-1-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_vision"><br/>Vision</div>
-	</div>
-    <!-- Tabs-->
-    <input type="checkbox" name="attr_tab1" class="sheet-tab sheet-tab1" value="1" checked />
-    <span class="sheet-tab sheet-tab1">Main</span>
-    <input type="checkbox" name="attr_tab2" class="sheet-tab sheet-tab2" value="1" checked />
-    <span class="sheet-tab sheet-tab2">Skills & Features</span>
-    <input type="checkbox" name="attr_tab3" class="sheet-tab sheet-tab3" value="1" checked />
-    <span class="sheet-tab sheet-tab3">Weapons</span>
-    <input type="checkbox" name="attr_tab4" class="sheet-tab sheet-tab4" value="1" checked />
-    <span class="sheet-tab sheet-tab4">Spellbook</span>
-    <input type="checkbox" name="attr_tab5" class="sheet-tab sheet-tab5" value="1" checked />
-    <span class="sheet-tab sheet-tab5">Inventory</span>
-    <input type="checkbox" name="attr_tab6" class="sheet-tab sheet-tab6" value="1" checked />
-    <span class="sheet-tab sheet-tab6">Injuries & Setbacks</span>
-	<span class="sheet-spacer"></span>
-    <!--Main Page-->
-    <div class="sheet-section-main">
-		<div class="sheet-row">
-			<div class="sheet-col-7-12 sheet-padr">
-				<h4 class="sheet-center">Attributes</h4>
-				<div class="sheet-row sheet-sub-header">
-					<div class="sheet-col-1-12 sheet-center sheet-small-label">Score</div>
-					<div class="sheet-col-1-12 sheet-center sheet-small-label">Max</div>
-					<div class="sheet-col-1-10 sheet-center sheet-small-label">&nbsp;</div>
-					<div class="sheet-col-1-16 sheet-center sheet-small-label">Mod</div>
-					<div class="sheet-col-1-12 sheet-center sheet-small-label">GS</div>
-					<div class="sheet-col-1-12 sheet-center sheet-small-label">TF</div>
-					<div class="sheet-col-1-8 sheet-center sheet-small-label">Advantage</div>
-					<div class="sheet-col-1-14 sheet-center sheet-small-label">Roll</div>
-					<div class="sheet-col-1-4 sheet-center sheet-small-label">Notes</div>
-				</div>
-				<div class="sheet-row">
-					<div class="sheet-col-1-12"><input type="number" name="attr_strength" min="1" step="1" value="10"/></div>
-					<div class="sheet-col-1-12"><input type="number" name="attr_strength_max" min="1" step="1" value="10"/></div>
-					<div class="sheet-col-1-10 sheet-core-stat-label">Str</div>
-					<div class="sheet-col-1-16">
-						<input type="text" name="attr_strength_mod" value="0" readonly/>
-					</div>
-					<div class="sheet-col-1-12"><input type="number" name="attr_strength_gs" min="1" step="1" value="1"/></div>
-					<div class="sheet-col-1-12"><input type="number" name="attr_strength_tf" min="1" step="1" value="20"/></div>
-                    <div class="sheet-col-1-8">
-                        <select name="attr_strengthadvantage">
-                            <option value="2d20cs=1cf=20kl1">ADV</option>
-                            <option value="1d20cs=1cf=20" selected>NO</option>
-                            <option value="2d20cs=1cf=20kh1">DIS</option>
-                        </select>
-                    </div>
-					<div class="sheet-col-1-14 sheet-center">
-					    <!-- Rolling Advantage h/l swap depending -->
-					    <!-- ?{Advantage|Normal,1d20|Advantage,2d20kl1|Disadvantage,2d20kh1} -->
-					    <!-- How to show advantage in the roll template
-					        {{subheaderright= @{strengthadvantage}}} -> this will just eval as the roll result
-					    -->
-						<button type="roll" name="roll_Str" value="&{template:5eDefault} {{ability=1}} {{title=Strength Check}} {{subheader=@{character_name}}} {{check=[[@{strengthadvantage}]]}} {{target=[[@{strength}]]}} {{gsresult=[[@{strength_gs}]]}} {{tfresult=[[@{strength_tf}]]}}"></button>
-					</div>
-					<div class="sheet-col-1-4 sheet-tiny-note">Melee,&nbsp;Athletics</div>
-				</div>
-				<div class="sheet-row">
-                    <div class="sheet-col-1-12"><input type="number" name="attr_dexterity" min="1" step="1" value="10"/></div>
-                    <div class="sheet-col-1-12"><input type="number" name="attr_dexterity_max" min="1" step="1" value="10"/></div>
-                    <div class="sheet-col-1-10 sheet-core-stat-label">Dex</div>
-                    <div class="sheet-col-1-16">
-						<input type="text" name="attr_dexterity_mod" value="0" readonly/>
-					</div>
-                    <div class="sheet-col-1-12"><input type="number" name="attr_dexterity_gs" min="1" step="1" value="1"/></div>
-					<div class="sheet-col-1-12"><input type="number" name="attr_dexterity_tf" min="1" step="1" value="20"/></div>
-                    <div class="sheet-col-1-8">
-                        <select name="attr_dexterityadvantage">
-                            <option value="2d20cs=1cf=20kl1">ADV</option>
-                            <option value="1d20cs=1cf=20" selected>NO</option>
-                            <option value="2d20cs=1cf=20kh1">DIS</option>
-                        </select>
-                    </div>
-					<div class="sheet-col-1-14 sheet-center">
-						<button type="roll" name="roll_Dex" value="&{template:5eDefault} {{ability=1}} {{title=Dexterity Check}} {{subheader=@{character_name}}} {{check=[[@{dexterityadvantage}]]}} {{target=[[@{dexterity}]]}} {{gsresult=[[@{dexterity_gs}]]}} {{tfresult=[[@{dexterity_tf}]]}}"></button>
-					</div>
-					<div class="sheet-col-1-4 sheet-tiny-note">Ranged,&nbsp;AC</div>
-				</div>
-                <div class="sheet-row">
-                    <div class="sheet-col-1-12"><input type="number" name="attr_constitution" min="1" step="1" value="10"/></div>
-                    <div class="sheet-col-1-12"><input type="number" name="attr_constitution_max" min="1" step="1" value="10"/></div>
-					<div class="sheet-col-1-10 sheet-core-stat-label">Con</div>
-					<div class="sheet-col-1-16">
-                        <input type="text" name="attr_constitution_mod" value="0" readonly/>
-					</div>
-                    <div class="sheet-col-1-12"><input type="number" name="attr_constitution_gs" min="1" step="1" value="1"/></div>
-                    <div class="sheet-col-1-12"><input type="number" name="attr_constitution_tf" min="1" step="1" value="20"/></div>
-                    <div class="sheet-col-1-8">
-                        <select name="attr_constitutionadvantage">
-                            <option value="2d20cs=1cf=20kl1">ADV</option>
-                            <option value="1d20cs=1cf=20" selected>NO</option>
-                            <option value="2d20cs=1cf=20kh1">DIS</option>
-                        </select>
-                    </div>
-					<div class="sheet-col-1-14 sheet-center">
-						<button type="roll" name="roll_Con" value="&{template:5eDefault} {{ability=1}} {{title=Constitution Check}} {{subheader=@{character_name}}} {{check=[[@{constitutionadvantage}]]}} {{target=[[@{constitution}]]}} {{gsresult=[[@{constitution_gs}]]}} {{tfresult=[[@{constitution_tf}]]}}"></button>
-					</div>
-					<div class="sheet-col-1-4 sheet-tiny-note">Hit&nbsp;Points,&nbsp;Poison</div>
-				</div>
-                <div class="sheet-row">
-					<div class="sheet-col-1-12"><input type="number" name="attr_intelligence" min="1" step="1" value="10"/></div>
-					<div class="sheet-col-1-12"><input type="number" name="attr_intelligence_max" min="1" step="1" value="10"/></div>
-					<div class="sheet-col-1-10 sheet-core-stat-label">Int</div>
-					<div class="sheet-col-1-16">
-						<input type="text" name="attr_intelligence_mod" value="0" readonly/>
-					</div>
-					<div class="sheet-col-1-12"><input type="number" name="attr_intelligence_gs" min="1" step="1" value="1"/></div>
-					<div class="sheet-col-1-12"><input type="number" name="attr_intelligence_tf" min="1" step="1" value="20"/></div>
-                    <div class="sheet-col-1-8">
-                        <select name="attr_intelligenceadvantage">
-                            <option value="2d20cs=1cf=20kl1">ADV</option>
-                            <option value="1d20cs=1cf=20" selected>NO</option>
-                            <option value="2d20cs=1cf=20kh1">DIS</option>
-                        </select>
-                    </div>
-					<div class="sheet-col-1-14 sheet-center">
-						<button type="roll" name="roll_Int" value="&{template:5eDefault} {{ability=1}} {{title=Intelligence Check}} {{subheader=@{character_name}}} {{check=[[@{intelligenceadvantage}]]}} {{target=[[@{intelligence}]]}} {{gsresult=[[@{intelligence_gs}]]}} {{tfresult=[[@{intelligence_tf}]]}}"></button>
-					</div>
-					<div class="sheet-col-1-4 sheet-tiny-note">Lore,&nbsp;Insight,&nbsp;Lang</div>
-				</div>
-                <div class="sheet-row">
-                    <div class="sheet-col-1-12"><input type="number" name="attr_perception" min="1" step="1" value="10"/></div>
-                    <div class="sheet-col-1-12"><input type="number" name="attr_perception_max" min="1" step="1" value="10"/></div>
-					<div class="sheet-col-1-10 sheet-core-stat-label">Per</div>
-					<div class="sheet-col-1-16">
-						<input type="text" name="attr_perception_mod" value="0" readonly/>
-					</div>
-					<div class="sheet-col-1-12"><input type="number" name="attr_perception_gs" min="1" step="1" value="1"/></div>
-                    <div class="sheet-col-1-12"><input type="number" name="attr_perception_tf" min="1" step="1" value="20"/></div>
-				   <div class="sheet-col-1-8">
-                        <select name="attr_perceptionadvantage">
-                            <option value="2d20cs=1cf=20kl1">ADV</option>
-                            <option value="1d20cs=1cf=20" selected>NO</option>
-                            <option value="2d20cs=1cf=20kh1">DIS</option>
-                        </select>
-                    </div>
-					<div class="sheet-col-1-14 sheet-center">
-						<button type="roll" name="roll_Per" value="&{template:5eDefault} {{ability=1}} {{title=Perception Check}} {{subheader=@{character_name}}} {{check=[[@{perceptionadvantage}]]}} {{target=[[@{perception}]]}} {{gsresult=[[@{perception_gs}]]}} {{tfresult=[[@{perception_tf}]]}}"></button>
-					</div>
-					<div class="sheet-col-1-4 sheet-tiny-note">Alertness,&nbsp;Detection</div>
-				</div>
-				<div class="sheet-row">
-					<div class="sheet-col-1-12"><input type="number" name="attr_willpower" min="1" step="1" value="10"/></div>
-					<div class="sheet-col-1-12"><input type="number" name="attr_willpower_max" min="1" step="1" value="10"/></div>
-					<div class="sheet-col-1-10 sheet-core-stat-label">Will</div>
-					<div class="sheet-col-1-16">
-						<input type="text" name="attr_willpower_mod" value="0" readonly/>
-					</div>
-					<div class="sheet-col-1-12"><input type="number" name="attr_willpower_gs" min="1" step="1" value="1"/></div>
-					<div class="sheet-col-1-12"><input type="number" name="attr_willpower_tf" min="1" step="1" value="20"/></div>
-				   <div class="sheet-col-1-8">
-                        <select name="attr_willpoweradvantage">
-                            <option value="2d20cs=1cf=20kl1">ADV</option>
-                            <option value="1d20cs=1cf=20" selected>NO</option>
-                            <option value="2d20cs=1cf=20kh1">DIS</option>
-                        </select>
-                    </div>
-					<div class="sheet-col-1-14 sheet-center">
-						<button type="roll" name="roll_Will" value="&{template:5eDefault} {{ability=1}} {{title=Willpower Check}} {{subheader=@{character_name}}} {{check=[[@{willpoweradvantage}]]}} {{target=[[@{willpower}]]}} {{gsresult=[[@{willpower_gs}]]}} {{tfresult=[[@{willpower_tf}]]}}"></button>
-					</div>
-					<div class="sheet-col-1-4 sheet-tiny-note">Mental&nbsp;Defence,&nbsp;Recovery</div>
-				</div>
-				<div class="sheet-row">
-					<div class="sheet-col-1-12"><input type="number" name="attr_charisma" min="1" step="1" value="10"/></div>
-					<div class="sheet-col-1-12"><input type="number" name="attr_charisma_max" min="1" step="1" value="10"/></div>
-					<div class="sheet-col-1-10 sheet-core-stat-label">Cha</div>
-					<div class="sheet-col-1-16">
-						<input type="text" name="attr_charisma_mod" value="0" readonly/>
-					</div>
-					<div class="sheet-col-1-12"><input type="number" name="attr_charisma_gs" min="1" step="1" value="1"/></div>
-					<div class="sheet-col-1-12"><input type="number" name="attr_charisma_tf" min="1" step="1" value="20"/></div>
-                    <div class="sheet-col-1-8">
-                        <select name="attr_charismaadvantage">
-                            <option value="2d20cs=1cf=20kl1">ADV</option>
-                            <option value="1d20cs=1cf=20" selected>NO</option>
-                            <option value="2d20cs=1cf=20kh1">DIS</option>
-                        </select>
-                    </div>
-					<div class="sheet-col-1-14 sheet-center">
-						<button type="roll" name="roll_Cha" value="&{template:5eDefault} {{ability=1}} {{title=Charisma Check}} {{subheader=@{character_name}}} {{check=[[@{charismaadvantage}]]}} {{target=[[@{charisma}]]}} {{gsresult=[[@{charisma_gs}]]}} {{tfresult=[[@{charisma_tf}]]}}"></button>
-					</div>
-					<div class="sheet-col-1-4 sheet-tiny-note">Influence,&nbsp;Morale</div>
-				</div>
-                <div class="sheet-row">
-                    <div class="sheet-col-1-12"><input type="number" name="attr_luck" min="1" step="1" value="10"/></div>
-                    <div class="sheet-col-1-12"><input type="number" name="attr_luck_max" min="1" step="1" value="10"/></div>
-					<div class="sheet-col-1-10 sheet-luck-stat-label">Luck</div>
-					<!--<div class="sheet-col-1-16">
-						<input type="text" name="attr_luck_mod" value="0" readonly/>
-					</div>-->
-					<div class="sheet-col-11-48">
-                        <select name="attr_luckvs">
-                            <option value="1" selected>Luck Check</option>
-                            <option value="2">(STR) Save</option>
-                            <option value="3">(DEX) Save</option>
-                            <option value="4">(CON) Save</option>
-                            <option value="5">(INT) Save</option>
-                            <option value="6">(PER) Save</option>
-                            <option value="7">(WILL) Save</option>
-                            <option value="8">(CHA) Save</option>
-                        </select>
-					</div>
-                    <div class="sheet-col-1-8">
-                        <select name="attr_luckadvantage">
-                            <option value="2d20cs=1cf=20kl1">ADV</option>
-                            <option value="1d20cs=1cf=20" selected>NO</option>
-                            <option value="2d20cs=1cf=20kh1">DIS</option>
-                        </select>
-                    </div>
-					<div class="sheet-col-1-14 sheet-center">
-                        <input class="sheet-hide-it" type="text" name="attr_lucksave_title" value="Luck Check">
-                        <input class="sheet-hide-it" type="text" name="attr_lucksave_mod" value="0">
-                        <button type="roll" name="roll_Luck" value="&{template:5eDefault} {{lucksave=1}} {{title=@{lucksave_title}}} {{subheader=@{character_name}}} {{save=[[@{luckadvantage}-(@{lucksave_mod})]]}} {{target=[[@{luck}]]}}"></button>
-					</div>
-					<div class="sheet-col-1-4 sheet-tiny-note">Saves,&nbsp;Exploits</div>
-				</div>
-			</div>
-			<!--Buncha Stats-->
-			<div class="sheet-col-5-12 sheet-padr">
-				<h4 class="sheet-center">Statistics</h4>
-				<div class="sheet-row">
-                    <div class="sheet-col-1-2 sheet-padr">
-                        <div class="sheet-center sheet-small-label sheet-vert-bottom sheet-sub-header">Hit Points</div>
-                        <div class="sheet-row">
-                            <div class="sheet-col-1-2 sheet-small-label sheet-center">
-                                <input class="sheet-underlined" type="number" name="attr_HP" step="1" value="0">
-                                <br/>Current
-                            </div>
-                            <div class="sheet-col-1-2 sheet-small-label sheet-center">
-                                <input class="sheet-underlined" type="number" name="attr_HP_max" min="1" step="1" value="1">
-                                <br/>Max
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sheet-col-1-2 sheet-padr">
-                        <input type="hidden" class="sheet-newinit" name="attr_newinit_toggle" />
-                        <div class="sheet-center sheet-small-label sheet-vert-bottom sheet-sub-header">Initiative</div>
-                        <div class="sheet-section-oldinit">
-                            <div class="sheet-row">
-                                <div class="sheet-col-1-6 sheet-small-label sheet-center">
-                                    <input type="checkbox" name="attr_newinit_toggle" value="1" checked>
-                                    Dlx
-                                </div>
-                                <div class="sheet-col-1-3 sheet-small-label sheet-center">
-                                    <input class="sheet-underlined" type="number" name="attr_initiative" step="1" value="0">
-                                    +Misc
-                                </div>
-            				   <div class="sheet-col-1-3 sheet-small-label sheet-center">
-                                    <select name="attr_oldinitiativeadvantage">
-                                        <option value="2d20kh1">ADV</option>
-                                        <option value="1d20" selected>NO</option>
-                                        <option value="2d20kl1">DIS</option>
-                                    </select>
-                                    <br/>Advantage
-                                </div>
-                                <div class="sheet-col-1-6 sheet-small-label sheet-center">
-                                    <button type="roll" name="roll_Initiative" value="&{template:5eDefault} {{ability=1}} {{title=Classic Initiative Roll}} {{subheader=@{character_name}}} {{roll=[[ @{oldinitiativeadvantage}+(@{initiative}) &{tracker} ]]}}"></button>
-                                    <div class="sheet-tiny-spacer"></div>Roll
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" sheet-section-newinit">
-                            <div class="sheet-row">
-                                <div class="sheet-col-1-6 sheet-small-label sheet-center">
-                                    <input type="checkbox" name="attr_newinit_toggle" value="1" checked>
-                                    Dlx
-                                </div>
-                                <div class="sheet-col-1-3 sheet-small-label sheet-center">
-                                    <input class="sheet-underlined" type="number" name="attr_initiative" step="1" value="0">
-                                    +Misc
-                                </div>
-                                <div class="sheet-col-1-3 sheet-small-label sheet-center">
-                                    <select name="attr_initiativeadvantage">
-                                        <option value="2d20cs=1cf=20kl1">ADV</option>
-                                        <option value="1d20cs=1cf=20" selected>NO</option>
-                                        <option value="2d20cs=1cf=20kh1">DIS</option>
-                                    </select>
-                                    <br/>Advantage
-                                </div>
-    				            <div class="sheet-col-1-6 sheet-small-label sheet-center">
-                                    <button type="roll" name="roll_Initiative" value="&{template:5eDefault} {{ability=1}} {{title=Initiative Check}} {{subheader=@{character_name}}} {{check=[[@{initiativeadvantage}-(@{initiative})]]}} {{target=[[@{dexterity}]]}} {{gsresult=[[@{dexterity_gs}]]}} {{tfresult=[[@{dexterity_tf}]]}}"></button>
-                                    <div class="sheet-tiny-spacer"></div>Roll
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="sheet-row">
-                    <div class="sheet-col-1-2 sheet-padr">
-                        <div class="sheet-center sheet-small-label sheet-vert-bottom sheet-sub-header">Attack Bonus</div>
-                        <div class="sheet-row">
-                            <div class="sheet-col-1-1 sheet-small-label sheet-center">
-                                <input class="sheet-underlined sheet-center" type="number" name="attr_class_hitbonus" step="1" value="0">
-                                <br/>&nbsp;
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sheet-col-1-2 sheet-padr">
-                        <div class="sheet-center sheet-small-label sheet-vert-bottom sheet-sub-header">Armour Class</div>
-                        <div class="sheet-row">
-                            <div class="sheet-col-1-1 sheet-small-label sheet-center">
-                                <input class="sheet-underlined sheet-center" type="number" name="attr_armour_class" step="1" value="10">
-                                <br/>&nbsp;
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="sheet-row">
-                    <div class="sheet-col-1 sheet-padr">
-                        <div class="sheet-center sheet-small-label sheet-vert-bottom sheet-sub-header">Reroll Pool</div>
-                    </div>
-                    <div class="sheet-col-3-8 sheet-padr">
-                        <div class="sheet-row">
-                            <div class="sheet-col-1-2 sheet-small-label sheet-center">
-                                <input class="sheet-underlined" type="number" name="attr_rerolls" step="1" value="0">
-                                <br/>Current
-                            </div>
-                            <div class="sheet-col-1-2 sheet-small-label sheet-center">
-                                <input class="sheet-underlined" type="number" name="attr_rerolls_max" value="0">
-                                <br/>Max
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sheet-col-5-8 sheet-padr">
-                        <div class="sheet-row">
-                            <div class="sheet-col-1-4 sheet-tiny-note">Skill&nbsp;checks,&nbsp;Luck&nbsp;rolls,&nbsp;Rest recoveries,&nbsp;and&nbsp;Dead&nbsp;tests.</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="sheet-row">
-                    <div class="sheet-col-1 sheet-padr">
-                        <div class="sheet-center sheet-small-label sheet-vert-bottom sheet-sub-header">Dark and Dangerous Magic</div>
-                    </div>
-                    <div class="sheet-col-1-8 sheet-padr">
-                        <button type="roll" class="sheet-roll" name="roll_DDM" value="&{template:5eDefault} {{ddm=1}} {{title=Dark & Dangerous Magic}} {{subheader=@{character_name}}} {{ddmroll=[[1d20]]}} {{ddmthreshold=[[@{DDM}]]}}"></button>
-                    </div>
-                    <div class="sheet-col-3-16 sheet-padr">
-                        <input class="sheet-underlined sheet-center" type="number" name="attr_DDM" step="1" value="1">
-                    </div>
-                    <div class="sheet-col-11-16 sheet-padr">
-                        <div class="sheet-row">
-                            <div class="sheet-col-1-4 sheet-tiny-note">Threshold&nbsp;by&nbsp;which&nbsp;a&nbsp;roll&nbsp;on&nbsp;the Dark&nbsp;and&nbsp;Dangerous&nbsp;Magic&nbsp;table&nbsp;is triggered.</div>
-                        </div>
-                    </div>
-                </div>
+.charsheet .repcontainer .repitem .itemcontrol .repcontrol_del {  
+    float: left !important;
+    z-index: 99999 !important;
+}
 
-            </div>
-        </div>
-    </div>
-<!----------------------------------------------------------->
-    <!--Class-->
-    <div class="sheet-section-class">
-		<div class="sheet-row">
-			<div class="sheet-col-1-2 sheet-padr">
-				<h4 class="sheet-center">Features</h4>
-				<div class="sheet-row sheet-sub-header">
-					<div class="sheet-col-2-7 sheet-center sheet-small-label">Feature Name / Uses</div>
-					<div class="sheet-col-5-7 sheet-center sheet-small-label">Feature Description</div>
-				</div>
-				<fieldset class="repeating_features">
-				    <div class="sheet-row">
-                        <div class="sheet-col-2-7">
-                            <div class="sheet-row">
-                                <input type="text" name="attr_featurename">
-                            </div>
-                            <div class="sheet-row">
-                                <div class="sheet-col-1-4">
-                                    <button type="roll" name="roll_Feature" value="&{template:5eDefault} {{feature=1}} {{featuresubheader=@{character_name}}} {{featureuses=@{feature_uses}}} {{featureusesmax=@{feature_uses|max}}} {{featureusesmaxnum=[[@{feature_uses|max}]]}} {{title=@{featurename}}} {{featureshowdesc=@{featuredescr}}}"></button>
-                                </div>
-                                <div class="sheet-col-3-10">
-                                    <input type="number" name="attr_feature_uses" min="0" step="1" value="0" />
-                                </div>
-                                <div class="sheet-col-1-10 sheet-tiny-note">
-                                    &nbsp;/&nbsp;
-                                </div>
-                                <div class="sheet-col-3-10">
-                                    <input type="number" name="attr_feature_uses_max" min="0" step="1" value="0" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sheet-col-5-7">
-                            <div class="sheet-auto-expand">
-                            	<span name="attr_featuredescr"></span>
-                            	<textarea class="sheet-auto-expand" spellcheck="false" name="attr_featuredescr"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                </fieldset>
-			</div>
-			<!--Buncha Stats-->
-			<div class="sheet-col-1-2 sheet-padr">
-				<h4 class="sheet-center">Skills</h4>
-				<div class="sheet-row sheet-sub-header">
-					<div class="sheet-col-1-2 sheet-center sheet-small-label">Skill Name</div>
-					<div class="sheet-col-1-7 sheet-center sheet-small-label">Attribute</div>
-					<div class="sheet-col-1-7 sheet-center sheet-small-label">Advantage</div>
-					<div class="sheet-col-1-10 sheet-center sheet-small-label">Modifier</div>
-					<div class="sheet-col-1-10 sheet-center sheet-small-label">Roll</div>
-				</div>
-				<fieldset class="repeating_skills">
-				    <div class="sheet-row">
-                        <div class="sheet-col-1-2">
-                            <input type="text" name="attr_skillname">
-                        </div>
-                        <div class="sheet-col-1-7">
-                            <select name="attr_skilltype">
-                                <option value="STR" selected>STR</option>
-                                <option value="DEX">DEX</option>
-                                <option value="CON">CON</option>
-                                <option value="INT">INT</option>
-                                <option value="PER">PER</option>
-                                <option value="WILL">WILL</option>
-                                <option value="CHA">CHA</option>
-                                <option value="LUCK">LUCK</option>
-                            </select>
-                        </div>
-                        <input type="hidden" name="attr_skilltarget" value="@{strength}" readonly>
-                        <input type="hidden" name="attr_skillgs" value="@{strength_gs}" readonly>
-                        <input type="hidden" name="attr_skilltf" value="@{strength_tf}" readonly>
-                        <div class="sheet-col-1-7">
-                            <select name="attr_skilladvantage">
-                                <option value="2d20cs=1cf=20kl1">ADV</option>
-                                <option value="1d20cs=1cf=20" selected>NO</option>
-                                <option value="2d20cs=1cf=20kh1">DIS</option>
-                            </select>
-                        </div>
-                        <div class="sheet-col-1-10">
-                            <input type="number" name="attr_skillmod" value="0" step="1">
-                        </div>
-                        <div class="sheet-col-1-10 sheet-center">
-                            <button type="roll" name="roll_Skill" value="&{template:5eDefault} {{ability=1}} {{title=@{skillname} Check (@{skilltype})}} {{subheader=@{character_name}}} {{check=[[@{skilladvantage}-1-(@{skillmod})]]}} {{target=[[@{skilltarget}]]}} {{gsresult=[[@{skillgs}]]}} {{tfresult=[[@{skilltf}]]}}"></button>
-                        </div>
-                    </div>
-                </fieldset>
-            </div>
-        </div>
-    </div>
-<!----------------------------------------------------------->
-    <!--Combat-->
-    <div class="sheet-section-combat">
-        <span class="sheet-spacer"></span>
-        <div class="sheet-col-1">
-            <h4 class="sheet-center">Melee Weapons</h4>
-            <div class="sheet-row">
-                <div class="sheet-row sheet-sub-header">
-                    <div class="sheet-col-9-24 sheet-center sheet-small-label">Weapon Name</div>
-                    <div class="sheet-col-1-12 sheet-center sheet-small-label">Advantage</div>
-                    <div class="sheet-col-1-12 sheet-center sheet-small-label sheet-padr">+Hit</div>
-                    <div class="sheet-col-1-12 sheet-center sheet-small-label sheet-padr">+Dmg</div>
-                    <div class="sheet-col-1-6 sheet-center sheet-small-label">Base Dmg</div>
-                    <div class="sheet-col-1-12 sheet-center sheet-small-label">Crit Range</div>
-                    <div class="sheet-col-1-12 sheet-center sheet-small-label">Crit Dmg</div>
-                    <div class="sheet-col-1-24 sheet-center sheet-small-label sheet-padr">Roll</div>
-                </div>
-            </div>
-        </div>
-        <fieldset class="repeating_meleeattacks">
-            <div class="sheet-row">
-                <div class="sheet-col-9-24 sheet-padr"><input type="text" name="attr_melee_weaponname"></div>
-                <div class="sheet-col-1-12 sheet-padr">
-                    <select name="attr_melee_advantage">
-                        <option value="2d20kh1">ADV</option>
-                        <option value="1d20" selected>NO</option>
-                        <option value="2d20kl1">DIS</option>
-                    </select>
-                </div>
-                <div class="sheet-col-1-12 sheet-padr"><input type="number" name="attr_melee_hitbonus" value="0" step="1"></div>
-                <div class="sheet-col-1-12 sheet-padr"><input type="number" name="attr_melee_dmgbonus" value="0" step="1"></div>
-                <div class="sheet-col-1-6 sheet-padr"><input class="sheet-center" type="text" name="attr_melee_dmgbase" value="1d4"></div>
-                <div class="sheet-col-1-12 sheet-padr">
-                    <select name="attr_melee_critrange">
-                                <option value="" selected>20</option>
-                                <option value="cs>19">19-20</option>
-                                <option value="cs>18">18-20</option>
-                    </select>
-                </div>
-                <div class="sheet-col-1-12 sheet-padr"><input type="number" name="attr_melee_dmgcrit" value="4"></div>
-                <div class="sheet-col-1-24 sheet-padr sheet-center">
-                    <button type="roll" class="sheet-roll" name="roll_MeleeAttack" value="&{template:5eDefault} {{weapon=1}} {{title=@{melee_weaponname}}} {{subheader=@{character_name}}} {{attack=[[@{melee_advantage}@{melee_critrange}+@{class_hitbonus}+(@{strength_mod})+(@{melee_hitbonus})]]}} {{damage=[[@{melee_dmgbase}+(@{strength_mod})+(@{melee_dmgbonus})]]}} {{critdamage=[[@{melee_dmgcrit}]]}} @{meleedescr_toggle}"></button>
-                </div>
-            </div>
-            <div class="sheet-row">
-                <div class="sheet-col-23-24 sheet-padr">
-                    <div class="sheet-auto-expand">
-                    	<span name="attr_melee_description"></span>
-                    	<textarea class="sheet-auto-expand" spellcheck="false" name="attr_melee_description" placeholder="Notes: STR mod factored in."></textarea>
-                    </div>
-                </div>
-                <div class="sheet-col-1-24 sheet-padr">
-                    <input type="checkbox" name="attr_meleedescr_toggle" value="@{meleedescr_var}">
-                    <input type="hidden" name="attr_meleedescr_var" value={{attackdescription=@{melee_description}}}>
-                </div>
-            </div><hr/>
-            <span class="sheet-spacer"></span>
-        </fieldset>
-        <div class="sheet-col-1">
-            <h4 class="sheet-center">Ranged Weapons</h4>
-            <div class="sheet-row">
-                <div class="sheet-row sheet-sub-header">
-                    <div class="sheet-col-7-24 sheet-center sheet-small-label">Weapon Name</div>
-                    <div class="sheet-col-1-12 sheet-center sheet-small-label">Advantage</div>
-                    <div class="sheet-col-1-12 sheet-center sheet-small-label">Range</div>
-                    <div class="sheet-col-1-12 sheet-center sheet-small-label sheet-padr">+Hit</div>
-                    <div class="sheet-col-1-12 sheet-center sheet-small-label sheet-padr">+Dmg</div>
-                    <div class="sheet-col-1-6 sheet-center sheet-small-label">Base Dmg</div>
-                    <div class="sheet-col-1-12 sheet-center sheet-small-label">Crit Range</div>
-                    <div class="sheet-col-1-12 sheet-center sheet-small-label">Crit Dmg</div>
-                    <div class="sheet-col-1-24 sheet-center sheet-small-label sheet-padr">Roll</div>
-                </div>
-            </div>
-        </div>
-        <fieldset class="repeating_rangedattacks">
-            <div class="sheet-row">
-                <div class="sheet-col-7-24 sheet-padr"><input type="text" name="attr_range_weaponname"></div>
-                <div class="sheet-col-1-12 sheet-padr">
-                    <select name="attr_range_advantage">
-                        <option value="2d20kh1">ADV</option>
-                        <option value="1d20" selected>NO</option>
-                        <option value="2d20kl1">DIS</option>
-                    </select>
-                </div>
-                <div class="sheet-col-1-12 sheet-padr"><input type="text" name="attr_range_distance"></div>
-                <div class="sheet-col-1-12 sheet-padr"><input type="number" name="attr_range_hitbonus" value="0" step="1"></div>
-                <div class="sheet-col-1-12 sheet-padr"><input type="number" name="attr_range_dmgbonus" value="0" step="1"></div>
-                <div class="sheet-col-1-6 sheet-padr"><input class="sheet-center" type="text" name="attr_range_dmgbase" value="1d4"></div>
-                <div class="sheet-col-1-12 sheet-padr">
-                    <select name="attr_range_critrange">
-                                <option value="" selected>20</option>
-                                <option value="cs>19">19-20</option>
-                                <option value="cs>18">18-20</option>
-                    </select>
-                </div>
-                <div class="sheet-col-1-12 sheet-padr"><input type="number" name="attr_range_dmgcrit" value="4"></div>
-                <div class="sheet-col-1-24 sheet-padr sheet-center">
-                    <button type="roll" class="sheet-roll" name="roll_RangeAttack" value="&{template:5eDefault} {{weapon=1}} {{title=@{range_weaponname} (Range:@{range_distance})}} {{subheader=@{character_name}}} {{attack=[[@{range_advantage}@{range_critrange}+@{class_hitbonus}+(@{dexterity_mod})+(@{range_hitbonus})]]}} {{damage=[[@{range_dmgbase}+(@{dexterity_mod})+(@{range_dmgbonus})]]}} {{critdamage=[[@{range_dmgcrit}]]}} @{rangedescr_toggle}"></button>
-                </div>
-            </div>
-            <div class="sheet-row">
-                <div class="sheet-col-23-24 sheet-padr">
-                    <div class="sheet-auto-expand">
-                    	<span name="attr_range_description"></span>
-                    	<textarea class="sheet-auto-expand" spellcheck="false" name="attr_range_description" placeholder="Notes: DEX mod factored in."></textarea>
-                    </div>
-                </div>
-                <div class="sheet-col-1-24 sheet-padr">
-                    <input type="checkbox" name="attr_rangedescr_toggle" value="@{rangedescr_var}">
-                    <input type="hidden" name="attr_rangedescr_var" value={{attackdescription=@{range_description}}}>
-                </div>
-            </div><hr/>
-            <span class="sheet-spacer"></span>
-        </fieldset>
-    </div>
-<!----------------------------------------------------------->
-    <!--Spellbook-->
-    <div class="sheet-section-spellbook">
-		<h4 class="sheet-center">Spellbook</h4>
-        <span class="sheet-spacer"></span>
-		<input type="radio" name="attr_spellpagetab" class="sheet-spellpagetab sheet-spelltab99" value="99" title="Show All"/>
-		<span class="sheet-spellpagetab sheet-spelltab99">Show All</span>
-		<input type="radio" name="attr_spellpagetab" class="sheet-spellpagetab sheet-spelltab1" value="1" title="Level 1" checked/>
-		<span class="sheet-spellpagetab sheet-spelltab1">Level 1</span>
-		<input type="radio" name="attr_spellpagetab" class="sheet-spellpagetab sheet-spelltab2" value="2" title="Level 2"/>
-		<span class="sheet-spellpagetab sheet-spelltab2">Level 2</span>
-		<input type="radio" name="attr_spellpagetab" class="sheet-spellpagetab sheet-spelltab3" value="3" title="Level 3"/>
-		<span class="sheet-spellpagetab sheet-spelltab3">Level 3</span>
-		<input type="radio" name="attr_spellpagetab" class="sheet-spellpagetab sheet-spelltab4" value="4" title="Level 4"/>
-		<span class="sheet-spellpagetab sheet-spelltab4">Level 4</span>
-		<input type="radio" name="attr_spellpagetab" class="sheet-spellpagetab sheet-spelltab5" value="5" title="Level 5"/>
-		<span class="sheet-spellpagetab sheet-spelltab5">Level 5</span>
-		<input type="radio" name="attr_spellpagetab" class="sheet-spellpagetab sheet-spelltab6" value="6" title="Level 6"/>
-		<span class="sheet-spellpagetab sheet-spelltab6">Level 6</span>
-		<span class="sheet-spacer"></span>
-		<!-- BEGIN AUTO GENERATED SPELL PAGES -->
-	    <!-- BEGIN new spell page -->
-		<div class="sheet-spell-page1">
-		    <div class="sheet-row sheet-sub-header">
-				<div class="sheet-col-1 sheet-vert-bottom sheet-center sheet-small-label">
-				    <div class="sheet-row">
-				        <div class="sheet-col-6-7">
-				            Level 1
-				        </div>
-				        <div class="sheet-col-1-7">
-				            <div class="sheet-row">
-    				            <div class="sheet-col-1-3"><input type="number" name="attr_spellscast1" value="0" min="0" step="1"/></div>
-                                <div class="sheet-col-1-24">/</div>
-    				            <div class="sheet-col-1-3"><input type="number" name="attr_spellscast1_max" value="0" min="0" step="1"/></div>
-    				            <div class="sheet-col-7-24 sheet-small-label">Spells Cast</div>
-    				        </div>
-				        </div>
-				    </div>
-				</div>
-			</div>
-			<fieldset class="repeating_spellbooklevel1">
-			<!-- BEGIN spell row -->
-			    <span class="sheet-spacer"></span>
-    			<div class="sheet-margin-bottom sheet-padr sheet-padl">
-    				<div class="sheet-row">
-    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Spell Level</div>
-    					<div class="sheet-col-13-24 sheet-vert-bottom sheet-center sheet-small-label">Spell Name</div>
-    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Range</div>
-    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Duration</div>
-    					<div class="sheet-col-1-12 sheet-center sheet-small-label sheet-vert-bottom">Roll</div>
-    				</div>
-    				
-    				<div class="sheet-row">
-    					<div class="sheet-col-1-8 sheet-vert-middle sheet-center">Level 1<input type="hidden" name="attr_spellbaselevel" value="1"></div>
-    					<div class="sheet-col-13-24 sheet-vert-middle"><input type="text" name="attr_spellname"></div>
-    					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellrange"></div>
-    					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellduration"></div>
-                        <div class="sheet-col-1-12 sheet-center">
-                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell • @{spellscast1}/@{spellscast1|max}}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmrequest=[Dark & Dangerous Magic Roll](~@{character_id}|DDM)}}"></button>
-                        </div>
-    				</div>
-    				<div class="sheet-row">
-    				    <div class="sheet-col-1">
-        					<div class="sheet-auto-expand">
-                                <span name="attr_spelldescr"></span>
-                                <textarea class="sheet-auto-expand" spellcheck="false" name="attr_spelldescr" placeholder="Spell Description and Effects"></textarea>
-                            </div>
-                        </div>
-    				</div>
-    				<span class="sheet-spacer"></span>
-    			</div>
-			<!-- END spell row -->	
-			</fieldset>
-		</div>
-		<!-- END spell page -->
-		<!-- BEGIN new spell page -->
-		<div class="sheet-spell-page2">
-		    <div class="sheet-row sheet-sub-header">
-				<div class="sheet-col-1 sheet-vert-bottom sheet-center sheet-small-label">
-				    <div class="sheet-row">
-				        <div class="sheet-col-6-7">
-				            Level 2
-				        </div>
-				        <div class="sheet-col-1-7">
-				            <div class="sheet-row">
-    				            <div class="sheet-col-1-3"><input type="number" name="attr_spellscast2" value="0" min="0" step="1"/></div>
-                                <div class="sheet-col-1-24">/</div>
-    				            <div class="sheet-col-1-3"><input type="number" name="attr_spellscast2_max" value="0" min="0" step="1"/></div>
-    				            <div class="sheet-col-7-24 sheet-small-label">Spells Cast</div>
-    				        </div>
-				        </div>
-				    </div>
-				</div>
-			</div>
-			<fieldset class="repeating_spellbooklevel2">
-			<!-- BEGIN spell row -->
-			    <span class="sheet-spacer"></span>
-    			<div class="sheet-margin-bottom sheet-padr sheet-padl">
-    				<div class="sheet-row">
-    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Spell Level</div>
-    					<div class="sheet-col-13-24 sheet-vert-bottom sheet-center sheet-small-label">Spell Name</div>
-    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Range</div>
-    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Duration</div>
-    					<div class="sheet-col-1-12 sheet-center sheet-small-label sheet-vert-bottom">Roll</div>
-    				</div>
-    				
-    				<div class="sheet-row">
-    					<div class="sheet-col-1-8 sheet-vert-middle sheet-center">Level 2<input type="hidden" name="attr_spellbaselevel" value="2"></div>
-    					<div class="sheet-col-13-24 sheet-vert-middle"><input type="text" name="attr_spellname"></div>
-    					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellrange"></div>
-    					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellduration"></div>
-                        <div class="sheet-col-1-12 sheet-center">
-                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell • @{spellscast2}/@{spellscast2|max}}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmrequest=[Dark & Dangerous Magic Roll](~@{character_id}|DDM)}}"></button>
-                        </div>
-    				</div>
-    				<div class="sheet-row">
-    				    <div class="sheet-col-1">
-        					<div class="sheet-auto-expand">
-                                <span name="attr_spelldescr"></span>
-                                <textarea class="sheet-auto-expand" spellcheck="false" name="attr_spelldescr" placeholder="Spell Description and Effects"></textarea>
-                            </div>
-                        </div>
-    				</div>
-    				<span class="sheet-spacer"></span>
-    			</div>
-			<!-- END spell row -->	
-			</fieldset>
-		</div>
-		<!-- END spell page -->
-		<!-- BEGIN new spell page -->
-		<div class="sheet-spell-page3">
-		    <div class="sheet-row sheet-sub-header">
-				<div class="sheet-col-1 sheet-vert-bottom sheet-center sheet-small-label">
-				    <div class="sheet-row">
-				        <div class="sheet-col-6-7">
-				            Level 3
-				        </div>
-				        <div class="sheet-col-1-7">
-				            <div class="sheet-row">
-    				            <div class="sheet-col-1-3"><input type="number" name="attr_spellscast3" value="0" min="0" step="1"/></div>
-                                <div class="sheet-col-1-24">/</div>
-    				            <div class="sheet-col-1-3"><input type="number" name="attr_spellscast3_max" value="0" min="0" step="1"/></div>
-    				            <div class="sheet-col-7-24 sheet-small-label">Spells Cast</div>
-    				        </div>
-				        </div>
-				    </div>
-				</div>
-			</div>
-			<fieldset class="repeating_spellbooklevel3">
-			<!-- BEGIN spell row -->
-			    <span class="sheet-spacer"></span>
-    			<div class="sheet-margin-bottom sheet-padr sheet-padl">
-    				<div class="sheet-row">
-    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Spell Level</div>
-    					<div class="sheet-col-13-24 sheet-vert-bottom sheet-center sheet-small-label">Spell Name</div>
-    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Range</div>
-    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Duration</div>
-    					<div class="sheet-col-1-12 sheet-center sheet-small-label sheet-vert-bottom">Roll</div>
-    				</div>
-    				
-    				<div class="sheet-row">
-    					<div class="sheet-col-1-8 sheet-vert-middle sheet-center">Level 3<input type="hidden" name="attr_spellbaselevel" value="3"></div>
-    					<div class="sheet-col-13-24 sheet-vert-middle"><input type="text" name="attr_spellname"></div>
-    					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellrange"></div>
-    					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellduration"></div>
-                        <div class="sheet-col-1-12 sheet-center">
-                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell • @{spellscast3}/@{spellscast3|max}}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmrequest=[Dark & Dangerous Magic Roll](~@{character_id}|DDM)}}"></button>
-                        </div>
-    				</div>
-    				<div class="sheet-row">
-    				    <div class="sheet-col-1">
-        					<div class="sheet-auto-expand">
-                                <span name="attr_spelldescr"></span>
-                                <textarea class="sheet-auto-expand" spellcheck="false" name="attr_spelldescr" placeholder="Spell Description and Effects"></textarea>
-                            </div>
-                        </div>
-    				</div>
-    				<span class="sheet-spacer"></span>
-    			</div>
-			<!-- END spell row -->	
-			</fieldset>
-		</div>
-		<!-- END spell page -->
-		<!-- BEGIN new spell page -->
-		<div class="sheet-spell-page4">
-		    <div class="sheet-row sheet-sub-header">
-				<div class="sheet-col-1 sheet-vert-bottom sheet-center sheet-small-label">
-				    <div class="sheet-row">
-				        <div class="sheet-col-6-7">
-				            Level 4
-				        </div>
-				        <div class="sheet-col-1-7">
-				            <div class="sheet-row">
-    				            <div class="sheet-col-1-3"><input type="number" name="attr_spellscast4" value="0" min="0" step="1"/></div>
-                                <div class="sheet-col-1-24">/</div>
-    				            <div class="sheet-col-1-3"><input type="number" name="attr_spellscast4_max" value="0" min="0" step="1"/></div>
-    				            <div class="sheet-col-7-24 sheet-small-label">Spells Cast</div>
-    				        </div>
-				        </div>
-				    </div>
-				</div>
-			</div>
-			<fieldset class="repeating_spellbooklevel4">
-			<!-- BEGIN spell row -->
-			    <span class="sheet-spacer"></span>
-    			<div class="sheet-margin-bottom sheet-padr sheet-padl">
-    				<div class="sheet-row">
-    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Spell Level</div>
-    					<div class="sheet-col-13-24 sheet-vert-bottom sheet-center sheet-small-label">Spell Name</div>
-    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Range</div>
-    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Duration</div>
-    					<div class="sheet-col-1-12 sheet-center sheet-small-label sheet-vert-bottom">Roll</div>
-    				</div>
-    				
-    				<div class="sheet-row">
-    					<div class="sheet-col-1-8 sheet-vert-middle sheet-center">Level 4<input type="hidden" name="attr_spellbaselevel" value="4"></div>
-    					<div class="sheet-col-13-24 sheet-vert-middle"><input type="text" name="attr_spellname"></div>
-    					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellrange"></div>
-    					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellduration"></div>
-                        <div class="sheet-col-1-12 sheet-center">
-                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell • @{spellscast4}/@{spellscast4|max}}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmrequest=[Dark & Dangerous Magic Roll](~@{character_id}|DDM)}}"></button>
-                        </div>
-    				</div>
-    				<div class="sheet-row">
-    				    <div class="sheet-col-1">
-        					<div class="sheet-auto-expand">
-                                <span name="attr_spelldescr"></span>
-                                <textarea class="sheet-auto-expand" spellcheck="false" name="attr_spelldescr" placeholder="Spell Description and Effects"></textarea>
-                            </div>
-                        </div>
-    				</div>
-    				<span class="sheet-spacer"></span>
-    			</div>
-			<!-- END spell row -->	
-			</fieldset>
-		</div>
-		<!-- END spell page -->
-		<!-- BEGIN new spell page -->
-		<div class="sheet-spell-page5">
-		    <div class="sheet-row sheet-sub-header">
-				<div class="sheet-col-1 sheet-vert-bottom sheet-center sheet-small-label">
-				    <div class="sheet-row">
-				        <div class="sheet-col-6-7">Level 5</div>
-				        <div class="sheet-col-1-7">
-				            <div class="sheet-row">
-    				            <div class="sheet-col-1-3"><input type="number" name="attr_spellscast5" value="0" min="0" step="1"/></div>
-                                <div class="sheet-col-1-24">/</div>
-    				            <div class="sheet-col-1-3"><input type="number" name="attr_spellscast5_max" value="0" min="0" step="1"/></div>
-    				            <div class="sheet-col-7-24 sheet-small-label">Spells Cast</div>
-    				        </div>
-				        </div>
-				    </div>
-				</div>
-			</div>
-			<fieldset class="repeating_spellbooklevel5">
-			<!-- BEGIN spell row -->
-			    <span class="sheet-spacer"></span>
-    			<div class="sheet-margin-bottom sheet-padr sheet-padl">
-    				<div class="sheet-row">
-    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Spell Level</div>
-    					<div class="sheet-col-13-24 sheet-vert-bottom sheet-center sheet-small-label">Spell Name</div>
-    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Range</div>
-    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Duration</div>
-    					<div class="sheet-col-1-12 sheet-center sheet-small-label sheet-vert-bottom">Roll</div>
-    				</div>
-    				
-    				<div class="sheet-row">
-    					<div class="sheet-col-1-8 sheet-vert-middle sheet-center">Level 5<input type="hidden" name="attr_spellbaselevel" value="5"></div>
-    					<div class="sheet-col-13-24 sheet-vert-middle"><input type="text" name="attr_spellname"></div>
-    					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellrange"></div>
-    					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellduration"></div>
-                        <div class="sheet-col-1-12 sheet-center">
-                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell • @{spellscast5}/@{spellscast5|max}}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmrequest=[Dark & Dangerous Magic Roll](~@{character_id}|DDM)}}"></button>
-                        </div>
-    				</div>
-    				<div class="sheet-row">
-    				    <div class="sheet-col-1">
-        					<div class="sheet-auto-expand">
-                                <span name="attr_spelldescr"></span>
-                                <textarea class="sheet-auto-expand" spellcheck="false" name="attr_spelldescr" placeholder="Spell Description and Effects"></textarea>
-                            </div>
-                        </div>
-    				</div>
-    				<span class="sheet-spacer"></span>
-    			</div>
-			<!-- END spell row -->	
-			</fieldset>
-		</div>
-		<!-- END spell page -->
-		<!-- BEGIN new spell page -->
-		<div class="sheet-spell-page6">
-		    <div class="sheet-row sheet-sub-header">
-				<div class="sheet-col-1 sheet-vert-bottom sheet-center sheet-small-label">
-				    <div class="sheet-row">
-				        <div class="sheet-col-6-7">Level 6</div>
-				        <div class="sheet-col-1-7">
-				            <div class="sheet-row">
-    				            <div class="sheet-col-1-3"><input type="number" name="attr_spellscast6" value="0" min="0" step="1"/></div>
-                                <div class="sheet-col-1-24">/</div>
-    				            <div class="sheet-col-1-3"><input type="number" name="attr_spellscast6_max" value="0" min="0" step="1"/></div>
-    				            <div class="sheet-col-7-24 sheet-small-label">Spells Cast</div>
-    				        </div>
-				        </div>
-				    </div>
-				</div>
-			</div>
-			<fieldset class="repeating_spellbooklevel6">
-			<!-- BEGIN spell row -->
-			    <span class="sheet-spacer"></span>
-    			<div class="sheet-margin-bottom sheet-padr sheet-padl">
-    				<div class="sheet-row">
-    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Spell Level</div>
-    					<div class="sheet-col-13-24 sheet-vert-bottom sheet-center sheet-small-label">Spell Name</div>
-    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Range</div>
-    					<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label">Duration</div>
-    					<div class="sheet-col-1-12 sheet-center sheet-small-label sheet-vert-bottom">Roll</div>
-    				</div>
-    				
-    				<div class="sheet-row">
-    					<div class="sheet-col-1-8 sheet-vert-middle sheet-center">Level 6<input type="hidden" name="attr_spellbaselevel" value="6"></div>
-    					<div class="sheet-col-13-24 sheet-vert-middle"><input type="text" name="attr_spellname"></div>
-    					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellrange"></div>
-    					<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" name="attr_spellduration"></div>
-                        <div class="sheet-col-1-12 sheet-center">
-                            <button type="roll" class="sheet-roll" name="roll_SpellCast" value="&{template:5eDefault} {{spell=1}} {{spellshowinfoblock=1}} {{spellshowdesc=1}} {{title=@{spellname}}} {{subheader=@{character_name}}} {{subheaderright=Level @{spellbaselevel} Spell • @{spellscast6}/@{spellscast6|max}}} {{spellduration=@{spellduration}}} {{spellrange=@{spellrange}}} {{spelldescription=@{spelldescr}}} {{ddmrequest=[Dark & Dangerous Magic Roll](~@{character_id}|DDM)}}"></button>
-                        </div>
-    				</div>
-    				<div class="sheet-row">
-    				    <div class="sheet-col-1">
-        					<div class="sheet-auto-expand">
-                                <span name="attr_spelldescr"></span>
-                                <textarea class="sheet-auto-expand" spellcheck="false" name="attr_spelldescr" placeholder="Spell Description and Effects"></textarea>
-                            </div>
-                        </div>
-    				</div>
-    				<span class="sheet-spacer"></span>
-    			</div>
-			<!-- END spell row -->	
-			</fieldset>
-		</div>
-		<!-- END spell page -->
-		<!-- END AUTO GENERATED SPELL PAGES -->
-	</div>
+.sheet-rolltemplate-5eDefault .sheet-rt-card {
+    width:95%;
+    background-color:#FFFFFF;
+	font-size: 11px;
 
-<!----------------------------------------------------------->
-    <!--Inventory-->
-<!----------------------------------------------------------->
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 
-	<!--Inventory -->
-	<div class="sheet-section-inventory">
-		<div class="sheet-row ">
-			<!-- Loot-->
-			<div class="sheet-col-1-2 sheet-padr">
-				<h4 class="sheet-center">Coin</h4>
-				<div class="sheet-row sheet-sub-header">
-					<div class="sheet-col-1-6 sheet-center sheet-small-label">CP</div>
-					<div class="sheet-col-1-6 sheet-center sheet-small-label">SP</div>
-					<div class="sheet-col-1-6 sheet-center sheet-small-label">EP</div>
-					<div class="sheet-col-1-6 sheet-center sheet-small-label">GP</div>
-					<div class="sheet-col-1-6 sheet-center sheet-small-label">PP</div>
-					<div class="sheet-col-1-6 sheet-center sheet-small-label">Total (GP)</div>
-				</div>
-				<div class="sheet-row">
-					<div class="sheet-col-1-6" title="Copper Pieces"><input type="number" name="attr_cp" value="0" min="0" step="1"></div>
-					<div class="sheet-col-1-6" title="Silver Pieces"><input type="number" name="attr_sp" value="0" min="0" step="1"></div>
-					<div class="sheet-col-1-6" title="Electrum Pieces"><input type="number" name="attr_ep" value="0" min="0" step="1"></div>
-					<div class="sheet-col-1-6" title="Gold Pieces"><input type="number" name="attr_gp" value="0" min="0" step="1"></div>
-					<div class="sheet-col-1-6" title="Platinum Pieces"><input type="number" name="attr_pp" value="0" min="0" step="1"></div>
-					<div class="sheet-col-1-6" title="Total (in Gold Pieces)"><input type="number" name="attr_money_total_gp" value="(@{cp} / 100) + (@{sp} / 10) + (@{ep} / 2) + @{gp} + (@{pp} * 5) " disabled="disabled"></div>
-				</div>
-				<h4 class="sheet-center">Treasure/Loot/Inventory Notes</h4>
-				<textarea name="attr_lootnotes"></textarea>
-			</div>
-			<!--Encumbrance and Inventory Locations -->
-			<div class="sheet-col-1-2">
-				<h4 class="sheet-center">Inventory Locations</h4>
-				<div class="sheet-row sheet-sub-header">
-					<div class="sheet-col-1-8 sheet-center sheet-small-label sheet-padl">Tab</div>
-					<div class="sheet-col-7-8 sheet-center sheet-small-label">Name</div>
-				</div>
-				<div class="sheet-row">
-					<div class="sheet-col-1-8 sheet-center sheet-padl">1</div>
-					<div class="sheet-col-7-8 sheet-center"><input type="text" name="attr_itab1" value="Worn"></div>
-				</div>
-				<div class="sheet-row">
-					<div class="sheet-col-1-8 sheet-center sheet-padl">2</div>
-					<div class="sheet-col-7-8 sheet-center"><input type="text" name="attr_itab2" value="Carried"></div>
-				</div>
-				<div class="sheet-row">
-					<div class="sheet-col-1-8 sheet-center sheet-padl">3</div>
-					<div class="sheet-col-7-8 sheet-center"><input type="text" name="attr_itab3" value="Backpack"></div>
-				</div>
-				<div class="sheet-row">
-					<div class="sheet-col-1-8 sheet-center sheet-padl">4</div>
-					<div class="sheet-col-7-8 sheet-center"><input type="text" name="attr_itab4" value="Belt pouch"></div>
-				</div>
-				<div class="sheet-row">
-					<div class="sheet-col-1-8 sheet-center sheet-padl">5</div>
-					<div class="sheet-col-7-8 sheet-center"><input type="text" name="attr_itab5" value="Sack large"></div>
-				</div>
-				<div class="sheet-row">
-					<div class="sheet-col-1-8 sheet-center sheet-padl">6</div>
-					<div class="sheet-col-7-8 sheet-center"><input type="text" name="attr_itab6" value="Mount"></div>
-				</div>
-				<div class="sheet-row">
-					<div class="sheet-col-1-8 sheet-center sheet-padl">7</div>
-					<div class="sheet-col-7-8 sheet-center"><input type="text" name="attr_itab7" value="Other"></div>
-				</div>
-			</div>
-		</div>
-		<h4 class="sheet-center">Inventory</h4>
-		<input type="checkbox" name="attr_inventorytab1" class="sheet-inventorytab sheet-inventorytab1" value="1" title="Page 1" />
-		<span class="sheet-inventorytab sheet-inventorytab1" name="attr_itab1"></span>
-		<input type="checkbox" name="attr_inventorytab2" class="sheet-inventorytab sheet-inventorytab2" value="2" title="Page 2" />
-		<span class="sheet-inventorytab sheet-inventorytab2" name="attr_itab2"></span>
-		<input type="checkbox" name="attr_inventorytab3" class="sheet-inventorytab sheet-inventorytab3" value="3" title="Page 3" />
-		<span class="sheet-inventorytab sheet-inventorytab3" name="attr_itab3"></span>
-		<input type="checkbox" name="attr_inventorytab4" class="sheet-inventorytab sheet-inventorytab4" value="4" title="Page 4" />
-		<span class="sheet-inventorytab sheet-inventorytab4" name="attr_itab4"></span>
-		<input type="checkbox" name="attr_inventorytab5" class="sheet-inventorytab sheet-inventorytab5" value="5" title="Page 5" />
-		<span class="sheet-inventorytab sheet-inventorytab5" name="attr_itab5"></span>
-		<input type="checkbox" name="attr_inventorytab6" class="sheet-inventorytab sheet-inventorytab6" value="6" title="Page 6" />
-		<span class="sheet-inventorytab sheet-inventorytab6" name="attr_itab6"></span>
-		<input type="checkbox" name="attr_inventorytab7" class="sheet-inventorytab sheet-inventorytab7" value="7" title="Page 7" />
-		<span class="sheet-inventorytab sheet-inventorytab7" name="attr_itab7"></span>
-		<span class="sheet-spacer"></span>
-		<!-- Inventory Page 1-->
-		<div class="sheet-inventory-page1">
-			<div class="sheet-row sheet-sub-header">
-			    <div class="sheet-col-1 sheet-center sheet-small-label sheet-padl"><span name="attr_itab1"></span></div>
-				<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-padl">Name</div>
-				<div class="sheet-col-2-21 sheet-center sheet-small-label">Qty</div>
-				<div class="sheet-col-2-21 sheet-center sheet-small-label">Uses</div>
-				<div class="sheet-col-13-24 sheet-center sheet-small-label sheet-padl">Notes</div>
-			</div>
-			<fieldset class="repeating_inventtab1">
-				<div class="sheet-row">
-					<div class="sheet-col-1-4 sheet-small-label sheet-left"><input type="text" name="attr_itemname"></div>
-					<div class="sheet-col-2-21 sheet-padl sheet-center"><input type="number" name="attr_itemquantity"></div>
-					<div class="sheet-col-2-21 sheet-padl sheet-center"><input type="number" name="attr_itemuses"></div>
-					<div class="sheet-col-13-24 sheet-padl sheet-small-label sheet-left"><input type="text" name="attr_itemdesc"></div>
-				</div>
-			</fieldset>
-		</div>
-		<!-- Inventory Page 2-->
-		<div class="sheet-inventory-page2">
-			<div class="sheet-row sheet-sub-header">
-			    <div class="sheet-col-1 sheet-center sheet-small-label sheet-padl"><span name="attr_itab2"></span></div>
-				<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-padl">Name</div>
-				<div class="sheet-col-2-21 sheet-center sheet-small-label">Qty</div>
-				<div class="sheet-col-2-21 sheet-center sheet-small-label">Uses</div>
-				<div class="sheet-col-13-24 sheet-center sheet-small-label sheet-padl">Notes</div>
-			</div>
-			<fieldset class="repeating_inventtab2">
-				<div class="sheet-row">
-					<div class="sheet-col-1-4 sheet-small-label sheet-left"><input type="text" name="attr_itemname"></div>
-					<div class="sheet-col-2-21 sheet-padl sheet-center"><input type="number" name="attr_itemquantity"></div>
-					<div class="sheet-col-2-21 sheet-padl sheet-center"><input type="number" name="attr_itemuses"></div>
-					<div class="sheet-col-13-24 sheet-padl sheet-small-label sheet-left"><input type="text" name="attr_itemdesc"></div>
-				</div>
-			</fieldset>
-		</div>
-		<!-- Inventory Page 3-->
-		<div class="sheet-inventory-page3">
-			<div class="sheet-row sheet-sub-header">
-			    <div class="sheet-col-1 sheet-center sheet-small-label sheet-padl"><span name="attr_itab3"></span></div>
-				<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-padl">Name</div>
-				<div class="sheet-col-2-21 sheet-center sheet-small-label">Qty</div>
-				<div class="sheet-col-2-21 sheet-center sheet-small-label">Uses</div>
-				<div class="sheet-col-13-24 sheet-center sheet-small-label sheet-padl">Notes</div>
-			</div>
-			<fieldset class="repeating_inventtab3">
-				<div class="sheet-row">
-					<div class="sheet-col-1-4 sheet-small-label sheet-left"><input type="text" name="attr_itemname"></div>
-					<div class="sheet-col-2-21 sheet-padl sheet-center"><input type="number" name="attr_itemquantity"></div>
-					<div class="sheet-col-2-21 sheet-padl sheet-center"><input type="number" name="attr_itemuses"></div>
-					<div class="sheet-col-13-24 sheet-padl sheet-small-label sheet-left"><input type="text" name="attr_itemdesc"></div>
-				</div>
-			</fieldset>
-		</div>
-		<!-- Inventory Page 4-->
-		<div class="sheet-inventory-page4">
-			<div class="sheet-row sheet-sub-header">
-			    <div class="sheet-col-1 sheet-center sheet-small-label sheet-padl"><span name="attr_itab4"></span></div>
-				<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-padl">Name</div>
-				<div class="sheet-col-2-21 sheet-center sheet-small-label">Qty</div>
-				<div class="sheet-col-2-21 sheet-center sheet-small-label">Uses</div>
-				<div class="sheet-col-13-24 sheet-center sheet-small-label sheet-padl">Notes</div>
-			</div>
-			<fieldset class="repeating_inventtab4">
-				<div class="sheet-row">
-					<div class="sheet-col-1-4 sheet-small-label sheet-left"><input type="text" name="attr_itemname"></div>
-					<div class="sheet-col-2-21 sheet-padl sheet-center"><input type="number" name="attr_itemquantity"></div>
-					<div class="sheet-col-2-21 sheet-padl sheet-center"><input type="number" name="attr_itemuses"></div>
-					<div class="sheet-col-13-24 sheet-padl sheet-small-label sheet-left"><input type="text" name="attr_itemdesc"></div>
-				</div>
-			</fieldset>
-		</div>
-		<!-- Inventory Page 5-->
-		<div class="sheet-inventory-page5">
-			<div class="sheet-row sheet-sub-header">
-			    <div class="sheet-col-1 sheet-center sheet-small-label sheet-padl"><span name="attr_itab5"></span></div>
-				<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-padl">Name</div>
-				<div class="sheet-col-2-21 sheet-center sheet-small-label">Qty</div>
-				<div class="sheet-col-2-21 sheet-center sheet-small-label">Uses</div>
-				<div class="sheet-col-13-24 sheet-center sheet-small-label sheet-padl">Notes</div>
-			</div>
-			<fieldset class="repeating_inventtab5">
-				<div class="sheet-row">
-					<div class="sheet-col-1-4 sheet-small-label sheet-left"><input type="text" name="attr_itemname"></div>
-					<div class="sheet-col-2-21 sheet-padl sheet-center"><input type="number" name="attr_itemquantity"></div>
-					<div class="sheet-col-2-21 sheet-padl sheet-center"><input type="number" name="attr_itemuses"></div>
-					<div class="sheet-col-13-24 sheet-padl sheet-small-label sheet-left"><input type="text" name="attr_itemdesc"></div>
-				</div>
-			</fieldset>
-		</div>
-		<!-- Inventory Page 6-->
-		<div class="sheet-inventory-page6">
-			<div class="sheet-row sheet-sub-header">
-			    <div class="sheet-col-1 sheet-center sheet-small-label sheet-padl"><span name="attr_itab6"></span></div>
-				<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-padl">Name</div>
-				<div class="sheet-col-2-21 sheet-center sheet-small-label">Qty</div>
-				<div class="sheet-col-2-21 sheet-center sheet-small-label">Uses</div>
-				<div class="sheet-col-13-24 sheet-center sheet-small-label sheet-padl">Notes</div>
-			</div>
-			<fieldset class="repeating_inventtab6">
-				<div class="sheet-row">
-					<div class="sheet-col-1-4 sheet-small-label sheet-left"><input type="text" name="attr_itemname"></div>
-					<div class="sheet-col-2-21 sheet-padl sheet-center"><input type="number" name="attr_itemquantity"></div>
-					<div class="sheet-col-2-21 sheet-padl sheet-center"><input type="number" name="attr_itemuses"></div>
-					<div class="sheet-col-13-24 sheet-padl sheet-small-label sheet-left"><input type="text" name="attr_itemdesc"></div>
-				</div>
-			</fieldset>
-		</div>
-		<!-- Inventory Page 7-->
-		<div class="sheet-inventory-page7">
-			<div class="sheet-row sheet-sub-header">
-			    <div class="sheet-col-1 sheet-center sheet-small-label sheet-padl"><span name="attr_itab7"></span></div>
-				<div class="sheet-col-1-4 sheet-center sheet-small-label sheet-padl">Name</div>
-				<div class="sheet-col-2-21 sheet-center sheet-small-label">Qty</div>
-				<div class="sheet-col-2-21 sheet-center sheet-small-label">Uses</div>
-				<div class="sheet-col-13-24 sheet-center sheet-small-label sheet-padl">Notes</div>
-			</div>
-			<fieldset class="repeating_inventtab7">
-				<div class="sheet-row">
-					<div class="sheet-col-1-4 sheet-small-label sheet-left"><input type="text" name="attr_itemname"></div>
-					<div class="sheet-col-2-21 sheet-padl sheet-center"><input type="number" name="attr_itemquantity"></div>
-					<div class="sheet-col-2-21 sheet-padl sheet-center"><input type="number" name="attr_itemuses"></div>
-					<div class="sheet-col-13-24 sheet-padl sheet-small-label sheet-left"><input type="text" name="attr_itemdesc"></div>
-				</div>
-			</fieldset>
-		</div>
-	</div>
-<!----------------------------------------------------------->
-    <!--Injury-->
-    <div class="sheet-section-injury">
-		<div class="sheet-row">
-			<div class="sheet-col-1 sheet-padr">
-				<h4 class="sheet-center">Injuries & Setbacks</h4>
-				<div class="sheet-row sheet-sub-header">
-					<div class="sheet-col-1-6 sheet-center sheet-small-label">Type</div>
-					<div class="sheet-col-5-6 sheet-center sheet-small-label">Description</div>
-				</div>
-				<fieldset class="repeating_injuries">
-				    <div class="sheet-row">
-                        <div class="sheet-col-1-6">
-                            <input type="text" name="attr_injuryname">
-                        </div>
-                        <div class="sheet-col-5-6">
-                            <div class="sheet-auto-expand">
-                            	<span name="attr_injurydescr"></span>
-                            	<textarea class="sheet-auto-expand" spellcheck="false" name="attr_injurydescr"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                </fieldset>
-			</div>
-        </div>
-    </div>
-<!----------------------------------------------------------->
-</div>
-<!-- Roll Templates -->
-<rolltemplate class="sheet-rolltemplate-5eDefault">
-	<div class="sheet-rt-card">
-		<div class="sheet-rt-header{{#weapon}} sheet-weapon{{/weapon}}{{#spell}} sheet-spell{{/spell}}{{#ability}} sheet-ability{{/ability}}{{#save}} sheet-save{{/save}}{{#feature}} sheet-feature{{/feature}}{{#ddm}} sheet-ddm{{/ddm}}">
-			<div class="sheet-rt-title">{{title}}</div>
-			{{#subheader}}
-			<div class="sheet-rt-subheader">{{subheader}}{{#subheaderright}} &bullet; {{subheaderright}}{{/subheaderright}}</div>
-			{{/subheader}}
-			{{#featuresubheader}}
-			    {{#rollGreater() featureusesmaxnum 0}}
-			        <div class="sheet-rt-subheader">{{featuresubheader}} &bullet; {{featureuses}}/{{featureusesmax}} Uses</div>
-			    {{/rollGreater() featureusesmaxnum 0}}
-			    {{#^rollGreater() featureusesmaxnum 0}}
-			        <div class="sheet-rt-subheader">{{featuresubheader}}</div>
-			    {{/^rollGreater() featureusesmaxnum 0}}
-			{{/featuresubheader}}
-			{{#subheader2}}
-			<div class="sheet-rt-subheader">{{subheader2}}{{#subheaderright2}} &bullet; {{subheaderright2}}{{/subheaderright2}}</div>
-			{{/subheader2}}
-		</div>
-			{{#emote}}
-			<p class="sheet-rt-emote">{{character_name}} {{emote}}</p>
-			{{/emote}}
-			<div class="sheet-main-content">
-                {{#roll}}
-				<div class="sheet-row">
-					<div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Result</div>
-					<div class="sheet-col-7-12 sheet-padr sheet-rt-value">{{roll}}</div>
-				</div>
-				{{/roll}}
-				{{#check}}
-                    <div class="sheet-row">
-                        <div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Check</div>
-                        <div class="sheet-col-7-12 sheet-padr sheet-rt-value">{{check}}</div>
-                    </div>
-                    <div class="sheet-row">
-                        <div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Target</div>
-                        <div class="sheet-col-7-12 sheet-padr sheet-rt-value">{{target}}</div>
-                    </div>
-                    {{#rollGreater() check target}}
-                        {{#rollGreater() check tfresult}}
-                            <div class="sheet-row">
-                                <div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Result</div>
-                                <div class="sheet-col-7-12 sheet-padr sheet-rt-value" style="color:red;">Terrible Failure!</div>
-                            </div>
-                        {{/rollGreater() check tfresult}}
-                        {{#^rollGreater() check tfresult}}
-                            {{#rollTotal() check 20}}
-                                <div class="sheet-row">
-                                    <div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Result</div>
-                                    <div class="sheet-col-7-12 sheet-padr sheet-rt-value" style="color:red;">Terrible Failure!</div>
-                                </div>
-                            {{/rollTotal() check 20}}
-                            {{#^rollTotal() check 20}}
-                                <div class="sheet-row">
-                                    <div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Result</div>
-                                    <div class="sheet-col-7-12 sheet-padr sheet-rt-value" style="color:red;">Failure!</div>
-                                </div>
-                            {{/^rollTotal() check 20}}
-                        {{/^rollGreater() check tfresult}}
-                    {{/rollGreater() check target}}
-                    {{#^rollGreater() check target}}
-                        {{#rollLess() check gsresult}}
-                            <div class="sheet-row">
-                                <div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Result</div>
-                                <div class="sheet-col-7-12 sheet-padr sheet-rt-value" style="color:green;">Great Success!</div>
-                            </div>
-                        {{/rollLess() check gsresult}}
-                        {{#^rollLess() check gsresult}}
-                            {{#rollTotal() check gsresult}}
-                                <div class="sheet-row">
-                                    <div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Result</div>
-                                    <div class="sheet-col-7-12 sheet-padr sheet-rt-value" style="color:green;">Great Success!</div>
-                                </div>
-                            {{/rollTotal() check gsresult}}
-                            {{#^rollTotal() check gsresult}}
-                                <div class="sheet-row">
-                                    <div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Result</div>
-                                    <div class="sheet-col-7-12 sheet-padr sheet-rt-value" style="color:green;">Success!</div>
-                                </div>
-                            {{/^rollTotal() check gsresult}}
-                        {{/^rollLess() check gsresult}}
-                    {{/^rollGreater() check target}}
-				{{/check}}
-                {{#save}}
-                    <div class="sheet-row">
-                        <div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Save</div>
-                        <div class="sheet-col-7-12 sheet-padr sheet-rt-value">{{save}}</div>
-                    </div>
-                    <div class="sheet-row">
-                        <div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Target</div>
-                        <div class="sheet-col-7-12 sheet-padr sheet-rt-value">{{target}}</div>
-                    </div>
-                    {{#rollGreater() save target}}
-                        <div class="sheet-row">
-                            <div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Result</div>
-                            <div class="sheet-col-7-12 sheet-padr sheet-rt-value" style="color:red;">Failure!</div>
-                        </div>
-                    {{/rollGreater() save target}}
-                    {{#^rollGreater() save target}}
-                        <div class="sheet-row">
-                            <div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Result</div>
-                            <div class="sheet-col-7-12 sheet-padr sheet-rt-value" style="color:green;">Success!</div>
-                        </div>
-                    {{/^rollGreater() save target}}
-				{{/save}}
-				<!--Weapon based attacks-->
-				{{#attack}}
-                    {{#rollWasFumble() attack}}
-                        <div class="sheet-row">
-                            <div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Attack</div>
-                            <div class="sheet-col-7-12 sheet-padr sheet-rt-value" style="color:red;">hits AC {{attack}}, Fumble!</div>
-                        </div>
-                    {{/rollWasFumble() attack}}
-                    {{#^rollWasFumble() attack}}
-                        {{#rollWasCrit() attack}}
-                            <div class="sheet-row">
-                                <div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Attack</div>
-                                <div class="sheet-col-7-12 sheet-padr sheet-rt-value" style="color:green;">hits AC {{attack}}, Critical!</div>
-                            </div>
-                            <div class="sheet-row">
-                                <div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Crit Damage</div>
-                                <div class="sheet-col-7-12 sheet-padr sheet-rt-value">{{critdamage}}</div>
-                            </div>
-                        {{/rollWasCrit() attack}}
-                        {{#^rollWasCrit() attack}}
-                            <div class="sheet-row">
-                                <div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Attack</div>
-                                <div class="sheet-col-7-12 sheet-padr sheet-rt-value">hits AC {{attack}}</div>
-                            </div>
-                            <div class="sheet-row">
-                                <div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Damage</div>
-                                <div class="sheet-col-7-12 sheet-padr sheet-rt-value">{{damage}}</div>
-                            </div>
-                        {{/^rollWasCrit() attack}}
-                    {{/^rollWasFumble() attack}}
-				{{/attack}}
-				{{#attackdescription}}
-                <div class="sheet-row">
-					<div class="sheet-col-1 sheet-padl sheet-padr sheet-rt-value">{{attackdescription}}</div>
-				</div>
-				{{/attackdescription}}
-				{{#ddm}}
-                <div class="sheet-row">
-				    <div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Threshold</div>
-				    <div class="sheet-col-7-12 sheet-padl sheet-padr sheet-rt-value">{{ddmthreshold}}</div>
-				</div>
-				<div class="sheet-row">
-                    {{#rollLess() ddmroll ddmthreshold}}
-                        <div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Result</div>
-                        <div class="sheet-col-7-12 sheet-padl sheet-padr sheet-rt-value" style="color: red;">{{ddmroll}} Trigger!</div>
-                    {{/rollLess() ddmroll ddmthreshold}}
-                    {{#rollTotal() ddmroll ddmthreshold}}
-                        <div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Result</div>
-                        <div class="sheet-col-7-12 sheet-padl sheet-padr sheet-rt-value" style="color: red;">{{ddmroll}} Trigger!</div>
-                    {{/rollTotal() ddmroll ddmthreshold}}
-                    {{#rollGreater() ddmroll ddmthreshold}}
-                        <div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Result</div>
-                        <div class="sheet-col-7-12 sheet-padl sheet-padr sheet-rt-value">{{ddmroll}}</div>
-                    {{/rollGreater() ddmroll ddmthreshold}}
-                </div>
-				{{/ddm}}
-				<!--Spellcasting-->
-				{{#spellshowinfoblock}}
-				<div class="sheet-row sheet-padb">
-					<div class="sheet-col-1-2 sheet-padl sheet-padr sheet-center"><span class="sheet-rt-key">Duration</span><br/><span class="sheet-rt-value">{{spellduration}}</span></div>
-					<div class="sheet-col-1-2 sheet-padl sheet-padr sheet-center"><span class="sheet-rt-key">Range</span><br/><span class="sheet-rt-value">{{spellrange}}</span></div>
-				</div>
-				{{/spellshowinfoblock}}
-				{{#spellshowattack}}
-				<div class="sheet-row">
-					<div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Attack</div>
-					<div class="sheet-col-7-12 sheet-padr sheet-rt-value">{{spellattack}} AC Hit</div>
-				</div>
-				{{/spellshowattack}}
-				{{#spellshowsavethrow}}
-				<div class="sheet-row">
-					<div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Save</div>
-					<div class="sheet-col-7-12 sheet-padr sheet-rt-value">{{spellsavestat}}</div>
-				</div>
-				{{/spellshowsavethrow}}
-				{{#spellshowhealing}}
-				<div class="sheet-row">
-					<div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Healing</div>
-					<div class="sheet-col-7-12 sheet-padr sheet-rt-value">{{spellhealing}} HP healed</div>
-				</div>
-				{{/spellshowhealing}}
-				{{#spellshowdamage}}
-				<div class="sheet-row">
-					<div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Damage</div>
-					<div class="sheet-col-7-12 sheet-padr sheet-rt-value">{{spelldamage}}</div>
-				</div>
-				{{/spellshowdamage}}
-				{{#spellshoweffects}}
-				<div class="sheet-row">
-					<div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Effect</div>
-					<div class="sheet-col-7-12 sheet-padr sheet-rt-value">{{spelleffect}}</div>
-				</div>
-				{{/spellshoweffects}}
-				{{#spellshowsavethrow}}
-				<div class="sheet-row">
-					<div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">Save success</div>
-					<div class="sheet-col-7-12 sheet-padr sheet-rt-value">{{spellsavesuccess}}</div>
-				</div>
-				{{/spellshowsavethrow}}
-				{{#spellshowdesc}}
-				<div class="sheet-row">
-					<div class="sheet-col-1 sheet-padl sheet-padr sheet-rt-key">Spell Description</div>
-					<div class="sheet-col-1 sheet-padl sheet-padr sheet-rt-value">{{spelldescription}}</div>
-				</div>
-				<div class="sheet-row">
-					<div class="sheet-col-1 sheet-padl sheet-padr sheet-rt-value sheet-center">{{ddmrequest}}</div>
-				</div>
-				{{/spellshowdesc}}
-				{{#featureshowdesc}}
-				<div class="sheet-row">
-					<div class="sheet-col-1 sheet-padl sheet-padr sheet-rt-key">Description</div>
-					<div class="sheet-col-1 sheet-padl sheet-padr sheet-rt-value">{{featureshowdesc}}</div>
-				</div>
-				{{/featureshowdesc}}
-				<!--NPC-->
-				<!--Generic section-->
-				{{#freetext}}
-					<div class="sheet-row">
-						<div class="sheet-col-1 sheet-padl sheet-padr sheet-rt-key-wide">{{freetextname}}</div>
-						<div class="sheet-col-1 sheet-padl sheet-padr sheet-rt-value">{{freetext}}</div>
-					</div>
-				{{/freetext}}
-				<!--Outputall-->
-				{{#outputall}}
-					{{#allprops() outputall title subheader subheaderright subheader2 subheaderright2 emote weapon spell ability save feature ddm}}
-						<div class="sheet-row">
-							<div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">{{key}}</div>
-							<div class="sheet-col-7-12 sheet-padr sheet-rt-value">{{value}}</div>
-						</div>
-					{{/allprops() outputall title subheader subheaderright subheader2 subheaderright2 emote weapon spell ability save feature ddm}}
-				{{/outputall}}
-				<!--DEBUG-->
-				{{#debug}}
-					{{#allprops()}}
-						<div class="sheet-row">
-							<div class="sheet-col-5-12 sheet-padl sheet-padr sheet-rt-key">{{key}} (DEBUG)</div>
-							<div class="sheet-col-7-12 sheet-padr sheet-rt-value">{{value}}</div>
-						</div>
-					{{/allprops()}}
-				{{/debug}}
-			</div>
-		</div>
-</rolltemplate>
-<!-- Sheet workers -->
-<script type="text/worker">
+	border: black 1px solid;
+	padding: 5px 0px;
 
-// Ability modifiers
-['strength', 'dexterity', 'constitution', 'intelligence', 'perception', 'willpower', 'charisma', 'luck'].forEach(ability => {
-  on(`sheet:opened change:${ability.toLowerCase()}`, () => {
-    getAttrs([ability.toLowerCase()], v => {
-      const value = parseInt(v[ability.toLowerCase()]) || 10,
-        setting = {};
-      if (value <= 4) setting[`${ability}_mod`] = -3;
-      else if (value <= 6) setting[`${ability}_mod`] = -2;
-      else if (value <= 8) setting[`${ability}_mod`] = -1;
-      else if (value <= 12) setting[`${ability}_mod`] = 0;
-      else if (value <= 14) setting[`${ability}_mod`] = 1;
-      else if (value <= 16) setting[`${ability}_mod`] = 2;
-      else if (value <= 18) setting[`${ability}_mod`] = 3;
-      else if (value <= 20) setting[`${ability}_mod`] = 4;
-      else if (value <= 22) setting[`${ability}_mod`] = 5;
-      else if (value <= 24) setting[`${ability}_mod`] = 6;
-      else if (value <= 26) setting[`${ability}_mod`] = 7;
-      else if (value <= 28) setting[`${ability}_mod`] = 8;
-      else if (value <= 30) setting[`${ability}_mod`] = 9;
-      else setting[`${ability}_mod`] = 10;
-      setAttrs(setting);
-    });
-  });
-});
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+/* Generic header */
+.sheet-rolltemplate-5eDefault .sheet-rt-header {
+	text-align: center;
+	position: relative;
+	color: #fff;
+	margin: 0 -10px 10px -10px;
+	padding: 5px 0;
+	background-color: #5c5c5c;
+	background-image:  linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,0));
+	-moz-box-shadow: 0 2px 0 rgba(0,0,0,.3);
+	-webkit-box-shadow: 0 2px 0 rgba(0,0,0,.3);
+	box-shadow: 0 2px 0 rgba(0,0,0,.3);
+}
 
-//Update associated attribute for luck save
-on("change:luckvs", function() {
-    getAttrs(["luckvs"], function(values) {
-        switch (values.luckvs) {
-            case "1":
-                setAttrs({ lucksave_title: "Luck Check", lucksave_mod: "0" });
-                break;
-            case "2":
-                getAttrs(["strength_mod"], function(values) {
-                    setAttrs({ lucksave_title: "Luck(STR) Save", lucksave_mod: values.strength_mod });
-                });
-                break;
-            case "3":
-                getAttrs(["dexterity_mod"], function(values) {
-                    setAttrs({ lucksave_title: "Luck(DEX) Save", lucksave_mod: values.dexterity_mod });
-                });
-                break;
-            case "4":
-                getAttrs(["constitution_mod"], function(values) {
-                    setAttrs({ lucksave_title: "Luck(CON) Save", lucksave_mod: values.constitution_mod });
-                });
-                break;
-            case "5":
-                getAttrs(["intelligence_mod"], function(values) {
-                    setAttrs({ lucksave_title: "Luck(INT) Save", lucksave_mod: values.intelligence_mod });
-                });
-                break;
-            case "6":
-                getAttrs(["perception_mod"], function(values) {
-                    setAttrs({ lucksave_title: "Luck(PER) Save", lucksave_mod: values.perception_mod });
-                });
-                break;
-            case "7":
-                getAttrs(["willpower_mod"], function(values) {
-                    setAttrs({ lucksave_title: "Luck(WILL) Save", lucksave_mod: values.willpower_mod });
-                });
-                break;
-            case "8":
-                getAttrs(["charisma_mod"], function(values) {
-                    setAttrs({ lucksave_title: "Luck(CHA) Save", lucksave_mod: values.charisma_mod });
-                });
-                break;
-            default:
-                setAttrs({ lucksave_title: "Luck Check", lucksave_mod: "0" });
-        }
-    });
-});
+.sheet-rolltemplate-5eDefault .sheet-rt-header:before,
+.sheet-rolltemplate-5eDefault .sheet-rt-header:after {
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-color: transparent;
+	bottom: -10px;
+}
 
-//Update associated attribute for skill
-on("change:repeating_skills:skilltype", function() {
-    getAttrs(["repeating_skills_skilltype"], function(values) {
-        switch (values.repeating_skills_skilltype) {
-            case "STR":
-                getAttrs(["strength","strength_gs","strength_tf"], function(values) {
-                    setAttrs({ repeating_skills_skilltarget: values.strength, repeating_skills_skillgs: values.strength_gs, repeating_skills_skilltf: values.strength_tf });
-                });
-                break;
-            case "DEX":
-                getAttrs(["dexterity","dexterity_gs","dexterity_tf"], function(values) {
-                    setAttrs({ repeating_skills_skilltarget: values.dexterity, repeating_skills_skillgs: values.dexterity_gs, repeating_skills_skilltf: values.dexterity_tf });
-                });
-                break;
-            case "CON":
-                getAttrs(["constitution","constitution_gs","constitution_tf"], function(values) {
-                    setAttrs({ repeating_skills_skilltarget: values.constitution, repeating_skills_skillgs: values.constitution_gs, repeating_skills_skilltf: values.constitution_tf });
-                });
-                break;
-            case "INT":
-                getAttrs(["intelligence","intelligence_gs","intelligence_tf"], function(values) {
-                    setAttrs({ repeating_skills_skilltarget: values.intelligence, repeating_skills_skillgs: values.intelligence_gs, repeating_skills_skilltf: values.intelligence_tf });
-                });
-                break;
-            case "PER":
-                getAttrs(["perception","perception_gs","perception_tf"], function(values) {
-                    setAttrs({ repeating_skills_skilltarget: values.perception, repeating_skills_skillgs: values.perception_gs, repeating_skills_skilltf: values.perception_tf });
-                });
-                break;
-            case "WILL":
-                getAttrs(["willpower","willpower_gs","willpower_tf"], function(values) {
-                    setAttrs({ repeating_skills_skilltarget: values.willpower, repeating_skills_skillgs: values.willpower_gs, repeating_skills_skilltf: values.willpower_tf });
-                });
-                break;
-            case "CHA":
-                getAttrs(["charisma","charisma_gs","charisma_tf"], function(values) {
-                    setAttrs({ repeating_skills_skilltarget: values.charisma, repeating_skills_skillgs: values.charisma_gs, repeating_skills_skilltf: values.charisma_tf });
-                });
-                break;
-            case "LUCK":
-                getAttrs(["luck","luck_gs","luck_tf"], function(values) {
-                    setAttrs({ repeating_skills_skilltarget: values.luck, repeating_skills_skillgs: values.luck_gs, repeating_skills_skilltf: values.luck_tf });
-                });
-                break;
-            default:
-                getAttrs(["strength","strength_gs","strength_tf"], function(values) {
-                    setAttrs({ repeating_skills_skilltarget: values.strength, repeating_skills_skillgs: values.strength_gs, repeating_skills_skilltf: values.strength_tf });
-                });
-        }
-    });
-});
+.sheet-rolltemplate-5eDefault .sheet-rt-header:before {
+	border-width: 0 10px 10px 0;
+	border-right-color: #222;
+	left: 0;
+}
+
+.sheet-rolltemplate-5eDefault .sheet-rt-header:after {
+	border-width: 0 0 10px 10px;
+	border-left-color: #222;
+	right: 0;
+}
+
+.sheet-rolltemplate-5eDefault .sheet-rt-title {
+	font-size: 1.5em;
+}
+
+.sheet-rolltemplate-5eDefault .sheet-rt-subheader {
+
+}
+
+/* Melee header*/
+.sheet-rolltemplate-5eDefault .sheet-rt-header.sheet-weapon {
+	background-color: #2C5D28;
+}
+
+.sheet-rolltemplate-5eDefault .sheet-rt-header.sheet-weapon:before {
+	border-right-color: #375035;
+}
+
+.sheet-rolltemplate-5eDefault .sheet-rt-header.sheet-weapon:after {
+	border-left-color: #375035;
+}
+
+/* Spell header */
+.sheet-rolltemplate-5eDefault .sheet-rt-header.sheet-spell{
+	background-color: #45285D;
+}
+
+.sheet-rolltemplate-5eDefault .sheet-rt-header.sheet-spell:before {
+	border-right-color: #443550;
+}
+
+.sheet-rolltemplate-5eDefault .sheet-rt-header.sheet-spell:after {
+	border-left-color: #443550;
+}
+
+/* Ability check header */
+.sheet-rolltemplate-5eDefault .sheet-rt-header.sheet-ability{
+	background-color: #28595D;
+}
+
+.sheet-rolltemplate-5eDefault .sheet-rt-header.sheet-ability:before {
+	border-right-color: #354E50;
+}
+
+.sheet-rolltemplate-5eDefault .sheet-rt-header.sheet-ability:after {
+	border-left-color: #354E50;
+}
+
+/* Saving throw header */
+.sheet-rolltemplate-5eDefault .sheet-rt-header.sheet-feature{
+	background-color: #5D2828;
+}
+
+.sheet-rolltemplate-5eDefault .sheet-rt-header.sheet-feature:before {
+	border-right-color: #503535;
+}
+
+.sheet-rolltemplate-5eDefault .sheet-rt-header.sheet-feature:after {
+	border-left-color: #503535;
+}
+
+/* DDM header */
+.sheet-rolltemplate-5eDefault .sheet-rt-header.sheet-ddm{
+	background-color: #240F0F;
+}
+
+.sheet-rolltemplate-5eDefault .sheet-rt-header.sheet-ddm:before {
+	border-right-color: #1F1414;
+}
+
+.sheet-rolltemplate-5eDefault .sheet-rt-header.sheet-ddm:after {
+	border-left-color: #1F1414;
+}
+
+.sheet-rolltemplate-5eDefault .sheet-row:nth-child(even) {
+
+	background-color: #E9EDEE;
+}
 
 
-var convertFromOldSheet = function () {
-    var notes1="";
-    var notes2="";
-    // Non-repeating attributes to rename
-    let conversionData = {
-        "size" : "race",
-        "vision" : "background",
-        "prolanguages" : "languages",
-        "alignment" : "vision",
-        "strength" : "strength_max",
-        "dexterity" : "dexterity_max",
-        "constitution" : "constitution_max",
-        "intelligence" : "intelligence_max",
-        "perception" : "perception_max",
-        "willpower" : "willpower_max",
-        "charisma" : "charisma_max",
-        "luck" : "luck_max",
-        "nil" : "armour_class",
-        "initiative" : "rerolls"
-    };
-    // Non-repeating attribute renaming
-    getAttrs(Object.keys(conversionData), function (values) {
-        let setting = {};
-        Object.keys(conversionData).forEach(function (oldAttr) {
-            if (values[oldAttr] != null) {
-                // set value of new attribute to the old one
-                setting[conversionData[oldAttr]] = values[oldAttr];
-            }
-        });
-        console.log("Setting non-repeating attributes.");
-        setAttrs(setting);
-    });
+.sheet-rolltemplate-5eDefault .sheet-rt-key {
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.1em;
 
-    //Special Case to bring over the two note fields into one notes field here.
-    getAttrs(["notey","noob"], function(values) {
-        if (values.notey != null) { notes1=values.notey; }
-        if (values.noob != null) { notes2=values.notey; }
-        setAttrs({lootnotes: (notes1 + "\n" + notes2)});
-    });
-    
-	getSectionIDs('repeating_meleeattacks', function (idArray) {
-	    console.log("Setting repeating_meleeattacks attributes.");
-		getAttrs(idArray.map(id => `repeating_meleeattacks_${id}_meleeweaponname`), function (values) {
-			let setting = {};
-			idArray.forEach(function (id) {
-				setting[`repeating_meleeattacks_${id}_melee_weaponname`] = values[`repeating_meleeattacks_${id}_meleeweaponname`];
-			});
-			setAttrs(setting);
-		});
-		getAttrs(idArray.map(id => `repeating_meleeattacks_${id}_meleemagic`), function (values) {
-			let setting = {};
-			idArray.forEach(function (id) {
-				setting[`class_hitbonus`] = values[`repeating_meleeattacks_${id}_meleemagic`];
-			});
-			setAttrs(setting);
-		});
-		getAttrs(idArray.map(id => `repeating_meleeattacks_${id}_meleemisc`), function (values) {
-			let setting = {};
-			idArray.forEach(function (id) {
-				setting[`repeating_meleeattacks_${id}_melee_hitbonus`] = values[`repeating_meleeattacks_${id}_meleemisc`];
-				setting[`repeating_meleeattacks_${id}_melee_dmgbonus`] = values[`repeating_meleeattacks_${id}_meleemisc`];
-			});
-			setAttrs(setting);
-		});
-		getAttrs(idArray.map(id => `repeating_meleeattacks_${id}_meleedmg`), function (values) {
-			let setting = {};
-			idArray.forEach(function (id) {
-				setting[`repeating_meleeattacks_${id}_melee_dmgbase`] = values[`repeating_meleeattacks_${id}_meleedmg`];
-			});
-			setAttrs(setting);
-		});
-		getAttrs(idArray.map(id => `repeating_meleeattacks_${id}_meleeacbonus`), function (values) {
-			let setting = {};
-			idArray.forEach(function (id) {
-				setting[`repeating_meleeattacks_${id}_melee_description`] = values[`repeating_meleeattacks_${id}_meleeacbonus`];
-			});
-			setAttrs(setting);
-		});
-	});
-	
-	getSectionIDs('repeating_rangedattacks', function (idArray) {
-	    console.log("Setting repeating_rangedattacks attributes.");
-		getAttrs(idArray.map(id => `repeating_rangedattacks_${id}_rangeweaponname`), function (values) {
-			let setting = {};
-			idArray.forEach(function (id) {
-				setting[`repeating_rangedattacks_${id}_range_weaponname`] = values[`repeating_rangedattacks_${id}_rangeweaponname`];
-			});
-			setAttrs(setting);
-		});
-		getAttrs(idArray.map(id => `repeating_rangedattacks_${id}_rangemisc`), function (values) {
-			let setting = {};
-			idArray.forEach(function (id) {
-				setting[`repeating_rangedattacks_${id}_range_hitbonus`] = values[`repeating_rangedattacks_${id}_rangemisc`];
-				setting[`repeating_rangedattacks_${id}_range_dmgbonus`] = values[`repeating_rangedattacks_${id}_rangemisc`];
-			});
-			setAttrs(setting);
-		});
-		getAttrs(idArray.map(id => `repeating_rangedattacks_${id}_rangedmg`), function (values) {
-			let setting = {};
-			idArray.forEach(function (id) {
-				setting[`repeating_rangedattacks_${id}_range_dmgbase`] = values[`repeating_rangedattacks_${id}_rangedmg`];
-			});
-			setAttrs(setting);
-		});
-		getAttrs(idArray.map(id => `repeating_rangedattacks_${id}_rangeacbonus`), function (values) {
-			let setting = {};
-			idArray.forEach(function (id) {
-				setting[`repeating_rangedattacks_${id}_range_distance`] = values[`repeating_rangedattacks_${id}_rangeacbonus`];
-			});
-			setAttrs(setting);
-		});
-		getAttrs(idArray.map(id => `repeating_rangedattacks_${id}_rangesaves`), function (values) {
-			let setting = {};
-			idArray.forEach(function (id) {
-				setting[`repeating_rangedattacks_${id}_range_description`] = values[`repeating_rangedattacks_${id}_rangesaves`];
-			});
-			setAttrs(setting);
-		});
-	});
-};
-on('sheet:opened', function () {
-    let currentVersion = '3.0';
-    getAttrs(['version','lootnotes'], function (values) {
-        if (!values.version) {
-            //Special Case to check if the custom sheet was already in use prior to adding version control logic
-            if (values.lootnotes) {
-                console.log("Special Case Cancel Upgrade from V1.0");
-            }
-            else{
-                //The old sheet had many variables whose names did not match sheet headings.
-                //I do my best to assign them to appropriate variables in the upgraded sheet.
-                console.log("Upgrading Sheet from V1.0");
-                convertFromOldSheet();
-            }
-        }
-        else{
-            switch (values.version) {
-                case 2.1:
-                    // V3 won't require any conversion.
-                    // Making compatible with Deluxe Edition of LFG.
-                case 3.0:
-                    //etc
-            }
-        }
-        setAttrs({
-            version: currentVersion
-        });
-    });
-});
-</script>
+	-moz-text-decoration-color: #D64541;
+	text-decoration-color: #D64541;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	max-width: 120px;
+	padding: 2px 2px 2px 0px;
+
+}
+
+.sheet-rolltemplate-5eDefault .sheet-rt-key-wide {
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.1em;
+
+	-moz-text-decoration-color: #D64541;
+	text-decoration-color: #D64541;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	padding: 2px 2px 2px 0px
+
+}
+
+
+.sheet-rolltemplate-5eDefault .sheet-rt-value {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	margin-top: 2px ;
+
+}
+
+.sheet-rolltemplate-5eDefault .sheet-main-content {
+
+}
+
+.sheet-rolltemplate-5eDefault .sheet-main-content hr.sheet-roll {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+
+	color: #D64541;
+	background-color: #D64541;
+	height: 1px;
+}
+
+
+.sheet-rolltemplate-5eDefault .sheet-rt-emote {
+	font-style: italic;
+	font-size: 11px;
+	font-family: Arial;
+	text-align: center;
+
+	border: green 1px dashed;
+	border-radius: 5px;
+
+	padding: 0px 5px;
+	margin: 0px 5px 5px 5px;
+
+}
+
+/*** ROLL TEMPLATE STYLING ENDS HERE **/
+
+
+/* overall wrapper to fix moving width issues with overflow on hidden sections */
+ .sheet-overall-wrapper {
+	max-width: 832px;
+	min-width: 832px;
+}
+
+/* Tweak repeating section buttons so they have a bottom margin and dont overflow when in edit mode. */
+ div[class^="repcontrol"] {
+	margin-bottom: 5px;
+}
+
+ div[class="repcontainer editmode"] ~ div[class^="repcontrol"] button[class="btn repcontrol_add"] {
+	display: inline-block!important;
+	visibility: hidden;
+}
+
+
+/* Main Sheet Tabs */
+ div[class^="sheet-section"] {
+	display: none;
+}
+
+ input.sheet-tab1:checked ~ div.sheet-section-main,
+ input.sheet-tab2:checked ~ div.sheet-section-class,
+ input.sheet-tab3:checked ~ div.sheet-section-combat,
+ input.sheet-tab4:checked ~ div.sheet-section-spellbook,
+ input.sheet-tab5:checked ~ div.sheet-section-inventory,
+ input.sheet-tab6:checked ~ div.sheet-section-injury {
+	display: block;
+}
+
+
+ input.sheet-tab {
+	width: 15%;
+	height: 20px;
+	cursor: pointer;
+	position: relative;
+	opacity: 0;
+	z-index: 9999;
+}
+
+ span.sheet-tab {
+	text-align: center;
+	display: inline-block;
+	font-size: 13px;
+	background: #4a6486;
+	color: white;
+	font-weight: bold;
+	border-radius: 4px;
+	width: 15%;
+	height: 20px;
+	cursor: pointer;
+	position: relative;
+	margin-left: -15%;
+}
+
+ input.sheet-tab1:checked + span.sheet-tab1,
+ input.sheet-tab2:checked + span.sheet-tab2,
+ input.sheet-tab3:checked + span.sheet-tab3,
+ input.sheet-tab4:checked + span.sheet-tab4,
+ input.sheet-tab5:checked + span.sheet-tab5,
+ input.sheet-tab6:checked + span.sheet-tab6 {
+	background: #ab8b57;
+	color: white;
+	border-radius: 4px;
+}
+
+/* END Main sheet tabs */
+
+.sheet-hide-it {
+    display: none;
+}
+
+div[class^="sheet-luckcheck"] {
+  display: none;
+}
+input.sheet-luckcheck:checked ~ div.sheet-luckcheck-normal,
+input.sheet-luckstrcheck:checked ~ div.sheet-luckcheck-str,
+input.sheet-luckdexcheck:checked ~ div.sheet-luckcheck-dex,
+input.sheet-luckconcheck:checked ~ div.sheet-luckcheck-con,
+input.sheet-luckintcheck:checked ~ div.sheet-luckcheck-int,
+input.sheet-luckpercheck:checked ~ div.sheet-luckcheck-per,
+input.sheet-luckwillcheck:checked ~ div.sheet-luckcheck-will,
+input.sheet-luckchacheck:checked ~ div.sheet-luckcheck-cha {
+  display: block;
+}
+
+
+/* Choose Init Method */
+ div.sheet-section-newinit {
+	display: block;
+}
+ div.sheet-section-oldinit {
+	display: block;
+}
+
+ input.sheet-newinit:not([value='0']) ~  div.sheet-section-oldinit {
+	display: none;
+}
+ input.sheet-newinit:not([value='1']) ~  div.sheet-section-newinit {
+ 	display: none;
+}
+/* END Choose Init Method */
+
+
+/* Spell Page Settings */
+ div[class^="sheet-spell-page"] {
+	display: none;
+}
+
+ input.sheet-spelltab0:checked ~ div.sheet-spell-page0,
+ input.sheet-spelltab1:checked ~ div.sheet-spell-page1,
+ input.sheet-spelltab2:checked ~ div.sheet-spell-page2,
+ input.sheet-spelltab3:checked ~ div.sheet-spell-page3,
+ input.sheet-spelltab4:checked ~ div.sheet-spell-page4,
+ input.sheet-spelltab5:checked ~ div.sheet-spell-page5,
+ input.sheet-spelltab6:checked ~ div.sheet-spell-page6,
+ input.sheet-spelltab7:checked ~ div.sheet-spell-page7,
+ input.sheet-spelltab8:checked ~ div.sheet-spell-page8,
+ input.sheet-spelltab9:checked ~ div.sheet-spell-page9 {
+	display: block;
+}
+
+ input.sheet-spelltab99:checked ~ div[class^="sheet-spell-page"] {
+	display: block;
+}
+
+ input.sheet-spelltab0:checked ~ span.sheet-spelltab0,
+ input.sheet-spelltab1:checked ~ span.sheet-spelltab1,
+ input.sheet-spelltab2:checked ~ span.sheet-spelltab2,
+ input.sheet-spelltab3:checked ~ span.sheet-spelltab3,
+ input.sheet-spelltab4:checked ~ span.sheet-spelltab4,
+ input.sheet-spelltab5:checked ~ span.sheet-spelltab5,
+ input.sheet-spelltab6:checked ~ span.sheet-spelltab6,
+ input.sheet-spelltab7:checked ~ span.sheet-spelltab7,
+ input.sheet-spelltab8:checked ~ span.sheet-spelltab8,
+ input.sheet-spelltab9:checked ~ span.sheet-spelltab9,
+ input.sheet-spelltab99:checked ~ span.sheet-spelltab99
+ {
+	background: rgb(0,158,115);
+	color: white;
+	border-radius: 4px;
+}
+
+ input.sheet-spellpagetab {
+	width: 13%;
+	height: 20px;
+	cursor: pointer;
+	position: relative;
+	opacity: 0;
+	z-index: 9999;
+}
+
+ span.sheet-spellpagetab {
+	text-align: center;
+	display: inline-block;
+	font-size: 13px;
+	background: rgb(86,180,233);
+	color: white;
+	font-weight: bold;
+	border-radius: 4px;
+
+	width: 13%;
+	height: 20px;
+	cursor: pointer;
+	position: relative;
+	margin-left: -13%;
+}
+
+input.sheet-spellscast {
+    border: 0;
+    text-align: right;
+}
+
+input.sheet-spellscast::-webkit-inner-spin-button, 
+input.sheet-spellscast::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+.sheet-spell-macro-output-options,
+.sheet-classaction-output-options,
+.sheet-npc-output-options
+ {
+
+	border: black 1px dashed;
+	border-radius: 5px;
+
+}
+/* END Spell Page Settings */
+
+/* Borders for spell page and class action repeating section rows */
+div[data-groupname^="repeating_spellbook"] .repitem,
+div[data-groupname^="repeating_classactions"] .repitem,
+.sheet-npc-row,
+div[class^="sheet-classaction-row"] {
+	border: 1px solid #000000;
+	border-radius: 12px;
+	margin-left: 1px;
+	margin-bottom: 5px;
+	background: #eee;
+}
+
+/* Inventory Page Settings */
+ div[class^="sheet-inventory-page"] {
+	display: none;
+}
+
+ input.sheet-inventorytab1:checked ~ div.sheet-inventory-page1,
+ input.sheet-inventorytab2:checked ~ div.sheet-inventory-page2,
+ input.sheet-inventorytab3:checked ~ div.sheet-inventory-page3,
+ input.sheet-inventorytab4:checked ~ div.sheet-inventory-page4,
+ input.sheet-inventorytab5:checked ~ div.sheet-inventory-page5,
+ input.sheet-inventorytab6:checked ~ div.sheet-inventory-page6,
+ input.sheet-inventorytab7:checked ~ div.sheet-inventory-page7 {
+	display: block;
+}
+
+
+ input.sheet-inventorytab1:checked ~ span.sheet-inventorytab1,
+ input.sheet-inventorytab2:checked ~ span.sheet-inventorytab2,
+ input.sheet-inventorytab3:checked ~ span.sheet-inventorytab3,
+ input.sheet-inventorytab4:checked ~ span.sheet-inventorytab4,
+ input.sheet-inventorytab5:checked ~ span.sheet-inventorytab5,
+ input.sheet-inventorytab6:checked ~ span.sheet-inventorytab6,
+ input.sheet-inventorytab7:checked ~ span.sheet-inventorytab7
+ {
+	background: rgb(0,158,115);
+	color: white;
+	border-radius: 4px;
+}
+
+ input.sheet-inventorytab {
+	width: 13%;
+	height: 20px;
+	cursor: pointer;
+	position: relative;
+	opacity: 0;
+	z-index: 9999;
+}
+
+ span.sheet-inventorytab {
+	text-align: center;
+	display: inline-block;
+	font-size: 13px;
+	background: rgb(86,180,233);
+	color: white;
+	font-weight: bold;
+	border-radius: 4px;
+
+	width: 13%;
+	height: 20px;
+	cursor: pointer;
+	position: relative;
+	margin-left: -13%;
+}
+
+/* END Inventory Page Settings */
+
+/* General sheet/rolltemplate wide Styles */
+ button, input, select, textarea,
+ .sheet-row [class *= "sheet-col"],
+ [class *= "sheet-col"] {
+	font-size: 12px;
+}
+
+ .sheet-spell-row-number,
+ .sheet-inventory-row-number,
+ .sheet-classaction-row-number {
+	text-align: center;
+	font-weight: bold;
+}
+
+ .sheet-small-label,
+ .sheet-rolltemplate-5eDefault .sheet-small-label {
+	font-size: 85%!important;
+	font-style: italic;
+	font-weight: bold;
+}
+
+ .sheet-last-updated,
+ .sheet-rolltemplate-5eDefault .sheet-last-updated {
+	font-size: 85%!important;
+	font-style: italic;
+	font-weight: bold;
+	margin: 0;
+}
+
+ .sheet-checkbox-row,
+ .sheet-rolltemplate-5eDefault .sheet-checkbox-row {
+	line-height: 28px;
+	text-align: center;
+}
+
+ .sheet-hd-row,
+ .sheet-rolltemplate-5eDefault .sheet-hd-row {
+	margin-top: 5px;
+	font-size: 11px!important;
+}
+
+ .sheet-pictos,
+ .sheet-rolltemplate-5eDefault .sheet-pictos {
+	font-family: "Pictos";
+	font-size: 14px;
+}
+
+ .sheet-pictos-custom,
+ .sheet-rolltemplate-5eDefault .sheet-pictos-custom {
+	font-family: "Pictos Custom";
+	font-size: 14px;
+}
+
+ .sheet-pictos-three,
+ .sheet-rolltemplate-5eDefault .sheet-pictos-three {
+	font-family: "Pictos Three";
+	font-size: 14px;
+}
+
+ .sheet-d6-font,
+ .sheet-rolltemplate-5eDefault .sheet-d6-font {
+	font-family: "dicefontd6";
+	font-size: 14px;
+}
+
+ .sheet-d8-font,
+ .sheet-rolltemplate-5eDefault .sheet-d8-font {
+	font-family: "dicefontd8";
+	font-size: 14px;
+}
+
+ .sheet-d10-font,
+ .sheet-rolltemplate-5eDefault .sheet-d10-font {
+	font-family: "dicefontd10";
+	font-size: 14px;
+}
+
+ .sheet-d20-font,
+ .sheet-rolltemplate-5eDefault .sheet-d20-font {
+	font-family: "dicefontd20";
+	font-size: 14px;
+}
+
+ .sheet-padl,
+ .sheet-rolltemplate-5eDefault .sheet-padl{
+	padding-left:10px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+ .sheet-padr,
+ .sheet-rolltemplate-5eDefault .sheet-padr{
+	padding-right:10px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+ .sheet-padt,
+ .sheet-rolltemplate-5eDefault .sheet-padt{
+	padding-top:12px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+ .sheet-padb,
+ .sheet-rolltemplate-5eDefault .sheet-padb{
+	padding-bottom:5px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.sheet-border-all,
+.sheet-rolltemplate-5eDefault .sheet-border-all {
+    border: 1px solid #000;
+}
+
+ .sheet-border-right,
+ .sheet-rolltemplate-5eDefault .sheet-border-right {
+	border-right: 1px solid #000;
+}
+
+ .sheet-border-left,
+ .sheet-rolltemplate-5eDefault .sheet-border-left {
+	border-left: 1px solid #000;
+}
+
+ .sheet-border-top,
+ .sheet-rolltemplate-5eDefault .sheet-border-top {
+	border-top: 1px solid #000;
+}
+
+ .sheet-border-bottom,
+ .sheet-rolltemplate-5eDefault .sheet-border-bottom {
+	border-bottom: 1px solid #000;
+}
+
+ .sheet-border-right-dotted,
+ .sheet-rolltemplate-5eDefault .sheet-border-right-dotted {
+	border-right: 1px dotted #000;
+}
+
+ .sheet-border-left-dotted,
+ .sheet-rolltemplate-5eDefault .sheet-border-left-dotted {
+	border-left: 1px dotted #000;
+}
+
+ .sheet-border-top-dotted,
+ .sheet-rolltemplate-5eDefault .sheet-border-top-dotted {
+	border-top: 1px dotted #000;
+}
+
+ .sheet-border-bottom-dotted,
+ .sheet-rolltemplate-5eDefault .sheet-border-bottom-dotted {
+	border-bottom: 1px dotted #000;
+}
+
+ input[type=number],  input[type=text],  select {
+	background: 0;
+	width: 100%!important;
+	margin-bottom:2px!important;
+}
+
+ input[type=number] {
+	text-align: center;
+}
+
+ input[type=text].sheet-underlined {
+	box-shadow: 0px -2px 0px 0px #000000 inset;
+}
+
+ input[type=number].sheet-underlined {
+	box-shadow: 0px -2px 0px 0px #000000 inset;
+}
+
+ button.sheet-core-save,  button.sheet-core-check,  button.sheet-initiative,  button.sheet-roll {
+	font-size: 12px!important;
+}
+
+div.sheet-tiny-spacer {
+    border-top: 2px solid transparent;
+}
+
+ hr,
+ .sheet-rolltemplate-5eDefault hr {
+	border: 0;
+	height: 1px;
+	background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,75.75), rgba(0,0,0,0));
+	background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,75.75), rgba(0,0,0,0));
+	background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,75.75), rgba(0,0,0,0));
+	background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,75.75), rgba(0,0,0,0));
+	margin: 5px 0;
+}
+
+ span.sheet-spacer,
+ .sheet-rolltemplate-5eDefault span.sheet-spacer {
+	display: block;
+	margin-top: 5px;
+}
+
+ .sheet-heading-row {
+	text-align: center;
+	font-weight: bold;
+}
+
+ .sheet-footer-row {
+	text-align: center;
+	font-weight: bold;
+	border-bottom: 1px solid #dddddd;
+	margin-bottom: 5px;
+}
+
+ .sheet-vert-middle,
+ .sheet-rolltemplate-5eDefault .sheet-vert-middle {
+	vertical-align: middle!important;
+}
+
+ .sheet-vert-bottom,
+ .sheet-rolltemplate-5eDefault .sheet-vert-bottom {
+	vertical-align: bottom!important;
+}
+
+ .sheet-center,
+ .sheet-rolltemplate-5eDefault .sheet-center {
+	text-align: center;
+}
+
+.sheet-right,
+ .sheet-rolltemplate-5eDefault .sheet-right {
+	text-align: right;
+}
+
+ textarea {
+	width: calc(100% - 10px);
+	height: 150px;
+	resize:none;
+}
+
+ .sheet-fluid-textarea {
+	height: 100%;
+}
+
+ .sheet-small-textarea {
+	height: 50px;
+}
+
+ .sheet-medium-textarea {
+	height: 100px;
+}
+
+ .sheet-large-textarea {
+	height: 300px;
+}
+
+/* Growing Text Boxes*/
+.sheet-auto-expand {
+	position: relative;
+	cursor: text;
+	word-wrap: break-word;
+    min-height: 28px;
+}
+.sheet-auto-expand span {
+	visibility: hidden;
+	white-space: pre-wrap;
+	display: block;
+}
+.sheet-auto-expand textarea {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	margin: 0 0 -10px 0;
+	overflow: hidden;
+	resize: none;
+	height: 100%;
+	width: 100%;
+	display: block;
+	box-sizing: border-box;
+	background: transparent;
+	color: inherit;
+	font: inherit;
+	letter-spacing: inherit;
+	text-align: inherit;
+	text-transform: inherit;
+}
+/* End auto expanding text boxes */
+
+ h3 {
+	font-size: 12px;
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 5px;
+	color:#ffffff;
+	background-color:#000000;
+	background-image: -moz-repeating-radial-gradient(center center, circle cover, #000000, #870202 100%);
+	background-image: -webkit-repeating-radial-gradient(center center, circle cover, #000000, #870202 100%);
+	background-image: -o-repeating-radial-gradient(center center, circle cover, #000000, #870202 100%);
+	background-image: -ms-repeating-radial-gradient(center center, circle cover, #000000, #870202 100%);
+	background-image: repeating-radial-gradient(center center, circle cover, #000000, #870202 100%);
+	margin-top: 10px;
+	border-radius: 12px;
+
+}
+
+ h4 {
+	background-color: #000000;
+	color: #ffffff;
+	font-size: 12px;
+	border-radius: 12px;
+	padding-left: 5px;
+	margin-bottom: 5px;
+}
+
+ input[disabled] {
+	background-color: #eeeeee;
+	border-color: #ddd;
+	cursor: not-allowed;
+	-moz-appearance: textfield;
+}
+
+ input[disabled].sheet-passive-skill-score {
+	background-color: #def6fc;
+	border-color: #ddd;
+	cursor: not-allowed;
+	-moz-appearance: textfield;
+}
+
+ input[disabled]::-webkit-inner-spin-button,
+ input[disabled]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+ .sheet-small-note {
+	text-align: center;
+	font-family: Arial;
+	font-size: 10px;
+}
+ .sheet-tiny-note {
+	text-align: Left;
+	font-family: Arial;
+	font-size: 6px;
+}
+
+ select {
+	font-size: 90%;
+}
+
+ .sheet-important-text {
+	text-decoration: underline;
+	color: #ff0000;
+}
+
+ .sheet-grey-row {
+	background-color: #eee;
+}
+
+
+ .sheet-sub-header {
+	background-color: #cecece;
+	vertical-align: bottom;
+	border-radius: 12px;
+	margin-bottom: 3px;
+}
+
+ .sheet-footer {
+	background-color: rgba(250, 202, 78, 0.2);
+	vertical-align: bottom;
+	border-radius: 12px;
+	margin-top: 3px;
+}
+
+ .sheet-spell-header {
+	background-color: #c7d1bf;
+	vertical-align: bottom;
+	border-radius: 12px;
+	margin-bottom: 3px;
+}
+
+/* Header section */
+
+ img.sheet-icon {
+	width: 100px;
+	height: 100px;
+}
+
+/* Core stat section */
+
+ .sheet-core-stat-label {
+	background-color: #000000;
+	color: #ffffff;
+	font-size: 14px!important;
+	font-weight: bold;
+	text-transform: uppercase;
+	vertical-align: middle;
+	line-height: 28px;
+	text-align: center;
+}
+
+ .sheet-luck-stat-label {
+	background-color: goldenrod;
+	color: #ffffff;
+	font-size: 14px!important;
+	font-weight: bold;
+	text-transform: uppercase;
+	vertical-align: middle;
+	line-height: 28px;
+	text-align: center;
+}
+
+ .sheet-large-button {
+	padding: 5px;
+	height: 45px;
+	vertical-align: middle;
+}
+
+/* Death save checkboxes - FAIL */
+
+ input.sheet-death-save-fail {
+	width: 28%;
+	height: 20px;
+	cursor: pointer;
+	position: relative;
+	opacity: 0;
+	z-index: 9999;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+ span.sheet-death-save-fail-tab::before {
+	content: "???";
+}
+
+ span.sheet-death-save-fail-tab {
+	text-align: center;
+	display: inline-block;
+	width: 28%;
+	height: 20px;
+	font-size: 13px;
+
+	font-weight: bold;
+	border-radius: 4px;
+	margin-left: -28%;
+	border: 1px solid;
+}
+
+ input.sheet-death-save-fail:checked + span.sheet-death-save-fail-tab {
+	background:  #8c6075;
+	color: white;
+	border-radius: 4px;
+}
+
+ input.sheet-death-save-fail:checked + span.sheet-death-save-fail-tab::before {
+	content: "Failure";
+}
+
+/* Death save checkboxes - success */
+
+ input.sheet-death-save-success {
+	width: 28%;
+	height: 20px;
+	cursor: pointer;
+	position: relative;
+	opacity: 0;
+	z-index: 9999;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+ span.sheet-death-save-success-tab::before {
+	content: "???";
+}
+
+ span.sheet-death-save-success-tab {
+	text-align: center;
+	display: inline-block;
+	width: 28%;
+	height: 20px;
+	font-size: 13px;
+
+	font-weight: bold;
+	border-radius: 4px;
+	margin-left: -28%;
+	border: 1px solid;
+}
+
+ input.sheet-death-save-success:checked + span.sheet-death-save-success-tab {
+	background: #879a6a;
+	color: white;
+	border-radius: 4px;
+}
+
+ input.sheet-death-save-success:checked + span.sheet-death-save-success-tab::before {
+	content: "Success"
+}
+
+/* Skills section */
+
+ .sheet-skill-row {
+	margin: 1px 0;
+}
+
+ .sheet-skill-roll {
+	padding: 0 5px!important;
+	height:29px;
+}
+ .sheet-skill-name {
+	margin-top: 5px;
+	font-size: 11px!important;
+}
+ .sheet-skill-checkbox {
+	margin-top: 5px;
+}
+
+ .sheet-margin-top {
+	margin-top: 5px;
+}
+
+ .sheet-margin-bottom {
+	margin-bottom: 5px;
+}
+
+ .sheet-margin-left {
+	margin-left: 5px;
+}
+
+ .sheet-margin-right {
+	margin-right: 5px;
+}
+
+/* Custom Pure Grid CSS (24 cols) DO NOT EDIT BELOW THIS LINE OR RISK BREAKING FORMATTING */
+ .sheet-row,
+.sheet-rolltemplate-5eDefault .sheet-row {
+	letter-spacing: -0.31em;
+	*letter-spacing: normal;
+	*word-spacing: -0.43em;
+	text-rendering: optimizespeed;
+}
+
+ .sheet-opera-only :-o-prefocus,  .sheet-row,
+ .sheet-rolltemplate-5eDefault .sheet-opera-only :-o-prefocus, .sheet-rolltemplate-5eDefault  .sheet-row {
+	word-spacing: -0.43em;
+}
+
+ .sheet-col,
+ .sheet-rolltemplate-5eDefault .sheet-col {
+	display: inline-block;
+	zoom: 1; *display: inline;
+	letter-spacing: normal;
+	word-spacing: normal;
+	vertical-align: top;
+	text-rendering: auto;
+}
+
+.sheet-rolltemplate-5eDefault .sheet-col-1,.sheet-rolltemplate-5eDefault .sheet-col-1-2,.sheet-rolltemplate-5eDefault .sheet-col-1-3,.sheet-rolltemplate-5eDefault .sheet-col-2-3,.sheet-rolltemplate-5eDefault .sheet-col-1-4,.sheet-rolltemplate-5eDefault .sheet-col-3-4,.sheet-rolltemplate-5eDefault .sheet-col-1-5,.sheet-rolltemplate-5eDefault .sheet-col-2-5,.sheet-rolltemplate-5eDefault .sheet-col-3-5,.sheet-rolltemplate-5eDefault .sheet-col-4-5,.sheet-rolltemplate-5eDefault .sheet-col-1-6,.sheet-rolltemplate-5eDefault .sheet-col-5-6,.sheet-rolltemplate-5eDefault .sheet-col-1-7,.sheet-rolltemplate-5eDefault .sheet-col-2-7,.sheet-rolltemplate-5eDefault .sheet-col-3-7,.sheet-rolltemplate-5eDefault .sheet-col-4-7,.sheet-rolltemplate-5eDefault .sheet-col-5-7,.sheet-rolltemplate-5eDefault .sheet-col-6-7,.sheet-rolltemplate-5eDefault .sheet-col-1-8,.sheet-rolltemplate-5eDefault .sheet-col-3-8,.sheet-rolltemplate-5eDefault .sheet-col-5-8,.sheet-rolltemplate-5eDefault .sheet-col-7-8,.sheet-rolltemplate-5eDefault .sheet-col-1-9,.sheet-rolltemplate-5eDefault .sheet-col-2-9,.sheet-rolltemplate-5eDefault .sheet-col-4-9,.sheet-rolltemplate-5eDefault .sheet-col-5-9,.sheet-rolltemplate-5eDefault .sheet-col-6-9,.sheet-rolltemplate-5eDefault .sheet-col-7-9,.sheet-rolltemplate-5eDefault .sheet-col-8-9,.sheet-rolltemplate-5eDefault .sheet-col-1-10,.sheet-rolltemplate-5eDefault .sheet-col-3-10,.sheet-rolltemplate-5eDefault .sheet-col-7-10,.sheet-rolltemplate-5eDefault .sheet-col-9-10,.sheet-rolltemplate-5eDefault .sheet-col-1-11,.sheet-rolltemplate-5eDefault .sheet-col-2-11,.sheet-rolltemplate-5eDefault .sheet-col-3-11,.sheet-rolltemplate-5eDefault .sheet-col-4-11,.sheet-rolltemplate-5eDefault .sheet-col-5-11,.sheet-rolltemplate-5eDefault .sheet-col-6-11,.sheet-rolltemplate-5eDefault .sheet-col-7-11,.sheet-rolltemplate-5eDefault .sheet-col-8-11,.sheet-rolltemplate-5eDefault .sheet-col-9-11,.sheet-rolltemplate-5eDefault .sheet-col-10-11,.sheet-rolltemplate-5eDefault .sheet-col-1-12,.sheet-rolltemplate-5eDefault .sheet-col-5-12,.sheet-rolltemplate-5eDefault .sheet-col-7-12,.sheet-rolltemplate-5eDefault .sheet-col-9-12,.sheet-rolltemplate-5eDefault .sheet-col-11-12,.sheet-rolltemplate-5eDefault .sheet-col-1-13,.sheet-rolltemplate-5eDefault .sheet-col-2-13,.sheet-rolltemplate-5eDefault .sheet-col-3-13,.sheet-rolltemplate-5eDefault .sheet-col-4-13,.sheet-rolltemplate-5eDefault .sheet-col-5-13,.sheet-rolltemplate-5eDefault .sheet-col-6-13,.sheet-rolltemplate-5eDefault .sheet-col-7-13,.sheet-rolltemplate-5eDefault .sheet-col-8-13,.sheet-rolltemplate-5eDefault .sheet-col-9-13,.sheet-rolltemplate-5eDefault .sheet-col-10-13,.sheet-rolltemplate-5eDefault .sheet-col-11-13,.sheet-rolltemplate-5eDefault .sheet-col-12-13,.sheet-rolltemplate-5eDefault .sheet-col-1-14,.sheet-rolltemplate-5eDefault .sheet-col-3-14,.sheet-rolltemplate-5eDefault .sheet-col-5-14,.sheet-rolltemplate-5eDefault .sheet-col-9-14,.sheet-rolltemplate-5eDefault .sheet-col-11-14,.sheet-rolltemplate-5eDefault .sheet-col-13-14,.sheet-rolltemplate-5eDefault .sheet-col-1-15,.sheet-rolltemplate-5eDefault .sheet-col-2-15,.sheet-rolltemplate-5eDefault .sheet-col-4-15,.sheet-rolltemplate-5eDefault .sheet-col-6-15,.sheet-rolltemplate-5eDefault .sheet-col-7-15,.sheet-rolltemplate-5eDefault .sheet-col-8-15,.sheet-rolltemplate-5eDefault .sheet-col-9-15,.sheet-rolltemplate-5eDefault .sheet-col-10-15,.sheet-rolltemplate-5eDefault .sheet-col-11-15,.sheet-rolltemplate-5eDefault .sheet-col-12-15,.sheet-rolltemplate-5eDefault .sheet-col-13-15,.sheet-rolltemplate-5eDefault .sheet-col-14-15,.sheet-rolltemplate-5eDefault .sheet-col-1-16,.sheet-rolltemplate-5eDefault .sheet-col-3-16,.sheet-rolltemplate-5eDefault .sheet-col-5-16,.sheet-rolltemplate-5eDefault .sheet-col-7-16,.sheet-rolltemplate-5eDefault .sheet-col-9-16,.sheet-rolltemplate-5eDefault .sheet-col-11-16,.sheet-rolltemplate-5eDefault .sheet-col-13-16,.sheet-rolltemplate-5eDefault .sheet-col-15-16,.sheet-rolltemplate-5eDefault .sheet-col-1-17,.sheet-rolltemplate-5eDefault .sheet-col-2-17,.sheet-rolltemplate-5eDefault .sheet-col-3-17,.sheet-rolltemplate-5eDefault .sheet-col-4-17,.sheet-rolltemplate-5eDefault .sheet-col-5-17,.sheet-rolltemplate-5eDefault .sheet-col-6-17,.sheet-rolltemplate-5eDefault .sheet-col-7-17,.sheet-rolltemplate-5eDefault .sheet-col-8-17,.sheet-rolltemplate-5eDefault .sheet-col-9-17,.sheet-rolltemplate-5eDefault .sheet-col-10-17,.sheet-rolltemplate-5eDefault .sheet-col-11-17,.sheet-rolltemplate-5eDefault .sheet-col-12-17,.sheet-rolltemplate-5eDefault .sheet-col-13-17,.sheet-rolltemplate-5eDefault .sheet-col-14-17,.sheet-rolltemplate-5eDefault .sheet-col-15-17,.sheet-rolltemplate-5eDefault .sheet-col-16-17,.sheet-rolltemplate-5eDefault .sheet-col-1-18,.sheet-rolltemplate-5eDefault .sheet-col-5-18,.sheet-rolltemplate-5eDefault .sheet-col-7-18,.sheet-rolltemplate-5eDefault .sheet-col-11-18,.sheet-rolltemplate-5eDefault .sheet-col-13-18,.sheet-rolltemplate-5eDefault .sheet-col-15-18,.sheet-rolltemplate-5eDefault .sheet-col-17-18,.sheet-rolltemplate-5eDefault .sheet-col-1-19,.sheet-rolltemplate-5eDefault .sheet-col-2-19,.sheet-rolltemplate-5eDefault .sheet-col-3-19,.sheet-rolltemplate-5eDefault .sheet-col-4-19,.sheet-rolltemplate-5eDefault .sheet-col-5-19,.sheet-rolltemplate-5eDefault .sheet-col-6-19,.sheet-rolltemplate-5eDefault .sheet-col-7-19,.sheet-rolltemplate-5eDefault .sheet-col-8-19,.sheet-rolltemplate-5eDefault .sheet-col-9-19,.sheet-rolltemplate-5eDefault .sheet-col-10-19,.sheet-rolltemplate-5eDefault .sheet-col-11-19,.sheet-rolltemplate-5eDefault .sheet-col-12-19,.sheet-rolltemplate-5eDefault .sheet-col-13-19,.sheet-rolltemplate-5eDefault .sheet-col-14-19,.sheet-rolltemplate-5eDefault .sheet-col-15-19,.sheet-rolltemplate-5eDefault .sheet-col-16-19,.sheet-rolltemplate-5eDefault .sheet-col-17-19,.sheet-rolltemplate-5eDefault .sheet-col-18-19,.sheet-rolltemplate-5eDefault .sheet-col-1-20,.sheet-rolltemplate-5eDefault .sheet-col-3-20,.sheet-rolltemplate-5eDefault .sheet-col-7-20,.sheet-rolltemplate-5eDefault .sheet-col-9-20,.sheet-rolltemplate-5eDefault .sheet-col-11-20,.sheet-rolltemplate-5eDefault .sheet-col-13-20,.sheet-rolltemplate-5eDefault .sheet-col-15-20,.sheet-rolltemplate-5eDefault .sheet-col-17-20,.sheet-rolltemplate-5eDefault .sheet-col-19-20,.sheet-rolltemplate-5eDefault .sheet-col-1-21,.sheet-rolltemplate-5eDefault .sheet-col-2-21,.sheet-rolltemplate-5eDefault .sheet-col-4-21,.sheet-rolltemplate-5eDefault .sheet-col-5-21,.sheet-rolltemplate-5eDefault .sheet-col-6-21,.sheet-rolltemplate-5eDefault .sheet-col-8-21,.sheet-rolltemplate-5eDefault .sheet-col-9-21,.sheet-rolltemplate-5eDefault .sheet-col-10-21,.sheet-rolltemplate-5eDefault .sheet-col-11-21,.sheet-rolltemplate-5eDefault .sheet-col-12-21,.sheet-rolltemplate-5eDefault .sheet-col-13-21,.sheet-rolltemplate-5eDefault .sheet-col-14-21,.sheet-rolltemplate-5eDefault .sheet-col-15-21,.sheet-rolltemplate-5eDefault .sheet-col-16-21,.sheet-rolltemplate-5eDefault .sheet-col-17-21,.sheet-rolltemplate-5eDefault .sheet-col-18-21,.sheet-rolltemplate-5eDefault .sheet-col-19-21,.sheet-rolltemplate-5eDefault .sheet-col-20-21,.sheet-rolltemplate-5eDefault .sheet-col-1-22,.sheet-rolltemplate-5eDefault .sheet-col-3-22,.sheet-rolltemplate-5eDefault .sheet-col-5-22,.sheet-rolltemplate-5eDefault .sheet-col-7-22,.sheet-rolltemplate-5eDefault .sheet-col-9-22,.sheet-rolltemplate-5eDefault .sheet-col-13-22,.sheet-rolltemplate-5eDefault .sheet-col-15-22,.sheet-rolltemplate-5eDefault .sheet-col-17-22,.sheet-rolltemplate-5eDefault .sheet-col-19-22,.sheet-rolltemplate-5eDefault .sheet-col-21-22,.sheet-rolltemplate-5eDefault .sheet-col-1-23,.sheet-rolltemplate-5eDefault .sheet-col-2-23,.sheet-rolltemplate-5eDefault .sheet-col-3-23,.sheet-rolltemplate-5eDefault .sheet-col-4-23,.sheet-rolltemplate-5eDefault .sheet-col-5-23,.sheet-rolltemplate-5eDefault .sheet-col-6-23,.sheet-rolltemplate-5eDefault .sheet-col-7-23,.sheet-rolltemplate-5eDefault .sheet-col-8-23,.sheet-rolltemplate-5eDefault .sheet-col-9-23,.sheet-rolltemplate-5eDefault .sheet-col-10-23,.sheet-rolltemplate-5eDefault .sheet-col-11-23,.sheet-rolltemplate-5eDefault .sheet-col-12-23,.sheet-rolltemplate-5eDefault .sheet-col-13-23,.sheet-rolltemplate-5eDefault .sheet-col-14-23,.sheet-rolltemplate-5eDefault .sheet-col-15-23,.sheet-rolltemplate-5eDefault .sheet-col-16-23,.sheet-rolltemplate-5eDefault .sheet-col-17-23,.sheet-rolltemplate-5eDefault .sheet-col-18-23,.sheet-rolltemplate-5eDefault .sheet-col-19-23,.sheet-rolltemplate-5eDefault .sheet-col-20-23,.sheet-rolltemplate-5eDefault .sheet-col-21-23,.sheet-rolltemplate-5eDefault .sheet-col-22-23,.sheet-rolltemplate-5eDefault .sheet-col-1-24,.sheet-rolltemplate-5eDefault .sheet-col-5-24,.sheet-rolltemplate-5eDefault .sheet-col-7-24,.sheet-rolltemplate-5eDefault .sheet-col-9-24,.sheet-rolltemplate-5eDefault .sheet-col-11-24,.sheet-rolltemplate-5eDefault .sheet-col-13-24,.sheet-rolltemplate-5eDefault .sheet-col-15-24,.sheet-rolltemplate-5eDefault .sheet-col-17-24,.sheet-rolltemplate-5eDefault .sheet-col-19-24,.sheet-rolltemplate-5eDefault .sheet-col-21-24,.sheet-rolltemplate-5eDefault .sheet-col-23-24,  .sheet-col-1, .sheet-col-1-2, .sheet-col-1-3, .sheet-col-2-3, .sheet-col-1-4, .sheet-col-3-4, .sheet-col-1-5, .sheet-col-2-5, .sheet-col-3-5, .sheet-col-4-5, .sheet-col-1-6, .sheet-col-5-6, .sheet-col-1-7, .sheet-col-2-7, .sheet-col-3-7, .sheet-col-4-7, .sheet-col-5-7, .sheet-col-6-7, .sheet-col-1-8, .sheet-col-3-8, .sheet-col-5-8, .sheet-col-7-8, .sheet-col-1-9, .sheet-col-2-9, .sheet-col-4-9, .sheet-col-5-9, .sheet-col-6-9, .sheet-col-7-9, .sheet-col-8-9, .sheet-col-1-10, .sheet-col-3-10, .sheet-col-7-10, .sheet-col-9-10, .sheet-col-1-11, .sheet-col-2-11, .sheet-col-3-11, .sheet-col-4-11, .sheet-col-5-11, .sheet-col-6-11, .sheet-col-7-11, .sheet-col-8-11, .sheet-col-9-11, .sheet-col-10-11, .sheet-col-1-12, .sheet-col-5-12, .sheet-col-7-12, .sheet-col-9-12, .sheet-col-11-12, .sheet-col-1-13, .sheet-col-2-13, .sheet-col-3-13, .sheet-col-4-13, .sheet-col-5-13, .sheet-col-6-13, .sheet-col-7-13, .sheet-col-8-13, .sheet-col-9-13, .sheet-col-10-13, .sheet-col-11-13, .sheet-col-12-13, .sheet-col-1-14, .sheet-col-3-14, .sheet-col-5-14, .sheet-col-9-14, .sheet-col-11-14, .sheet-col-13-14, .sheet-col-1-15, .sheet-col-2-15, .sheet-col-4-15, .sheet-col-6-15, .sheet-col-7-15, .sheet-col-8-15, .sheet-col-9-15, .sheet-col-10-15, .sheet-col-11-15, .sheet-col-12-15, .sheet-col-13-15, .sheet-col-14-15, .sheet-col-1-16, .sheet-col-3-16, .sheet-col-5-16, .sheet-col-7-16, .sheet-col-9-16, .sheet-col-11-16, .sheet-col-13-16, .sheet-col-15-16, .sheet-col-1-17, .sheet-col-2-17, .sheet-col-3-17, .sheet-col-4-17, .sheet-col-5-17, .sheet-col-6-17, .sheet-col-7-17, .sheet-col-8-17, .sheet-col-9-17, .sheet-col-10-17, .sheet-col-11-17, .sheet-col-12-17, .sheet-col-13-17, .sheet-col-14-17, .sheet-col-15-17, .sheet-col-16-17, .sheet-col-1-18, .sheet-col-5-18, .sheet-col-7-18, .sheet-col-11-18, .sheet-col-13-18, .sheet-col-15-18, .sheet-col-17-18, .sheet-col-1-19, .sheet-col-2-19, .sheet-col-3-19, .sheet-col-4-19, .sheet-col-5-19, .sheet-col-6-19, .sheet-col-7-19, .sheet-col-8-19, .sheet-col-9-19, .sheet-col-10-19, .sheet-col-11-19, .sheet-col-12-19, .sheet-col-13-19, .sheet-col-14-19, .sheet-col-15-19, .sheet-col-16-19, .sheet-col-17-19, .sheet-col-18-19, .sheet-col-1-20, .sheet-col-3-20, .sheet-col-7-20, .sheet-col-9-20, .sheet-col-11-20, .sheet-col-13-20, .sheet-col-15-20, .sheet-col-17-20, .sheet-col-19-20, .sheet-col-1-21, .sheet-col-2-21, .sheet-col-4-21, .sheet-col-5-21, .sheet-col-6-21, .sheet-col-8-21, .sheet-col-9-21, .sheet-col-10-21, .sheet-col-11-21, .sheet-col-12-21, .sheet-col-13-21, .sheet-col-14-21, .sheet-col-15-21, .sheet-col-16-21, .sheet-col-17-21, .sheet-col-18-21, .sheet-col-19-21, .sheet-col-20-21, .sheet-col-1-22, .sheet-col-3-22, .sheet-col-5-22, .sheet-col-7-22, .sheet-col-9-22, .sheet-col-13-22, .sheet-col-15-22, .sheet-col-17-22, .sheet-col-19-22, .sheet-col-21-22, .sheet-col-1-23, .sheet-col-2-23, .sheet-col-3-23, .sheet-col-4-23, .sheet-col-5-23, .sheet-col-6-23, .sheet-col-7-23, .sheet-col-8-23, .sheet-col-9-23, .sheet-col-10-23, .sheet-col-11-23, .sheet-col-12-23, .sheet-col-13-23, .sheet-col-14-23, .sheet-col-15-23, .sheet-col-16-23, .sheet-col-17-23, .sheet-col-18-23, .sheet-col-19-23, .sheet-col-20-23, .sheet-col-21-23, .sheet-col-22-23, .sheet-col-1-24, .sheet-col-5-24, .sheet-col-7-24, .sheet-col-9-24, .sheet-col-11-24, .sheet-col-13-24, .sheet-col-15-24, .sheet-col-17-24, .sheet-col-19-24, .sheet-col-21-24, .sheet-col-23-24, .sheet-col-11-48 {
+	display: inline-block;
+	zoom: 1;
+	*display: inline;
+	letter-spacing: normal;
+	word-spacing: normal;
+	vertical-align: top;
+	text-rendering: auto;
+}
+
+
+
+ .sheet-col-1,
+ .sheet-rolltemplate-5eDefault .sheet-col-1 {
+	display:block;
+}
+
+
+ .sheet-col-1-2,
+ .sheet-rolltemplate-5eDefault .sheet-col-1-2 {
+	width: 50%;
+}
+
+ .sheet-offset-1-2,
+ .sheet-rolltemplate-5eDefault .sheet-offset-1-2 {
+	margin-left: 50%;
+}
+
+ .sheet-col-1-3,
+ .sheet-rolltemplate-5eDefault .sheet-col-1-3 {
+	width: 33.33333%;
+}
+
+ .sheet-offset-1-3,
+ .sheet-rolltemplate-5eDefault .sheet-offset-1-3 {
+	margin-left: 33.33333%;
+}
+
+ .sheet-col-2-3,
+ .sheet-rolltemplate-5eDefault .sheet-col-2-3 {
+	width: 66.66667%;
+}
+
+ .sheet-offset-2-3,
+ .sheet-rolltemplate-5eDefault .sheet-offset-2-3 {
+	margin-left: 66.66667%;
+}
+
+ .sheet-col-1-4,
+ .sheet-rolltemplate-5eDefault .sheet-col-1-4 {
+	width: 25%;
+}
+
+ .sheet-offset-1-4,
+ .sheet-rolltemplate-5eDefault .sheet-offset-1-4 {
+	margin-left: 25%;
+}
+
+ .sheet-col-3-4,
+ .sheet-rolltemplate-5eDefault .sheet-col-3-4 {
+	width: 75%;
+}
+
+ .sheet-offset-3-4,
+ .sheet-rolltemplate-5eDefault .sheet-offset-3-4 {
+	margin-left: 75%;
+}
+
+ .sheet-col-1-5,
+ .sheet-rolltemplate-5eDefault .sheet-col-1-5 {
+	width: 20%;
+}
+
+ .sheet-offset-1-5,
+ .sheet-rolltemplate-5eDefault .sheet-offset-1-5 {
+	margin-left: 20%;
+}
+
+ .sheet-col-2-5,
+ .sheet-rolltemplate-5eDefault .sheet-col-2-5 {
+	width: 40%;
+}
+
+ .sheet-offset-2-5,
+ .sheet-rolltemplate-5eDefault .sheet-offset-2-5 {
+	margin-left: 40%;
+}
+
+ .sheet-col-3-5,
+ .sheet-rolltemplate-5eDefault .sheet-col-3-5 {
+	width: 60%;
+}
+
+ .sheet-offset-3-5,
+ .sheet-rolltemplate-5eDefault .sheet-offset-3-5 {
+	margin-left: 60%;
+}
+
+ .sheet-col-4-5,
+ .sheet-rolltemplate-5eDefault .sheet-col-4-5 {
+	width: 80%;
+}
+
+ .sheet-offset-4-5,
+ .sheet-rolltemplate-5eDefault .sheet-offset-4-5 {
+	margin-left: 80%;
+}
+
+ .sheet-col-1-6,
+ .sheet-rolltemplate-5eDefault .sheet-col-1-6 {
+	width: 16.66667%;
+}
+
+ .sheet-offset-1-6,
+ .sheet-rolltemplate-5eDefault .sheet-offset-1-6 {
+	margin-left: 16.66667%;
+}
+
+ .sheet-col-5-6,
+ .sheet-rolltemplate-5eDefault .sheet-col-5-6 {
+	width: 83.33333%;
+}
+
+ .sheet-offset-5-6,
+ .sheet-rolltemplate-5eDefault .sheet-offset-5-6 {
+	margin-left: 83.33333%;
+}
+
+ .sheet-col-1-7,
+ .sheet-rolltemplate-5eDefault .sheet-col-1-7 {
+	width: 14.28571%;
+}
+
+ .sheet-offset-1-7,
+ .sheet-rolltemplate-5eDefault .sheet-offset-1-7 {
+	margin-left: 14.28571%;
+}
+
+ .sheet-col-2-7,
+ .sheet-rolltemplate-5eDefault .sheet-col-2-7 {
+	width: 28.57143%;
+}
+
+ .sheet-offset-2-7,
+ .sheet-rolltemplate-5eDefault .sheet-offset-2-7 {
+	margin-left: 28.57143%;
+}
+
+ .sheet-col-3-7,
+ .sheet-rolltemplate-5eDefault .sheet-col-3-7 {
+	width: 42.85714%;
+}
+
+ .sheet-offset-3-7,
+ .sheet-rolltemplate-5eDefault .sheet-offset-3-7 {
+	margin-left: 42.85714%;
+}
+
+ .sheet-col-4-7,
+ .sheet-rolltemplate-5eDefault .sheet-col-4-7 {
+	width: 57.14286%;
+}
+
+ .sheet-offset-4-7,
+ .sheet-rolltemplate-5eDefault .sheet-offset-4-7 {
+	margin-left: 57.14286%;
+}
+
+ .sheet-col-5-7,
+ .sheet-rolltemplate-5eDefault .sheet-col-5-7 {
+	width: 71.42857%;
+}
+
+ .sheet-offset-5-7,
+ .sheet-rolltemplate-5eDefault .sheet-offset-5-7 {
+	margin-left: 71.42857%;
+}
+
+ .sheet-col-6-7,
+ .sheet-rolltemplate-5eDefault .sheet-col-6-7 {
+	width: 85.71429%;
+}
+
+ .sheet-offset-6-7,
+ .sheet-rolltemplate-5eDefault .sheet-offset-6-7 {
+	margin-left: 85.71429%;
+}
+
+ .sheet-col-1-8,
+ .sheet-rolltemplate-5eDefault .sheet-col-1-8 {
+	width: 12.5%;
+}
+
+ .sheet-offset-1-8,
+ .sheet-rolltemplate-5eDefault .sheet-offset-1-8 {
+	margin-left: 12.5%;
+}
+
+ .sheet-col-3-8,
+ .sheet-rolltemplate-5eDefault .sheet-col-3-8 {
+	width: 37.5%;
+}
+
+ .sheet-offset-3-8,
+ .sheet-rolltemplate-5eDefault .sheet-offset-3-8 {
+	margin-left: 37.5%;
+}
+
+ .sheet-col-5-8,
+ .sheet-rolltemplate-5eDefault .sheet-col-5-8 {
+	width: 62.5%;
+}
+
+ .sheet-offset-5-8,
+ .sheet-rolltemplate-5eDefault .sheet-offset-5-8 {
+	margin-left: 62.5%;
+}
+
+ .sheet-col-7-8,
+ .sheet-rolltemplate-5eDefault .sheet-col-7-8 {
+	width: 87.5%;
+}
+
+ .sheet-offset-7-8,
+ .sheet-rolltemplate-5eDefault .sheet-offset-7-8 {
+	margin-left: 87.5%;
+}
+
+ .sheet-col-1-9,
+ .sheet-rolltemplate-5eDefault .sheet-col-1-9 {
+	width: 11.11111%;
+}
+
+ .sheet-offset-1-9,
+ .sheet-rolltemplate-5eDefault .sheet-offset-1-9 {
+	margin-left: 11.11111%;
+}
+
+ .sheet-col-2-9,
+ .sheet-rolltemplate-5eDefault .sheet-col-2-9 {
+	width: 22.22222%;
+}
+
+ .sheet-offset-2-9,
+ .sheet-rolltemplate-5eDefault .sheet-offset-2-9 {
+	margin-left: 22.22222%;
+}
+
+ .sheet-col-4-9,
+ .sheet-rolltemplate-5eDefault .sheet-col-4-9 {
+	width: 44.44444%;
+}
+
+ .sheet-offset-4-9,
+ .sheet-rolltemplate-5eDefault .sheet-offset-4-9 {
+	margin-left: 44.44444%;
+}
+
+ .sheet-col-5-9,
+ .sheet-rolltemplate-5eDefault .sheet-col-5-9 {
+	width: 55.55556%;
+}
+
+ .sheet-offset-5-9,
+ .sheet-rolltemplate-5eDefault .sheet-offset-5-9 {
+	margin-left: 55.55556%;
+}
+
+ .sheet-col-6-9,
+ .sheet-rolltemplate-5eDefault .sheet-col-6-9 {
+	width: 66.66667%;
+}
+
+ .sheet-offset-6-9,
+ .sheet-rolltemplate-5eDefault .sheet-offset-6-9 {
+	margin-left: 66.66667%;
+}
+
+ .sheet-col-7-9,
+ .sheet-rolltemplate-5eDefault .sheet-col-7-9 {
+	width: 77.77778%;
+}
+
+ .sheet-offset-7-9,
+ .sheet-rolltemplate-5eDefault .sheet-offset-7-9 {
+	margin-left: 77.77778%;
+}
+
+ .sheet-col-8-9,
+ .sheet-rolltemplate-5eDefault .sheet-col-8-9 {
+	width: 88.88889%;
+}
+
+ .sheet-offset-8-9,
+ .sheet-rolltemplate-5eDefault .sheet-offset-8-9 {
+	margin-left: 88.88889%;
+}
+
+ .sheet-col-1-10,
+ .sheet-rolltemplate-5eDefault .sheet-col-1-10 {
+	width: 10%;
+}
+
+ .sheet-offset-1-10,
+ .sheet-rolltemplate-5eDefault .sheet-offset-1-10 {
+	margin-left: 10%;
+}
+
+ .sheet-col-3-10,
+ .sheet-rolltemplate-5eDefault .sheet-col-3-10 {
+	width: 30%;
+}
+
+ .sheet-offset-3-10,
+ .sheet-rolltemplate-5eDefault .sheet-offset-3-10 {
+	margin-left: 30%;
+}
+
+ .sheet-col-7-10,
+ .sheet-rolltemplate-5eDefault .sheet-col-7-10 {
+	width: 70%;
+}
+
+ .sheet-offset-7-10,
+ .sheet-rolltemplate-5eDefault .sheet-offset-7-10 {
+	margin-left: 70%;
+}
+
+ .sheet-col-9-10,
+ .sheet-rolltemplate-5eDefault .sheet-col-9-10 {
+	width: 90%;
+}
+
+ .sheet-offset-9-10,
+ .sheet-rolltemplate-5eDefault .sheet-offset-9-10 {
+	margin-left: 90%;
+}
+
+ .sheet-col-1-11,
+ .sheet-rolltemplate-5eDefault .sheet-col-1-11 {
+	width: 9.09091%;
+}
+
+ .sheet-offset-1-11,
+ .sheet-rolltemplate-5eDefault .sheet-offset-1-11 {
+	margin-left: 9.09091%;
+}
+
+ .sheet-col-2-11,
+ .sheet-rolltemplate-5eDefault .sheet-col-2-11 {
+	width: 18.18182%;
+}
+
+ .sheet-offset-2-11,
+ .sheet-rolltemplate-5eDefault .sheet-offset-2-11 {
+	margin-left: 18.18182%;
+}
+
+ .sheet-col-3-11,
+ .sheet-rolltemplate-5eDefault .sheet-col-3-11 {
+	width: 27.27273%;
+}
+
+ .sheet-offset-3-11,
+ .sheet-rolltemplate-5eDefault .sheet-offset-3-11 {
+	margin-left: 27.27273%;
+}
+
+ .sheet-col-4-11,
+ .sheet-rolltemplate-5eDefault .sheet-col-4-11 {
+	width: 36.36364%;
+}
+
+ .sheet-offset-4-11,
+ .sheet-rolltemplate-5eDefault .sheet-offset-4-11 {
+	margin-left: 36.36364%;
+}
+
+ .sheet-col-5-11,
+ .sheet-rolltemplate-5eDefault .sheet-col-5-11 {
+	width: 45.45455%;
+}
+
+ .sheet-offset-5-11,
+ .sheet-rolltemplate-5eDefault .sheet-offset-5-11 {
+	margin-left: 45.45455%;
+}
+
+ .sheet-col-6-11,
+ .sheet-rolltemplate-5eDefault .sheet-col-6-11 {
+	width: 54.54545%;
+}
+
+ .sheet-offset-6-11,
+ .sheet-rolltemplate-5eDefault .sheet-offset-6-11 {
+	margin-left: 54.54545%;
+}
+
+ .sheet-col-7-11,
+ .sheet-rolltemplate-5eDefault .sheet-col-7-11 {
+	width: 63.63636%;
+}
+
+ .sheet-offset-7-11,
+ .sheet-rolltemplate-5eDefault .sheet-offset-7-11 {
+	margin-left: 63.63636%;
+}
+
+ .sheet-col-8-11,
+ .sheet-rolltemplate-5eDefault .sheet-col-8-11 {
+	width: 72.72727%;
+}
+
+ .sheet-offset-8-11,
+ .sheet-rolltemplate-5eDefault .sheet-offset-8-11 {
+	margin-left: 72.72727%;
+}
+
+ .sheet-col-9-11,
+ .sheet-rolltemplate-5eDefault .sheet-col-9-11 {
+	width: 81.81818%;
+}
+
+ .sheet-offset-9-11,
+ .sheet-rolltemplate-5eDefault .sheet-offset-9-11 {
+	margin-left: 81.81818%;
+}
+
+ .sheet-col-10-11,
+ .sheet-rolltemplate-5eDefault .sheet-col-10-11 {
+	width: 90.90909%;
+}
+
+ .sheet-offset-10-11,
+ .sheet-rolltemplate-5eDefault .sheet-offset-10-11 {
+	margin-left: 90.90909%;
+}
+
+ .sheet-col-1-12,
+ .sheet-rolltemplate-5eDefault .sheet-col-1-12 {
+	width: 8.33333%;
+}
+
+ .sheet-offset-1-12,
+ .sheet-rolltemplate-5eDefault .sheet-offset-1-12 {
+	margin-left: 8.33333%;
+}
+
+ .sheet-col-5-12,
+ .sheet-rolltemplate-5eDefault .sheet-col-5-12 {
+	width: 41.66667%;
+}
+
+ .sheet-offset-5-12,
+ .sheet-rolltemplate-5eDefault .sheet-offset-5-12 {
+	margin-left: 41.66667%;
+}
+
+ .sheet-col-7-12,
+ .sheet-rolltemplate-5eDefault .sheet-col-7-12 {
+	width: 58.33333%;
+}
+
+ .sheet-offset-7-12,
+ .sheet-rolltemplate-5eDefault .sheet-offset-7-12 {
+	margin-left: 58.33333%;
+}
+
+ .sheet-col-9-12,
+ .sheet-rolltemplate-5eDefault .sheet-col-9-12 {
+	width: 75%;
+}
+
+ .sheet-offset-9-12,
+ .sheet-rolltemplate-5eDefault .sheet-offset-9-12 {
+	margin-left: 75%;
+}
+
+ .sheet-col-11-12,
+ .sheet-rolltemplate-5eDefault .sheet-col-11-12 {
+	width: 91.66667%;
+}
+
+ .sheet-offset-11-12,
+ .sheet-rolltemplate-5eDefault .sheet-offset-11-12 {
+	margin-left: 91.66667%;
+}
+
+ .sheet-col-1-13,
+ .sheet-rolltemplate-5eDefault .sheet-col-1-13 {
+	width: 7.69231%;
+}
+
+ .sheet-offset-1-13,
+ .sheet-rolltemplate-5eDefault .sheet-offset-1-13 {
+	margin-left: 7.69231%;
+}
+
+ .sheet-col-2-13,
+ .sheet-rolltemplate-5eDefault .sheet-col-2-13 {
+	width: 15.38462%;
+}
+
+ .sheet-offset-2-13,
+ .sheet-rolltemplate-5eDefault .sheet-offset-2-13 {
+	margin-left: 15.38462%;
+}
+
+ .sheet-col-3-13,
+ .sheet-rolltemplate-5eDefault .sheet-col-3-13 {
+	width: 23.07692%;
+}
+
+ .sheet-offset-3-13,
+ .sheet-rolltemplate-5eDefault .sheet-offset-3-13 {
+	margin-left: 23.07692%;
+}
+
+ .sheet-col-4-13,
+ .sheet-rolltemplate-5eDefault .sheet-col-4-13 {
+	width: 30.76923%;
+}
+
+ .sheet-offset-4-13,
+ .sheet-rolltemplate-5eDefault .sheet-offset-4-13 {
+	margin-left: 30.76923%;
+}
+
+ .sheet-col-5-13,
+ .sheet-rolltemplate-5eDefault .sheet-col-5-13 {
+	width: 38.46154%;
+}
+
+ .sheet-offset-5-13,
+ .sheet-rolltemplate-5eDefault .sheet-offset-5-13 {
+	margin-left: 38.46154%;
+}
+
+ .sheet-col-6-13,
+ .sheet-rolltemplate-5eDefault .sheet-col-6-13 {
+	width: 46.15385%;
+}
+
+ .sheet-offset-6-13,
+ .sheet-rolltemplate-5eDefault .sheet-offset-6-13 {
+	margin-left: 46.15385%;
+}
+
+ .sheet-col-7-13,
+ .sheet-rolltemplate-5eDefault .sheet-col-7-13 {
+	width: 53.84615%;
+}
+
+ .sheet-offset-7-13,
+ .sheet-rolltemplate-5eDefault .sheet-offset-7-13 {
+	margin-left: 53.84615%;
+}
+
+ .sheet-col-8-13,
+ .sheet-rolltemplate-5eDefault .sheet-col-8-13 {
+	width: 61.53846%;
+}
+
+ .sheet-offset-8-13,
+ .sheet-rolltemplate-5eDefault .sheet-offset-8-13 {
+	margin-left: 61.53846%;
+}
+
+ .sheet-col-9-13,
+ .sheet-rolltemplate-5eDefault .sheet-col-9-13 {
+	width: 69.23077%;
+}
+
+ .sheet-offset-9-13,
+ .sheet-rolltemplate-5eDefault .sheet-offset-9-13 {
+	margin-left: 69.23077%;
+}
+
+ .sheet-col-10-13,
+ .sheet-rolltemplate-5eDefault .sheet-col-10-13 {
+	width: 76.92308%;
+}
+
+ .sheet-offset-10-13,
+ .sheet-rolltemplate-5eDefault .sheet-offset-10-13 {
+	margin-left: 76.92308%;
+}
+
+ .sheet-col-11-13,
+ .sheet-rolltemplate-5eDefault .sheet-col-11-13 {
+	width: 84.61538%;
+}
+
+ .sheet-offset-11-13,
+ .sheet-rolltemplate-5eDefault .sheet-offset-11-13 {
+	margin-left: 84.61538%;
+}
+
+ .sheet-col-12-13,
+ .sheet-rolltemplate-5eDefault .sheet-col-12-13 {
+	width: 92.30769%;
+}
+
+ .sheet-offset-12-13,
+ .sheet-rolltemplate-5eDefault .sheet-offset-12-13 {
+	margin-left: 92.30769%;
+}
+
+ .sheet-col-1-14,
+ .sheet-rolltemplate-5eDefault .sheet-col-1-14 {
+	width: 7.14286%;
+}
+
+ .sheet-offset-1-14,
+ .sheet-rolltemplate-5eDefault .sheet-offset-1-14 {
+	margin-left: 7.14286%;
+}
+
+ .sheet-col-3-14,
+ .sheet-rolltemplate-5eDefault .sheet-col-3-14 {
+	width: 21.42857%;
+}
+
+ .sheet-offset-3-14,
+ .sheet-rolltemplate-5eDefault .sheet-offset-3-14 {
+	margin-left: 21.42857%;
+}
+
+ .sheet-col-5-14,
+ .sheet-rolltemplate-5eDefault .sheet-col-5-14 {
+	width: 35.71429%;
+}
+
+ .sheet-offset-5-14,
+ .sheet-rolltemplate-5eDefault .sheet-offset-5-14 {
+	margin-left: 35.71429%;
+}
+
+ .sheet-col-9-14,
+ .sheet-rolltemplate-5eDefault .sheet-col-9-14 {
+	width: 64.28571%;
+}
+
+ .sheet-offset-9-14,
+ .sheet-rolltemplate-5eDefault .sheet-offset-9-14 {
+	margin-left: 64.28571%;
+}
+
+ .sheet-col-11-14,
+ .sheet-rolltemplate-5eDefault .sheet-col-11-14 {
+	width: 78.57143%;
+}
+
+ .sheet-offset-11-14,
+ .sheet-rolltemplate-5eDefault .sheet-offset-11-14 {
+	margin-left: 78.57143%;
+}
+
+ .sheet-col-13-14,
+ .sheet-rolltemplate-5eDefault .sheet-col-13-14 {
+	width: 92.85714%;
+}
+
+ .sheet-offset-13-14,
+ .sheet-rolltemplate-5eDefault .sheet-offset-13-14 {
+	margin-left: 92.85714%;
+}
+
+ .sheet-col-1-15,
+ .sheet-rolltemplate-5eDefault .sheet-col-1-15 {
+	width: 6.66667%;
+}
+
+ .sheet-offset-1-15,
+ .sheet-rolltemplate-5eDefault .sheet-offset-1-15 {
+	margin-left: 6.66667%;
+}
+
+ .sheet-col-2-15,
+ .sheet-rolltemplate-5eDefault .sheet-col-2-15 {
+	width: 13.33333%;
+}
+
+ .sheet-offset-2-15,
+ .sheet-rolltemplate-5eDefault .sheet-offset-2-15 {
+	margin-left: 13.33333%;
+}
+
+ .sheet-col-4-15,
+ .sheet-rolltemplate-5eDefault .sheet-col-4-15 {
+	width: 26.66667%;
+}
+
+ .sheet-offset-4-15,
+ .sheet-rolltemplate-5eDefault .sheet-offset-4-15 {
+	margin-left: 26.66667%;
+}
+
+ .sheet-col-6-15,
+ .sheet-rolltemplate-5eDefault .sheet-col-6-15 {
+	width: 40%;
+}
+
+ .sheet-offset-6-15,
+ .sheet-rolltemplate-5eDefault .sheet-offset-6-15 {
+	margin-left: 40%;
+}
+
+ .sheet-col-7-15,
+ .sheet-rolltemplate-5eDefault .sheet-col-7-15 {
+	width: 46.66667%;
+}
+
+ .sheet-offset-7-15,
+ .sheet-rolltemplate-5eDefault .sheet-offset-7-15 {
+	margin-left: 46.66667%;
+}
+
+ .sheet-col-8-15,
+ .sheet-rolltemplate-5eDefault .sheet-col-8-15 {
+	width: 53.33333%;
+}
+
+ .sheet-offset-8-15,
+ .sheet-rolltemplate-5eDefault .sheet-offset-8-15 {
+	margin-left: 53.33333%;
+}
+
+ .sheet-col-9-15,
+ .sheet-rolltemplate-5eDefault .sheet-col-9-15 {
+	width: 60%;
+}
+
+ .sheet-offset-9-15,
+ .sheet-rolltemplate-5eDefault .sheet-offset-9-15 {
+	margin-left: 60%;
+}
+
+ .sheet-col-10-15,
+ .sheet-rolltemplate-5eDefault .sheet-col-10-15 {
+	width: 66.66667%;
+}
+
+ .sheet-offset-10-15,
+ .sheet-rolltemplate-5eDefault .sheet-offset-10-15 {
+	margin-left: 66.66667%;
+}
+
+ .sheet-col-11-15,
+ .sheet-rolltemplate-5eDefault .sheet-col-11-15 {
+	width: 73.33333%;
+}
+
+ .sheet-offset-11-15,
+ .sheet-rolltemplate-5eDefault .sheet-offset-11-15 {
+	margin-left: 73.33333%;
+}
+
+ .sheet-col-12-15,
+ .sheet-rolltemplate-5eDefault .sheet-col-12-15 {
+	width: 80%;
+}
+
+ .sheet-offset-12-15,
+ .sheet-rolltemplate-5eDefault .sheet-offset-12-15 {
+	margin-left: 80%;
+}
+
+ .sheet-col-13-15,
+ .sheet-rolltemplate-5eDefault .sheet-col-13-15 {
+	width: 86.66667%;
+}
+
+ .sheet-offset-13-15,
+ .sheet-rolltemplate-5eDefault .sheet-offset-13-15 {
+	margin-left: 86.66667%;
+}
+
+ .sheet-col-14-15,
+ .sheet-rolltemplate-5eDefault .sheet-col-14-15 {
+	width: 93.33333%;
+}
+
+ .sheet-offset-14-15,
+ .sheet-rolltemplate-5eDefault .sheet-offset-14-15 {
+	margin-left: 93.33333%;
+}
+
+ .sheet-col-1-16,
+ .sheet-rolltemplate-5eDefault .sheet-col-1-16 {
+	width: 6.25%;
+}
+
+ .sheet-offset-1-16,
+ .sheet-rolltemplate-5eDefault .sheet-offset-1-16 {
+	margin-left: 6.25%;
+}
+
+ .sheet-col-3-16,
+ .sheet-rolltemplate-5eDefault .sheet-col-3-16 {
+	width: 18.75%;
+}
+
+ .sheet-offset-3-16,
+ .sheet-rolltemplate-5eDefault .sheet-offset-3-16 {
+	margin-left: 18.75%;
+}
+
+ .sheet-col-5-16,
+ .sheet-rolltemplate-5eDefault .sheet-col-5-16 {
+	width: 31.25%;
+}
+
+ .sheet-offset-5-16,
+ .sheet-rolltemplate-5eDefault .sheet-offset-5-16 {
+	margin-left: 31.25%;
+}
+
+ .sheet-col-7-16,
+ .sheet-rolltemplate-5eDefault .sheet-col-7-16 {
+	width: 43.75%;
+}
+
+ .sheet-offset-7-16,
+ .sheet-rolltemplate-5eDefault .sheet-offset-7-16 {
+	margin-left: 43.75%;
+}
+
+ .sheet-col-9-16,
+ .sheet-rolltemplate-5eDefault .sheet-col-9-16 {
+	width: 56.25%;
+}
+
+ .sheet-offset-9-16,
+ .sheet-rolltemplate-5eDefault .sheet-offset-9-16 {
+	margin-left: 56.25%;
+}
+
+ .sheet-col-11-16,
+ .sheet-rolltemplate-5eDefault .sheet-col-11-16 {
+	width: 68.75%;
+}
+
+ .sheet-offset-11-16,
+ .sheet-rolltemplate-5eDefault .sheet-offset-11-16 {
+	margin-left: 68.75%;
+}
+
+ .sheet-col-13-16,
+ .sheet-rolltemplate-5eDefault .sheet-col-13-16 {
+	width: 81.25%;
+}
+
+ .sheet-offset-13-16,
+ .sheet-rolltemplate-5eDefault .sheet-offset-13-16 {
+	margin-left: 81.25%;
+}
+
+ .sheet-col-15-16,
+ .sheet-rolltemplate-5eDefault .sheet-col-15-16 {
+	width: 93.75%;
+}
+
+ .sheet-offset-15-16,
+ .sheet-rolltemplate-5eDefault .sheet-offset-15-16 {
+	margin-left: 93.75%;
+}
+
+ .sheet-col-1-17,
+ .sheet-rolltemplate-5eDefault .sheet-col-1-17 {
+	width: 5.88235%;
+}
+
+ .sheet-offset-1-17,
+ .sheet-rolltemplate-5eDefault .sheet-offset-1-17 {
+	margin-left: 5.88235%;
+}
+
+ .sheet-col-2-17,
+ .sheet-rolltemplate-5eDefault .sheet-col-2-17 {
+	width: 11.76471%;
+}
+
+ .sheet-offset-2-17,
+ .sheet-rolltemplate-5eDefault .sheet-offset-2-17 {
+	margin-left: 11.76471%;
+}
+
+ .sheet-col-3-17,
+ .sheet-rolltemplate-5eDefault .sheet-col-3-17 {
+	width: 17.64706%;
+}
+
+ .sheet-offset-3-17,
+ .sheet-rolltemplate-5eDefault .sheet-offset-3-17 {
+	margin-left: 17.64706%;
+}
+
+ .sheet-col-4-17,
+ .sheet-rolltemplate-5eDefault .sheet-col-4-17 {
+	width: 23.52941%;
+}
+
+ .sheet-offset-4-17,
+ .sheet-rolltemplate-5eDefault .sheet-offset-4-17 {
+	margin-left: 23.52941%;
+}
+
+ .sheet-col-5-17,
+ .sheet-rolltemplate-5eDefault .sheet-col-5-17 {
+	width: 29.41176%;
+}
+
+ .sheet-offset-5-17,
+ .sheet-rolltemplate-5eDefault .sheet-offset-5-17 {
+	margin-left: 29.41176%;
+}
+
+ .sheet-col-6-17,
+ .sheet-rolltemplate-5eDefault .sheet-col-6-17 {
+	width: 35.29412%;
+}
+
+ .sheet-offset-6-17,
+ .sheet-rolltemplate-5eDefault .sheet-offset-6-17 {
+	margin-left: 35.29412%;
+}
+
+ .sheet-col-7-17,
+ .sheet-rolltemplate-5eDefault .sheet-col-7-17 {
+	width: 41.17647%;
+}
+
+ .sheet-offset-7-17,
+ .sheet-rolltemplate-5eDefault .sheet-offset-7-17 {
+	margin-left: 41.17647%;
+}
+
+ .sheet-col-8-17,
+ .sheet-rolltemplate-5eDefault .sheet-col-8-17 {
+	width: 47.05882%;
+}
+
+ .sheet-offset-8-17,
+ .sheet-rolltemplate-5eDefault .sheet-offset-8-17 {
+	margin-left: 47.05882%;
+}
+
+ .sheet-col-9-17,
+ .sheet-rolltemplate-5eDefault .sheet-col-9-17 {
+	width: 52.94118%;
+}
+
+ .sheet-offset-9-17,
+ .sheet-rolltemplate-5eDefault .sheet-offset-9-17 {
+	margin-left: 52.94118%;
+}
+
+ .sheet-col-10-17,
+ .sheet-rolltemplate-5eDefault .sheet-col-10-17 {
+	width: 58.82353%;
+}
+
+ .sheet-offset-10-17,
+ .sheet-rolltemplate-5eDefault .sheet-offset-10-17 {
+	margin-left: 58.82353%;
+}
+
+ .sheet-col-11-17,
+ .sheet-rolltemplate-5eDefault .sheet-col-11-17 {
+	width: 64.70588%;
+}
+
+ .sheet-offset-11-17,
+ .sheet-rolltemplate-5eDefault .sheet-offset-11-17 {
+	margin-left: 64.70588%;
+}
+
+ .sheet-col-12-17,
+ .sheet-rolltemplate-5eDefault .sheet-col-12-17 {
+	width: 70.58824%;
+}
+
+ .sheet-offset-12-17,
+ .sheet-rolltemplate-5eDefault .sheet-offset-12-17 {
+	margin-left: 70.58824%;
+}
+
+ .sheet-col-13-17,
+ .sheet-rolltemplate-5eDefault .sheet-col-13-17 {
+	width: 76.47059%;
+}
+
+ .sheet-offset-13-17,
+ .sheet-rolltemplate-5eDefault .sheet-offset-13-17 {
+	margin-left: 76.47059%;
+}
+
+ .sheet-col-14-17,
+ .sheet-rolltemplate-5eDefault .sheet-col-14-17 {
+	width: 82.35294%;
+}
+
+ .sheet-offset-14-17,
+ .sheet-rolltemplate-5eDefault .sheet-offset-14-17 {
+	margin-left: 82.35294%;
+}
+
+ .sheet-col-15-17,
+ .sheet-rolltemplate-5eDefault .sheet-col-15-17 {
+	width: 88.23529%;
+}
+
+ .sheet-offset-15-17,
+ .sheet-rolltemplate-5eDefault .sheet-offset-15-17 {
+	margin-left: 88.23529%;
+}
+
+ .sheet-col-16-17,
+ .sheet-rolltemplate-5eDefault .sheet-col-16-17 {
+	width: 94.11765%;
+}
+
+ .sheet-offset-16-17,
+ .sheet-rolltemplate-5eDefault .sheet-offset-16-17 {
+	margin-left: 94.11765%;
+}
+
+ .sheet-col-1-18,
+ .sheet-rolltemplate-5eDefault .sheet-col-1-18 {
+	width: 5.55556%;
+}
+
+ .sheet-offset-1-18,
+ .sheet-rolltemplate-5eDefault .sheet-offset-1-18 {
+	margin-left: 5.55556%;
+}
+
+ .sheet-col-5-18,
+ .sheet-rolltemplate-5eDefault .sheet-col-5-18 {
+	width: 27.77778%;
+}
+
+ .sheet-offset-5-18,
+ .sheet-rolltemplate-5eDefault .sheet-offset-5-18 {
+	margin-left: 27.77778%;
+}
+
+ .sheet-col-7-18,
+ .sheet-rolltemplate-5eDefault .sheet-col-7-18 {
+	width: 38.88889%;
+}
+
+ .sheet-offset-7-18,
+ .sheet-rolltemplate-5eDefault .sheet-offset-7-18 {
+	margin-left: 38.88889%;
+}
+
+ .sheet-col-11-18,
+ .sheet-rolltemplate-5eDefault .sheet-col-11-18 {
+	width: 61.11111%;
+}
+
+ .sheet-offset-11-18,
+ .sheet-rolltemplate-5eDefault .sheet-offset-11-18 {
+	margin-left: 61.11111%;
+}
+
+ .sheet-col-13-18,
+ .sheet-rolltemplate-5eDefault .sheet-col-13-18 {
+	width: 72.22222%;
+}
+
+ .sheet-offset-13-18,
+ .sheet-rolltemplate-5eDefault .sheet-offset-13-18 {
+	margin-left: 72.22222%;
+}
+
+ .sheet-col-15-18,
+ .sheet-rolltemplate-5eDefault .sheet-col-15-18 {
+	width: 83.33333%;
+}
+
+ .sheet-offset-15-18,
+ .sheet-rolltemplate-5eDefault .sheet-offset-15-18 {
+	margin-left: 83.33333%;
+}
+
+ .sheet-col-17-18,
+ .sheet-rolltemplate-5eDefault .sheet-col-17-18 {
+	width: 94.44444%;
+}
+
+ .sheet-offset-17-18,
+ .sheet-rolltemplate-5eDefault .sheet-offset-17-18 {
+	margin-left: 94.44444%;
+}
+
+ .sheet-col-1-19,
+ .sheet-rolltemplate-5eDefault .sheet-col-1-19 {
+	width: 5.26316%;
+}
+
+ .sheet-offset-1-19,
+ .sheet-rolltemplate-5eDefault .sheet-offset-1-19 {
+	margin-left: 5.26316%;
+}
+
+ .sheet-col-2-19,
+ .sheet-rolltemplate-5eDefault .sheet-col-2-19 {
+	width: 10.52632%;
+}
+
+ .sheet-offset-2-19,
+ .sheet-rolltemplate-5eDefault .sheet-offset-2-19 {
+	margin-left: 10.52632%;
+}
+
+ .sheet-col-3-19,
+ .sheet-rolltemplate-5eDefault .sheet-col-3-19 {
+	width: 15.78947%;
+}
+
+ .sheet-offset-3-19,
+ .sheet-rolltemplate-5eDefault .sheet-offset-3-19 {
+	margin-left: 15.78947%;
+}
+
+ .sheet-col-4-19,
+ .sheet-rolltemplate-5eDefault .sheet-col-4-19 {
+	width: 21.05263%;
+}
+
+ .sheet-offset-4-19,
+ .sheet-rolltemplate-5eDefault .sheet-offset-4-19 {
+	margin-left: 21.05263%;
+}
+
+ .sheet-col-5-19,
+ .sheet-rolltemplate-5eDefault .sheet-col-5-19 {
+	width: 26.31579%;
+}
+
+ .sheet-offset-5-19,
+ .sheet-rolltemplate-5eDefault .sheet-offset-5-19 {
+	margin-left: 26.31579%;
+}
+
+ .sheet-col-6-19,
+ .sheet-rolltemplate-5eDefault .sheet-col-6-19 {
+	width: 31.57895%;
+}
+
+ .sheet-offset-6-19,
+ .sheet-rolltemplate-5eDefault .sheet-offset-6-19 {
+	margin-left: 31.57895%;
+}
+
+ .sheet-col-7-19,
+ .sheet-rolltemplate-5eDefault .sheet-col-7-19 {
+	width: 36.84211%;
+}
+
+ .sheet-offset-7-19,
+ .sheet-rolltemplate-5eDefault .sheet-offset-7-19 {
+	margin-left: 36.84211%;
+}
+
+ .sheet-col-8-19,
+ .sheet-rolltemplate-5eDefault .sheet-col-8-19 {
+	width: 42.10526%;
+}
+
+ .sheet-offset-8-19,
+ .sheet-rolltemplate-5eDefault .sheet-offset-8-19 {
+	margin-left: 42.10526%;
+}
+
+ .sheet-col-9-19,
+ .sheet-rolltemplate-5eDefault .sheet-col-9-19 {
+	width: 47.36842%;
+}
+
+ .sheet-offset-9-19,
+ .sheet-rolltemplate-5eDefault .sheet-offset-9-19 {
+	margin-left: 47.36842%;
+}
+
+ .sheet-col-10-19,
+ .sheet-rolltemplate-5eDefault .sheet-col-10-19 {
+	width: 52.63158%;
+}
+
+ .sheet-offset-10-19,
+ .sheet-rolltemplate-5eDefault .sheet-offset-10-19 {
+	margin-left: 52.63158%;
+}
+
+ .sheet-col-11-19,
+ .sheet-rolltemplate-5eDefault .sheet-col-11-19 {
+	width: 57.89474%;
+}
+
+ .sheet-offset-11-19,
+ .sheet-rolltemplate-5eDefault .sheet-offset-11-19 {
+	margin-left: 57.89474%;
+}
+
+ .sheet-col-12-19,
+ .sheet-rolltemplate-5eDefault .sheet-col-12-19 {
+	width: 63.15789%;
+}
+
+ .sheet-offset-12-19,
+ .sheet-rolltemplate-5eDefault .sheet-offset-12-19 {
+	margin-left: 63.15789%;
+}
+
+ .sheet-col-13-19,
+ .sheet-rolltemplate-5eDefault .sheet-col-13-19 {
+	width: 68.42105%;
+}
+
+ .sheet-offset-13-19,
+ .sheet-rolltemplate-5eDefault .sheet-offset-13-19 {
+	margin-left: 68.42105%;
+}
+
+ .sheet-col-14-19,
+ .sheet-rolltemplate-5eDefault .sheet-col-14-19 {
+	width: 73.68421%;
+}
+
+ .sheet-offset-14-19,
+ .sheet-rolltemplate-5eDefault .sheet-offset-14-19 {
+	margin-left: 73.68421%;
+}
+
+ .sheet-col-15-19,
+ .sheet-rolltemplate-5eDefault .sheet-col-15-19 {
+	width: 78.94737%;
+}
+
+ .sheet-offset-15-19,
+ .sheet-rolltemplate-5eDefault .sheet-offset-15-19 {
+	margin-left: 78.94737%;
+}
+
+ .sheet-col-16-19,
+ .sheet-rolltemplate-5eDefault .sheet-col-16-19 {
+	width: 84.21053%;
+}
+
+ .sheet-offset-16-19,
+ .sheet-rolltemplate-5eDefault .sheet-offset-16-19 {
+	margin-left: 84.21053%;
+}
+
+ .sheet-col-17-19,
+ .sheet-rolltemplate-5eDefault .sheet-col-17-19 {
+	width: 89.47368%;
+}
+
+ .sheet-offset-17-19,
+ .sheet-rolltemplate-5eDefault .sheet-offset-17-19 {
+	margin-left: 89.47368%;
+}
+
+ .sheet-col-18-19,
+ .sheet-rolltemplate-5eDefault .sheet-col-18-19 {
+	width: 94.73684%;
+}
+
+ .sheet-offset-18-19,
+ .sheet-rolltemplate-5eDefault .sheet-offset-18-19 {
+	margin-left: 94.73684%;
+}
+
+ .sheet-col-1-20,
+ .sheet-rolltemplate-5eDefault .sheet-col-1-20 {
+	width: 5%;
+}
+
+ .sheet-offset-1-20,
+ .sheet-rolltemplate-5eDefault .sheet-offset-1-20 {
+	margin-left: 5%;
+}
+
+ .sheet-col-3-20,
+ .sheet-rolltemplate-5eDefault .sheet-col-3-20 {
+	width: 15%;
+}
+
+ .sheet-offset-3-20,
+ .sheet-rolltemplate-5eDefault .sheet-offset-3-20 {
+	margin-left: 15%;
+}
+
+ .sheet-col-7-20,
+ .sheet-rolltemplate-5eDefault .sheet-col-7-20 {
+	width: 35%;
+}
+
+ .sheet-offset-7-20,
+ .sheet-rolltemplate-5eDefault .sheet-offset-7-20 {
+	margin-left: 35%;
+}
+
+ .sheet-col-9-20,
+ .sheet-rolltemplate-5eDefault .sheet-col-9-20 {
+	width: 45%;
+}
+
+ .sheet-offset-9-20,
+ .sheet-rolltemplate-5eDefault .sheet-offset-9-20 {
+	margin-left: 45%;
+}
+
+ .sheet-col-11-20,
+ .sheet-rolltemplate-5eDefault .sheet-col-11-20 {
+	width: 55%;
+}
+
+ .sheet-offset-11-20,
+ .sheet-rolltemplate-5eDefault .sheet-offset-11-20 {
+	margin-left: 55%;
+}
+
+ .sheet-col-13-20,
+ .sheet-rolltemplate-5eDefault .sheet-col-13-20 {
+	width: 65%;
+}
+
+ .sheet-offset-13-20,
+ .sheet-rolltemplate-5eDefault .sheet-offset-13-20 {
+	margin-left: 65%;
+}
+
+ .sheet-col-15-20,
+ .sheet-rolltemplate-5eDefault .sheet-col-15-20 {
+	width: 75%;
+}
+
+ .sheet-offset-15-20,
+ .sheet-rolltemplate-5eDefault .sheet-offset-15-20 {
+	margin-left: 75%;
+}
+
+ .sheet-col-17-20,
+ .sheet-rolltemplate-5eDefault .sheet-col-17-20 {
+	width: 85%;
+}
+
+ .sheet-offset-17-20,
+ .sheet-rolltemplate-5eDefault .sheet-offset-17-20 {
+	margin-left: 85%;
+}
+
+ .sheet-col-19-20,
+ .sheet-rolltemplate-5eDefault .sheet-col-19-20 {
+	width: 95%;
+}
+
+ .sheet-offset-19-20,
+ .sheet-rolltemplate-5eDefault .sheet-offset-19-20 {
+	margin-left: 95%;
+}
+
+ .sheet-col-1-21,
+ .sheet-rolltemplate-5eDefault .sheet-col-1-21 {
+	width: 4.7619%;
+}
+
+ .sheet-offset-1-21,
+ .sheet-rolltemplate-5eDefault .sheet-offset-1-21 {
+	margin-left: 4.7619%;
+}
+
+ .sheet-col-2-21,
+ .sheet-rolltemplate-5eDefault .sheet-col-2-21 {
+	width: 9.52381%;
+}
+
+ .sheet-offset-2-21,
+ .sheet-rolltemplate-5eDefault .sheet-offset-2-21 {
+	margin-left: 9.52381%;
+}
+
+ .sheet-col-4-21,
+ .sheet-rolltemplate-5eDefault .sheet-col-4-21 {
+	width: 19.04762%;
+}
+
+ .sheet-offset-4-21,
+ .sheet-rolltemplate-5eDefault .sheet-offset-4-21 {
+	margin-left: 19.04762%;
+}
+
+ .sheet-col-5-21,
+ .sheet-rolltemplate-5eDefault .sheet-col-5-21 {
+	width: 23.80952%;
+}
+
+ .sheet-offset-5-21,
+ .sheet-rolltemplate-5eDefault .sheet-offset-5-21 {
+	margin-left: 23.80952%;
+}
+
+ .sheet-col-6-21,
+ .sheet-rolltemplate-5eDefault .sheet-col-6-21 {
+	width: 28.57143%;
+}
+
+ .sheet-offset-6-21,
+ .sheet-rolltemplate-5eDefault .sheet-offset-6-21 {
+	margin-left: 28.57143%;
+}
+
+ .sheet-col-8-21,
+ .sheet-rolltemplate-5eDefault .sheet-col-8-21 {
+	width: 38.09524%;
+}
+
+ .sheet-offset-8-21,
+ .sheet-rolltemplate-5eDefault .sheet-offset-8-21 {
+	margin-left: 38.09524%;
+}
+
+ .sheet-col-9-21,
+ .sheet-rolltemplate-5eDefault .sheet-col-9-21 {
+	width: 42.85714%;
+}
+
+ .sheet-offset-9-21,
+ .sheet-rolltemplate-5eDefault .sheet-offset-9-21 {
+	margin-left: 42.85714%;
+}
+
+ .sheet-col-10-21,
+ .sheet-rolltemplate-5eDefault .sheet-col-10-21 {
+	width: 47.61905%;
+}
+
+ .sheet-offset-10-21,
+ .sheet-rolltemplate-5eDefault .sheet-offset-10-21 {
+	margin-left: 47.61905%;
+}
+
+ .sheet-col-11-21,
+ .sheet-rolltemplate-5eDefault .sheet-col-11-21 {
+	width: 52.38095%;
+}
+
+ .sheet-offset-11-21,
+ .sheet-rolltemplate-5eDefault .sheet-offset-11-21 {
+	margin-left: 52.38095%;
+}
+
+ .sheet-col-12-21,
+ .sheet-rolltemplate-5eDefault .sheet-col-12-21 {
+	width: 57.14286%;
+}
+
+ .sheet-offset-12-21,
+ .sheet-rolltemplate-5eDefault .sheet-offset-12-21 {
+	margin-left: 57.14286%;
+}
+
+ .sheet-col-13-21,
+ .sheet-rolltemplate-5eDefault .sheet-col-13-21 {
+	width: 61.90476%;
+}
+
+ .sheet-offset-13-21,
+ .sheet-rolltemplate-5eDefault .sheet-offset-13-21 {
+	margin-left: 61.90476%;
+}
+
+ .sheet-col-14-21,
+ .sheet-rolltemplate-5eDefault .sheet-col-14-21 {
+	width: 66.66667%;
+}
+
+ .sheet-offset-14-21,
+ .sheet-rolltemplate-5eDefault .sheet-offset-14-21 {
+	margin-left: 66.66667%;
+}
+
+ .sheet-col-15-21,
+ .sheet-rolltemplate-5eDefault .sheet-col-15-21 {
+	width: 71.42857%;
+}
+
+ .sheet-offset-15-21,
+ .sheet-rolltemplate-5eDefault .sheet-offset-15-21 {
+	margin-left: 71.42857%;
+}
+
+ .sheet-col-16-21,
+ .sheet-rolltemplate-5eDefault .sheet-col-16-21 {
+	width: 76.19048%;
+}
+
+ .sheet-offset-16-21,
+ .sheet-rolltemplate-5eDefault .sheet-offset-16-21 {
+	margin-left: 76.19048%;
+}
+
+ .sheet-col-17-21,
+ .sheet-rolltemplate-5eDefault .sheet-col-17-21 {
+	width: 80.95238%;
+}
+
+ .sheet-offset-17-21,
+ .sheet-rolltemplate-5eDefault .sheet-offset-17-21 {
+	margin-left: 80.95238%;
+}
+
+ .sheet-col-18-21,
+ .sheet-rolltemplate-5eDefault .sheet-col-18-21 {
+	width: 85.71429%;
+}
+
+ .sheet-offset-18-21,
+ .sheet-rolltemplate-5eDefault .sheet-offset-18-21 {
+	margin-left: 85.71429%;
+}
+
+ .sheet-col-19-21,
+ .sheet-rolltemplate-5eDefault .sheet-col-19-21 {
+	width: 90.47619%;
+}
+
+ .sheet-offset-19-21,
+ .sheet-rolltemplate-5eDefault .sheet-offset-19-21 {
+	margin-left: 90.47619%;
+}
+
+ .sheet-col-20-21,
+ .sheet-rolltemplate-5eDefault .sheet-col-20-21 {
+	width: 95.2381%;
+}
+
+ .sheet-offset-20-21,
+ .sheet-rolltemplate-5eDefault .sheet-offset-20-21 {
+	margin-left: 95.2381%;
+}
+
+ .sheet-col-1-22,
+ .sheet-rolltemplate-5eDefault .sheet-col-1-22 {
+	width: 4.54545%;
+}
+
+ .sheet-offset-1-22,
+ .sheet-rolltemplate-5eDefault .sheet-offset-1-22 {
+	margin-left: 4.54545%;
+}
+
+ .sheet-col-3-22,
+ .sheet-rolltemplate-5eDefault .sheet-col-3-22 {
+	width: 13.63636%;
+}
+
+ .sheet-offset-3-22,
+ .sheet-rolltemplate-5eDefault .sheet-offset-3-22 {
+	margin-left: 13.63636%;
+}
+
+ .sheet-col-5-22,
+ .sheet-rolltemplate-5eDefault .sheet-col-5-22 {
+	width: 22.72727%;
+}
+
+ .sheet-offset-5-22,
+ .sheet-rolltemplate-5eDefault .sheet-offset-5-22 {
+	margin-left: 22.72727%;
+}
+
+ .sheet-col-7-22,
+ .sheet-rolltemplate-5eDefault .sheet-col-7-22 {
+	width: 31.81818%;
+}
+
+ .sheet-offset-7-22,
+ .sheet-rolltemplate-5eDefault .sheet-offset-7-22 {
+	margin-left: 31.81818%;
+}
+
+ .sheet-col-9-22,
+ .sheet-rolltemplate-5eDefault .sheet-col-9-22 {
+	width: 40.90909%;
+}
+
+ .sheet-offset-9-22,
+ .sheet-rolltemplate-5eDefault .sheet-offset-9-22 {
+	margin-left: 40.90909%;
+}
+
+ .sheet-col-13-22,
+ .sheet-rolltemplate-5eDefault .sheet-col-13-22 {
+	width: 59.09091%;
+}
+
+ .sheet-offset-13-22,
+ .sheet-rolltemplate-5eDefault .sheet-offset-13-22 {
+	margin-left: 59.09091%;
+}
+
+ .sheet-col-15-22,
+ .sheet-rolltemplate-5eDefault .sheet-col-15-22 {
+	width: 68.18182%;
+}
+
+ .sheet-offset-15-22,
+ .sheet-rolltemplate-5eDefault .sheet-offset-15-22 {
+	margin-left: 68.18182%;
+}
+
+ .sheet-col-17-22,
+ .sheet-rolltemplate-5eDefault .sheet-col-17-22 {
+	width: 77.27273%;
+}
+
+ .sheet-offset-17-22,
+ .sheet-rolltemplate-5eDefault .sheet-offset-17-22 {
+	margin-left: 77.27273%;
+}
+
+ .sheet-col-19-22,
+ .sheet-rolltemplate-5eDefault .sheet-col-19-22 {
+	width: 86.36364%;
+}
+
+ .sheet-offset-19-22,
+ .sheet-rolltemplate-5eDefault .sheet-offset-19-22 {
+	margin-left: 86.36364%;
+}
+
+ .sheet-col-21-22,
+ .sheet-rolltemplate-5eDefault .sheet-col-21-22 {
+	width: 95.45455%;
+}
+
+ .sheet-offset-21-22,
+ .sheet-rolltemplate-5eDefault .sheet-offset-21-22 {
+	margin-left: 95.45455%;
+}
+
+ .sheet-col-1-23,
+ .sheet-rolltemplate-5eDefault .sheet-col-1-23 {
+	width: 4.34783%;
+}
+
+ .sheet-offset-1-23,
+ .sheet-rolltemplate-5eDefault .sheet-offset-1-23 {
+	margin-left: 4.34783%;
+}
+
+ .sheet-col-2-23,
+ .sheet-rolltemplate-5eDefault .sheet-col-2-23 {
+	width: 8.69565%;
+}
+
+ .sheet-offset-2-23,
+ .sheet-rolltemplate-5eDefault .sheet-offset-2-23 {
+	margin-left: 8.69565%;
+}
+
+ .sheet-col-3-23,
+ .sheet-rolltemplate-5eDefault .sheet-col-3-23 {
+	width: 13.04348%;
+}
+
+ .sheet-offset-3-23,
+ .sheet-rolltemplate-5eDefault .sheet-offset-3-23 {
+	margin-left: 13.04348%;
+}
+
+ .sheet-col-4-23,
+ .sheet-rolltemplate-5eDefault .sheet-col-4-23 {
+	width: 17.3913%;
+}
+
+ .sheet-offset-4-23,
+ .sheet-rolltemplate-5eDefault .sheet-offset-4-23 {
+	margin-left: 17.3913%;
+}
+
+ .sheet-col-5-23,
+ .sheet-rolltemplate-5eDefault .sheet-col-5-23 {
+	width: 21.73913%;
+}
+
+ .sheet-offset-5-23,
+ .sheet-rolltemplate-5eDefault .sheet-offset-5-23 {
+	margin-left: 21.73913%;
+}
+
+ .sheet-col-6-23,
+ .sheet-rolltemplate-5eDefault .sheet-col-6-23 {
+	width: 26.08696%;
+}
+
+ .sheet-offset-6-23,
+ .sheet-rolltemplate-5eDefault .sheet-offset-6-23 {
+	margin-left: 26.08696%;
+}
+
+ .sheet-col-7-23,
+ .sheet-rolltemplate-5eDefault .sheet-col-7-23 {
+	width: 30.43478%;
+}
+
+ .sheet-offset-7-23,
+ .sheet-rolltemplate-5eDefault .sheet-offset-7-23 {
+	margin-left: 30.43478%;
+}
+
+ .sheet-col-8-23,
+ .sheet-rolltemplate-5eDefault .sheet-col-8-23 {
+	width: 34.78261%;
+}
+
+ .sheet-offset-8-23,
+ .sheet-rolltemplate-5eDefault .sheet-offset-8-23 {
+	margin-left: 34.78261%;
+}
+
+ .sheet-col-9-23,
+ .sheet-rolltemplate-5eDefault .sheet-col-9-23 {
+	width: 39.13043%;
+}
+
+ .sheet-offset-9-23,
+ .sheet-rolltemplate-5eDefault .sheet-offset-9-23 {
+	margin-left: 39.13043%;
+}
+
+ .sheet-col-10-23,
+ .sheet-rolltemplate-5eDefault .sheet-col-10-23 {
+	width: 43.47826%;
+}
+
+ .sheet-offset-10-23,
+ .sheet-rolltemplate-5eDefault .sheet-offset-10-23 {
+	margin-left: 43.47826%;
+}
+
+ .sheet-col-11-23,
+ .sheet-rolltemplate-5eDefault .sheet-col-11-23 {
+	width: 47.82609%;
+}
+
+ .sheet-offset-11-23,
+ .sheet-rolltemplate-5eDefault .sheet-offset-11-23 {
+	margin-left: 47.82609%;
+}
+
+ .sheet-col-12-23,
+ .sheet-rolltemplate-5eDefault .sheet-col-12-23 {
+	width: 52.17391%;
+}
+
+ .sheet-offset-12-23,
+ .sheet-rolltemplate-5eDefault .sheet-offset-12-23 {
+	margin-left: 52.17391%;
+}
+
+ .sheet-col-13-23,
+ .sheet-rolltemplate-5eDefault .sheet-col-13-23 {
+	width: 56.52174%;
+}
+
+ .sheet-offset-13-23,
+ .sheet-rolltemplate-5eDefault .sheet-offset-13-23 {
+	margin-left: 56.52174%;
+}
+
+ .sheet-col-14-23,
+ .sheet-rolltemplate-5eDefault .sheet-col-14-23 {
+	width: 60.86957%;
+}
+
+ .sheet-offset-14-23,
+ .sheet-rolltemplate-5eDefault .sheet-offset-14-23 {
+	margin-left: 60.86957%;
+}
+
+ .sheet-col-15-23,
+ .sheet-rolltemplate-5eDefault .sheet-col-15-23 {
+	width: 65.21739%;
+}
+
+ .sheet-offset-15-23,
+ .sheet-rolltemplate-5eDefault .sheet-offset-15-23 {
+	margin-left: 65.21739%;
+}
+
+ .sheet-col-16-23,
+ .sheet-rolltemplate-5eDefault .sheet-col-16-23 {
+	width: 69.56522%;
+}
+
+ .sheet-offset-16-23,
+ .sheet-rolltemplate-5eDefault .sheet-offset-16-23 {
+	margin-left: 69.56522%;
+}
+
+ .sheet-col-17-23,
+ .sheet-rolltemplate-5eDefault .sheet-col-17-23 {
+	width: 73.91304%;
+}
+
+ .sheet-offset-17-23,
+ .sheet-rolltemplate-5eDefault .sheet-offset-17-23 {
+	margin-left: 73.91304%;
+}
+
+ .sheet-col-18-23,
+ .sheet-rolltemplate-5eDefault .sheet-col-18-23 {
+	width: 78.26087%;
+}
+
+ .sheet-offset-18-23,
+ .sheet-rolltemplate-5eDefault .sheet-offset-18-23 {
+	margin-left: 78.26087%;
+}
+
+ .sheet-col-19-23,
+ .sheet-rolltemplate-5eDefault .sheet-col-19-23 {
+	width: 82.6087%;
+}
+
+ .sheet-offset-19-23,
+ .sheet-rolltemplate-5eDefault .sheet-offset-19-23 {
+	margin-left: 82.6087%;
+}
+
+ .sheet-col-20-23,
+ .sheet-rolltemplate-5eDefault .sheet-col-20-23 {
+	width: 86.95652%;
+}
+
+ .sheet-offset-20-23,
+ .sheet-rolltemplate-5eDefault .sheet-offset-20-23 {
+	margin-left: 86.95652%;
+}
+
+ .sheet-col-21-23,
+ .sheet-rolltemplate-5eDefault .sheet-col-21-23 {
+	width: 91.30435%;
+}
+
+ .sheet-offset-21-23,
+ .sheet-rolltemplate-5eDefault .sheet-offset-21-23 {
+	margin-left: 91.30435%;
+}
+
+ .sheet-col-22-23,
+ .sheet-rolltemplate-5eDefault .sheet-col-22-23 {
+	width: 95.65217%;
+}
+
+ .sheet-offset-22-23,
+ .sheet-rolltemplate-5eDefault .sheet-offset-22-23 {
+	margin-left: 95.65217%;
+}
+
+ .sheet-col-1-24,
+ .sheet-rolltemplate-5eDefault .sheet-col-1-24 {
+	width: 4.16667%;
+}
+
+ .sheet-offset-1-24,
+ .sheet-rolltemplate-5eDefault .sheet-offset-1-24 {
+	margin-left: 4.16667%;
+}
+
+ .sheet-col-5-24,
+ .sheet-rolltemplate-5eDefault .sheet-col-5-24 {
+	width: 20.83333%;
+}
+
+ .sheet-offset-5-24,
+ .sheet-rolltemplate-5eDefault .sheet-offset-5-24 {
+	margin-left: 20.83333%;
+}
+
+ .sheet-col-7-24,
+ .sheet-rolltemplate-5eDefault .sheet-col-7-24 {
+	width: 29.16667%;
+}
+
+ .sheet-offset-7-24,
+ .sheet-rolltemplate-5eDefault .sheet-offset-7-24 {
+	margin-left: 29.16667%;
+}
+
+ .sheet-col-9-24,
+ .sheet-rolltemplate-5eDefault .sheet-col-9-24 {
+	width: 37.5%;
+}
+
+ .sheet-offset-9-24,
+ .sheet-rolltemplate-5eDefault .sheet-offset-9-24 {
+	margin-left: 37.5%;
+}
+
+ .sheet-col-11-24,
+ .sheet-rolltemplate-5eDefault .sheet-col-11-24 {
+	width: 45.83333%;
+}
+
+ .sheet-offset-11-24,
+ .sheet-rolltemplate-5eDefault .sheet-offset-11-24 {
+	margin-left: 45.83333%;
+}
+
+ .sheet-col-13-24,
+ .sheet-rolltemplate-5eDefault .sheet-col-13-24 {
+	width: 54.16667%;
+}
+
+ .sheet-offset-13-24,
+ .sheet-rolltemplate-5eDefault .sheet-offset-13-24 {
+	margin-left: 54.16667%;
+}
+
+ .sheet-col-15-24,
+ .sheet-rolltemplate-5eDefault .sheet-col-15-24 {
+	width: 62.5%;
+}
+
+ .sheet-offset-15-24,
+ .sheet-rolltemplate-5eDefault .sheet-offset-15-24 {
+	margin-left: 62.5%;
+}
+
+ .sheet-col-17-24,
+ .sheet-rolltemplate-5eDefault .sheet-col-17-24 {
+	width: 70.83333%;
+}
+
+ .sheet-offset-17-24,
+ .sheet-rolltemplate-5eDefault .sheet-offset-17-24 {
+	margin-left: 70.83333%;
+}
+
+ .sheet-col-19-24,
+ .sheet-rolltemplate-5eDefault .sheet-col-19-24 {
+	width: 79.16667%;
+}
+
+ .sheet-offset-19-24,
+ .sheet-rolltemplate-5eDefault .sheet-offset-19-24 {
+	margin-left: 79.16667%;
+}
+
+ .sheet-col-21-24,
+ .sheet-rolltemplate-5eDefault .sheet-col-21-24 {
+	width: 87.5%;
+}
+
+ .sheet-offset-21-24,
+ .sheet-rolltemplate-5eDefault .sheet-offset-21-24 {
+	margin-left: 87.5%;
+}
+
+ .sheet-col-23-24,
+ .sheet-rolltemplate-5eDefault .sheet-col-23-24 {
+	width: 95.83333%;
+}
+
+ .sheet-offset-23-24,
+ .sheet-rolltemplate-5eDefault .sheet-offset-23-24 {
+	margin-left: 95.83333%;
+}
+
+ .sheet-col-11-48,
+ .sheet-rolltemplate-5eDefault .sheet-col-11-48 {
+	width: 22.91666%;
+}
+
+ .sheet-offset-11-48,
+ .sheet-rolltemplate-5eDefault .sheet-offset-11-48 {
+	margin-left: 22.91666%;
+}
+
+ .sheet-row-r,
+ .sheet-rolltemplate-5eDefault .sheet-row-r {
+	letter-spacing: -0.31em;
+	*letter-spacing: normal;
+	word-spacing: -0.43em;
+}
+
+ .sheet-opera-only :-o-prefocus,  .sheet-row-r,
+ .sheet-rolltemplate-5eDefault .sheet-opera-only :-o-prefocus, .sheet-rolltemplate-5eDefault .sheet-row-r {
+	word-spacing: -0.43em;
+}
+
+ .sheet-row-r img,
+ .sheet-rolltemplate-5eDefault .sheet-row-r img {
+	max-width: 100%;
+}
+
+/* End custom Pure grid css (24 cols) */
